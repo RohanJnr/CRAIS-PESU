@@ -127,3 +127,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Jetbrains
+/.idea
+
+# VS Code
+/.vscode
+
+# node modules
+node_modules/
+
+# dev
+reset_migrations.sh
+
+# media
+media/
