@@ -3,6 +3,7 @@ from wagtail.models import Page, Site
 
 from crais.base.models import AboutPage, FormPage, FormField, HomePage
 from crais.projects.models import ProjectIndexPage
+from crais.users.models import MemberCategory
 
 
 class Command(BaseCommand):
@@ -79,4 +80,12 @@ class Command(BaseCommand):
         home_page.add_child(instance=contact_page)
         contact_page.save()
 
-
+        MemberCategory.objects.create(
+            name="Faculty"
+        )
+        MemberCategory.objects.create(
+            name="PhD Scholar"
+        )
+        MemberCategory.objects.create(
+            name="Research Assistant"
+        )

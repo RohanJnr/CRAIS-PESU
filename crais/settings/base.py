@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "crais.research",
     "crais.users",
     # Wagtail apps
+    "wagtail.contrib.modeladmin",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",

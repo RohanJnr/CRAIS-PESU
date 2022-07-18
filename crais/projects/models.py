@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from django.db import models
 from django import forms
 from django.http import HttpRequest
@@ -6,7 +5,6 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
-from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
 from wagtail.fields import RichTextField
 from wagtail.models import Page, Orderable
 from wagtail.search import index
@@ -56,7 +54,7 @@ class ProjectContributors(Orderable):
 
     page = ParentalKey("projects.ProjectPage", related_name="contributors")
     contributor = models.ForeignKey(
-        "users.Member",
+        "users.BaseMember",
         blank=True,
         on_delete=models.CASCADE,
     )
@@ -104,7 +102,7 @@ class ProjectPage(Page):
         related_name="+",
     )
     category = models.ForeignKey(
-        "ProjectCategory", blank=True, null=True, on_delete=models.SET_NULL
+        "projects.ProjectCategory", blank=True, null=True, on_delete=models.SET_NULL
     )
 
     tags = ClusterTaggableManager(through=ProjectTag, blank=True)

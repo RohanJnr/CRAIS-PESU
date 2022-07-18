@@ -1,3 +1,4 @@
+from dataclasses import Field
 from django import forms
 from django.db import models
 from modelcluster.models import ClusterableModel
@@ -7,9 +8,13 @@ from wagtail.snippets.models import register_snippet
 
 
 @register_snippet
-class TeamCategory(index.Indexed, models.Model):
+class MemberCategory(index.Indexed, models.Model):
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=512)
+    description = models.CharField(
+        max_length=512,
+        blank=True,
+        null=True
+    )
 
     panels = [
         FieldPanel("name"),
@@ -20,17 +25,12 @@ class TeamCategory(index.Indexed, models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Team Category"
-        verbose_name_plural = "Team Categories"
+        verbose_name = "Member Category"
+        verbose_name_plural = "Member Categories"
 
 
-@register_snippet
-class Member(index.Indexed, ClusterableModel):
+class BaseMember(index.Indexed, ClusterableModel):
     name = models.CharField(max_length=255)
-    designation = models.CharField(max_length=255)
-    category = models.ForeignKey(
-        "users.TeamCategory", blank=True, null=True, on_delete=models.SET_NULL
-    )
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -39,11 +39,9 @@ class Member(index.Indexed, ClusterableModel):
         related_name='+'
     )
 
+    email = models.EmailField()
+
     linkedin_link = models.URLField(
-        blank=True,
-        null=True,
-    )
-    pes_faculty_profile_link = models.URLField(
         blank=True,
         null=True,
     )
@@ -54,14 +52,51 @@ class Member(index.Indexed, ClusterableModel):
 
     panels = [
         FieldPanel("name"),
-        FieldPanel("designation"),
-        FieldPanel("category"),
         FieldPanel("image"),
         FieldPanel("linkedin_link"),
-        FieldPanel("pes_faculty_profile_link"),
         FieldPanel("google_scholar_link"),
     ]
 
 
     def __str__(self) -> str:
         return self.name
+
+
+@register_snippet
+class Member(BaseMember):
+    category = models.ForeignKey(
+        "users.MemberCategory", blank=True, null=True, on_delete=models.SET_NULL
+    )
+    pes_faculty_profile_link = models.URLField(
+        blank=True,
+        null=True,
+    )
+
+    panels = BaseMember.panels + [
+        FieldPanel("category"),
+        FieldPanel("pes_faculty_profile_link"),
+    ]
+
+
+@register_snippet
+class Intern(BaseMember):
+    faculty_guide = models.ForeignKey(
+        "users.Member",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL
+    )
+    srn = models.CharField(
+        max_length=32,
+        blank=True,
+        null=True,
+        help_text="Enter srn if applicable"
+    )
+    university = models.CharField(max_length=128)
+
+    panels = BaseMember.panels + [
+        FieldPanel("faculty_guide"),
+        FieldPanel("srn"),
+        FieldPanel("university")
+    ]
+
