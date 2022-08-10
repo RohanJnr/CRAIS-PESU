@@ -55,6 +55,10 @@ class Command(BaseCommand):
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat "
                 "ligula nisl, ultrices accumsan lectus tincidunt ac. "
             ),
+            body=(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat "
+                "ligula nisl, ultrices accumsan lectus tincidunt ac. "
+            ),
             slug="about-us"
         )
 

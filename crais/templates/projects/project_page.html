@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content_w %}
+<section class="pt-20 pb-5">
+    <h1 class="">{{ page.title }}</h1>
+    <p>{{ page.date }}</p>
+    {% image page.banner original as banner %}
+    <div class="w-full">
+        <img src="{{ banner.url }}" alt="" class="w-full h-[70vh] rounded-md">
+    </div>
+    <div class="grid grid-cols-4 mt-10">
+        <section class="w-full lg:w-4/5 col-span-3">
+
+
+            <div>
+                <h3>Introduction</h3>
+                <p>{{ page.intro }}</p>
+            </div>
+
+            <div class="rich-text">
+                {{ page.description|richtext }}
+            </div>
+
+            <a href="{{ page.get_parent.url }}" class="text-primary">Return to Projects</a>
+        </section>
+
+        <aside>
+            <h3>Contributors</h3>
+                {% for contrib in page.contributors.all %}
+                <div class="flex items-center justify-start gap-2">
+                    <p><span class="iconify" data-icon="dashicons:arrow-right"></span></p>
+                    <p>{{ contrib }}</p>
+                </div>
+                    
+                {% endfor %}
+            </ul>
+
+        </aside>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -9,6 +9,9 @@ from wagtail.fields import RichTextField
 from wagtail.models import Page, Orderable
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
+from wagtail.snippets.widgets import AdminSnippetChooser, AdminChooser
+
+from crais.users.models import BaseMember
 
 
 PROJECT_STATUS_CHOICES = (
@@ -18,7 +21,7 @@ PROJECT_STATUS_CHOICES = (
 
 
 class ProjectIndexPage(Page):
-    intro = RichTextField(blank=True)
+    intro = models.CharField(max_length=255)
 
     content_panels = Page.content_panels + [FieldPanel("intro")]
 
@@ -63,6 +66,9 @@ class ProjectContributors(Orderable):
         FieldPanel("contributor")
     ]
 
+    def __str__(self) -> str:
+        return self.contributor.name
+
 
 @register_snippet
 class ProjectCategory(index.Indexed, models.Model):
@@ -80,6 +86,9 @@ class ProjectCategory(index.Indexed, models.Model):
     ]
 
     def __str__(self) -> str:
+        return self.name
+
+    def __repr__(self) -> str:
         return self.name
 
     class Meta:

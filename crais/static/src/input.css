@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-size: 100%;
+}
+
+/*16px*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.rich-text ul {
+    list-style: inherit;
+}
+
+.rich-text ol {
+    list-style: decimal;
+}
+
+.rich-text ul,
+.rich-text ol {
+    margin: 2rem;
+}
+
+.rich-text img {
+    margin: 50px 0;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p,
+label,
+ul,
+ol {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    color: rgba(52, 44, 47, 0.75);
+    font-weight: 400;
+}
+
+li {
+    margin: 1rem 0;
+}
+
+label .asteriskField {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 1rem 0 1.38rem;
+    line-height: 1.3;
+    color: #3B3232;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.488rem;
+}
+
+h2 {
+    font-size: 2.074rem;
+}
+
+h3 {
+    font-size: 1.728rem;
+}
+
+h4 {
+    font-size: 1.44rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+small,
+.text_small {
+    font-size: 0.833rem;
+    font-weight: 500;
+    color: #858585;
+}
+
+
+/* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open {
+    transform: rotate(90deg) translateY(0px);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+/* Hamburger menu ends */
+
+a.underline-hover-effect {
+    text-decoration: none;
+    color: inherit;
+    margin-top: 0.5rem;
+}
+
+.underline-hover-effect {
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    /* defines the space between text and underline */
+    position: relative;
+}
+
+.underline-hover-effect::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #F25E3D;
+    transition: width 0.25s ease-out;
+}
+
+.underline-hover-effect:hover::before {
+    width: 100%;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FF6C6C 0%, #A095E0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.gradient-text-box {
+    background: linear-gradient(90deg, #FF6C6C 0%, #A095E0 100%);
+}
+
+.gradient-box {
+    background: linear-gradient(180deg, #483637 0%, #4A3234 0.01%, #3D3250 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gradient-image {
+    background: -moz-linear-gradient(to left, rgb(32, 32, 32, 0) 20%,  rgb(32, 32, 32) 40%), url('../images/bg-projects.jpg');
+}
+
+.stat-card {
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        margin-top: 0;
+        font-size: 3.052rem;
+    }
+
+    h2 {
+        font-size: 2.441rem;
+    }
+
+    h3 {
+        font-size: 1.953rem;
+        font-weight: 400;
+    }
+
+    h4 {
+        font-size: 1.563rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    small {
+        font-size: 0.8rem;
+    }
+}
+
+.custom-form label {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.custom-form small {
+    padding: 5px;
+}
+
+.custom-form input {
+    border: 2px rgb(218, 218, 218) solid;
+    outline: none;
+    color: #916d6d;
+    font-weight: 500;
+    margin: 0;
+}
+
+.custom-form input:focus {
+    border: 2px rgb(146, 165, 201) solid;
+}
+
+
+.custom-form textarea:focus {
+    border: 2px rgb(146, 165, 201) solid;
+}
+
+.custom-form textarea {
+    outline: none;
+    resize: none;
+    border: 2px rgb(218, 218, 218) solid;
+    padding: 20px;
+    color: #916d6d;
+    font-weight: 500;
+}
+
+
+
+.custom-form p strong {
+    color: red;
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400;
+}

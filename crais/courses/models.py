@@ -61,3 +61,5 @@ class CoursePage(Page):
             heading="Course faculties",
         ),
     ]
+
+    parent_page_types = ("courses.CourseIndexPage",)

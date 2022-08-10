@@ -28,7 +28,7 @@ class MemberCategory(index.Indexed, models.Model):
         verbose_name = "Member Category"
         verbose_name_plural = "Member Categories"
 
-
+@register_snippet
 class BaseMember(index.Indexed, ClusterableModel):
     name = models.CharField(max_length=255)
     image = models.ForeignKey(

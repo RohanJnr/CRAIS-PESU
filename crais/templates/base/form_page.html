@@ -1,0 +1,70 @@
+{% extends "_base.html" %}
+{% load tailwind_filters %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+<section class="h-[80vh] bg-[#202020] flex flex-col justify-start items-center pt-[10%]">
+    <h1 class="text-center text-[#FFF] font-bold">{{ page.title }}</h1>
+    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</p>
+    <div id="submission">
+    </div>
+</section>
+<section class="bg-body">
+    <div class="bg-white w-4/5 mx-auto grid grid-cols-2 shadow-md translate-y-[-300px]">
+        <div class="p-10 flex flex-col items-start justify-center">
+
+            <form class="w-full custom-form" hx-post="{% pageurl page %}" hx-swap="outerHTML">
+                <h2 class="mb-10">Write to Us</h2>
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit"
+                    class="mt-10 text-white bg-secondary md:flex justify-around items-center py-2 px-4 text-2xl rounded">Submit</button>
+            </form>
+
+        </div>
+        <div class="p-10 bg-darkBg">
+            <h2 class="mb-10 text-white">Contact Infomration</h2>
+            <p class="text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sapiente magnam qui esse soluta
+                tempore inventore cupiditate officiis error.
+            </p>
+            <div class="mt-20 flex flex-col items-start justify-start gap-10">
+                <div class="flex items-center justify-start gap-2">
+                    <p><span class="iconify text-white h-16 w-16" data-icon="clarity:email-line"></span></p>
+                    <p class="gradient-text font-bold">rohanjnr44@gmail.com</p>
+                </div>
+                <div class="flex items-center justify-start gap-2">
+                    <p><span class="iconify text-white h-16 w-16" data-icon="carbon:phone"></span></p>
+                    <p class="gradient-text font-bold">+91 97429 48843</p>
+                </div>
+                <div class="flex items-center justify-start gap-2">
+                    <p><span class="iconify text-white h-16 w-16" data-icon="cil:location-pin"></span></p>
+                    <p class="gradient-text font-bold">
+                        PES University
+                        Outer Ring Rd, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085                    
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="w-4/5 mx-auto mt-[-250px] mb-10">
+        <iframe class="rounded-md" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124452.6349696912!2d77.53022605806858!3d12.898406434920426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3e468d8d36d3%3A0x694d74f6ac640acf!2sPES%20University!5e0!3m2!1sen!2sin!4v1659425290415!5m2!1sen!2sin" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<!-- <div class="flex flex-col justify-around items-start gap-10 my-28 md:mx-[15%] bg-white p-10 md:rounded-md md:shadow-md">
+        <section class="flex flex-col items-start justify-start">
+            <h1 class="mt-0 font-bold">{{ page.title }}</h1>
+            <p>{{ page.intro|richtext }}</p>
+        </section>
+        <section class="custom-form w-full md:w-3/5">
+            <form class="w-full" action="{% pageurl page %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="mt-10 text-white gradient-box  md:flex justify-around items-center py-2 px-4 text-2xl rounded">Submit</button>
+            </form>
+        </section>
+    </div> -->
+{% endblock %}

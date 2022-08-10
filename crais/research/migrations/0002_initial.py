@@ -10,19 +10,19 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('research', '0001_initial'),
         ('users', '0001_initial'),
-        ('projects', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='projectcontributors',
-            name='contributor',
+            model_name='centerauthor',
+            name='author',
             field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='users.basemember'),
         ),
         migrations.AddField(
-            model_name='projectcontributors',
-            name='page',
-            field=modelcluster.fields.ParentalKey(on_delete=django.db.models.deletion.CASCADE, related_name='contributors', to='projects.projectpage'),
+            model_name='centerauthor',
+            name='model',
+            field=modelcluster.fields.ParentalKey(on_delete=django.db.models.deletion.CASCADE, related_name='center_authors', to='research.publication'),
         ),
     ]

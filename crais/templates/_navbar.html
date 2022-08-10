@@ -1,0 +1,60 @@
+{% load static %}
+{% load wagtailcore_tags %}
+<!-- Navbar -->
+<header class="bg-white">
+    <nav class="relative mx-auto text-text-75 w-2/3">
+        <!-- Flex container -->
+        <div class="flex items-center justify-between py-3">
+            <!-- Logo -->
+            <div class="pt-2 md:flex justify-around items-center gap-10">
+                <a href="{% slugurl 'home' %}" class="text-2xl">
+                    <!-- <img class="h-10 w-auto" src="{% static 'images/logo.png' %}" alt="" /> -->
+                    LOGO
+                </a>
+                <a href="{% slugurl 'about-us' %}" class="underline-hover-effect">About Us</a>
+                <a href="{% slugurl 'research' %}" class="underline-hover-effect">Research</a>
+                <a href="{% slugurl 'projects' %}" class="underline-hover-effect">Projects</a>
+                <a href="{% slugurl 'blog' %}" class="underline-hover-effect">Courses</a>
+                <a href="{% slugurl 'blog' %}" class="underline-hover-effect">Events</a>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="hidden pt-2 md:flex justify-around items-center gap-10">
+                <a href="{% slugurl 'contact-us' %}">
+                    <span class="iconify h-5 w-5" data-icon="clarity:search-line"></span>
+                </a>
+                <a href="{% slugurl 'contact-us' %}" class="border border-primary border-[1.5px] rounded-full py-1 px-2">Contact Us</a>
+            </div>
+            <!-- Hamburger Icon -->
+            <button id="menu-btn" class="hamburger md:hidden focus:outline-none flex flex-col items-center justify-around">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+            <div id="menu"
+                class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                    <a href="{% slugurl 'home' %}" class="underline-hover-effect">Home</a>
+                    <a href="{% slugurl 'about-us' %}" class="underline-hover-effect">About Us</a>
+                    <a href="{% slugurl 'projects' %}" class="underline-hover-effect">Projects</a>
+                    <a href="{% slugurl 'blog' %}" class="underline-hover-effect">Blog</a>
+                    <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const btn = document.getElementById('menu-btn')
+    const nav = document.getElementById('menu')
+
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open')
+      nav.classList.toggle('flex')
+      nav.classList.toggle('hidden')
+    })
+
+</script>
