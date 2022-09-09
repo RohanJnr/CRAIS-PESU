@@ -20,15 +20,17 @@ class FormField(AbstractFormField):
 class FormPage(AbstractForm):
     intro = RichTextField(blank=True)
     thank_you_text = models.CharField(max_length=255)
-
+    general_information = models.TextField()
 
 
     content_panels = AbstractForm.content_panels + [
         FieldPanel('intro'),
+        FieldPanel('general_information'),
         InlinePanel('form_fields', label="Form fields"),
         FieldPanel('thank_you_text', classname="full"),
     ]
 
+    parent_page_types = ("projects.ProjectPage",)
 
     def serve(self, request, *args, **kwargs):
         if request.method == "POST":
@@ -53,6 +55,21 @@ class FormPage(AbstractForm):
         context = self.get_context(request)
         context["form"] = form
         return TemplateResponse(request, self.get_template(request), context)
+
+
+class ContactPage(FormPage):
+    contact_email = models.CharField(max_length=255)
+    contact_phone = models.CharField(max_length=12)
+    contact_address = models.TextField()
+
+    parent_page_types = ("base.HomePage",)
+
+
+    content_panels = FormPage.content_panels + [
+        FieldPanel('contact_email'),
+        FieldPanel('contact_phone'),
+        FieldPanel('contact_address')
+    ]
 
 
 class HomePage(Page):

@@ -247,12 +247,12 @@ a.underline-hover-effect {
 }
 
 .custom-form input:focus {
-    border: 2px rgb(146, 165, 201) solid;
+    border: 2px #A095E0 solid;
 }
 
 
 .custom-form textarea:focus {
-    border: 2px rgb(146, 165, 201) solid;
+    border: 2px #A095E0 solid;
 }
 
 .custom-form textarea {

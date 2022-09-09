@@ -17,6 +17,17 @@ EVENT_STATUS_CHOICES = (
 )
 
 
+class EventTimelineNode(Orderable):
+
+    page = ParentalKey("events.EventPage", related_name="timelineNode")
+    node = models.CharField(
+        max_length=255
+    )
+
+    panels = [
+        FieldPanel("node")
+    ]
+
 
 class EventIndexPage(Page):
     intro = models.CharField(max_length=255)
@@ -48,7 +59,8 @@ class EventPage(Page):
         related_name="+",
     )
 
-    date = models.DateField(blank=True, null=True)
+    timestamp = models.DateTimeField(verbose_name="Date and Time")
+    venue = models.CharField(max_length=255)
 
     status = models.CharField(max_length=32, choices=EVENT_STATUS_CHOICES)
 
@@ -56,9 +68,21 @@ class EventPage(Page):
         FieldPanel("intro"),
         FieldPanel("description"),
         FieldPanel("banner"),
-        FieldPanel("date"),
+        FieldPanel("timestamp"),
+        FieldPanel("venue"),
         FieldPanel("status"),
+        MultiFieldPanel(
+            [InlinePanel("timelineNode", min_num=1, label="timelineNode")],
+            heading="Event Timeline",
+        ),
     ]
 
     parent_page_types = ("events.EventIndexPage",)
     subpage_types = ("base.FormPage", )
+
+    def get_context(self, request: HttpRequest, *args, **kwargs) -> dict:
+        """Update context to include only published posts, ordered by reverse-chron."""
+        context = super().get_context(request)
+        register_page = self.get_children().live().first()
+        context["register_page"] = register_page
+        return context

@@ -43,6 +43,7 @@ class ResearchPage(Page):
         FieldPanel("information"),
     ]
 
+    parent_page_types = ("base.HomePage",)
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)

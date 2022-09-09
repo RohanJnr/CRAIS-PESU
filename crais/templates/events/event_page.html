@@ -1,0 +1,58 @@
+{% extends "_base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content_w %}
+<section class="pt-20 pb-5">
+    <h1 class="">{{ page.title }}</h1>
+    <p>{{ page.date }}</p>
+    {% image page.banner original as banner %}
+    <div class="w-full">
+        <img src="{{ banner.url }}" alt="" class="w-auto h-4/5 rounded-md">
+    </div>
+    <div class="grid grid-cols-4 mt-10">
+        <section class="w-full lg:w-4/5 col-span-3">
+
+
+            <div>
+                <h3>About the event</h3>
+                <p>{{ page.intro }}</p>
+            </div>
+
+            <div class="rich-text">
+                {{ page.description|richtext }}
+            </div>
+
+            <a href="{{ page.get_parent.url }}" class="text-primary">Return to Events</a>
+        </section>
+
+        <aside>
+            <h3>Details</h3>
+            <div class="w-full h-fit bg-darkBg p-5 shadow-lg rounded flex flex-col justify-center items-start">
+                <div class="flex flex-col justify-between items-start">
+                    <h5 class="text-white font-bold m-0">Date and Time</h5>
+                    <p class="text-[#bbbbbb]">{{ page.timestamp }}</p>
+                </div>
+                <div class="flex flex-col justify-between items-start">
+                    <h5 class="text-white font-bold m-0">Location</h5>
+                    <p class="text-[#bbbbbb]">{{ page.venue }}</p>
+                </div>
+        
+            </div>
+
+            <div class="mt-5">
+                <a href="{% pageurl register_page %}" class="py-3 px-6 gradient-text-box text-white rounded">
+                    Register
+                    <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+                </a>
+            </div>
+
+            </ul>
+
+        </aside>
+
+    </div>
+</section>
+
+{% endblock %}

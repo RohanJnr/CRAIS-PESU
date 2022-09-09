@@ -9,7 +9,6 @@ from wagtail.fields import RichTextField
 from wagtail.models import Page, Orderable
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
-from wagtail.snippets.widgets import AdminSnippetChooser, AdminChooser
 
 from crais.users.models import BaseMember
 

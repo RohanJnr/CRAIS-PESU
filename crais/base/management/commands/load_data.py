@@ -72,15 +72,15 @@ class Command(BaseCommand):
         # Create research page
         research_page = ResearchPage(
             title="About Us",
-            details=(
+            information=(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat "
                 "ligula nisl, ultrices accumsan lectus tincidunt ac. "
             ),
             slug="research"
         )
 
-        home_page.add_child(instance=about_page)
-        about_page.save()
+        home_page.add_child(instance=research_page)
+        research_page.save()
 
 
 
