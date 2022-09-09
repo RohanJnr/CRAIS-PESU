@@ -4,12 +4,44 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 
-{% block content_w %}
+{% block content %}
+<section class="h-[50vh] bg-darkBg flex flex-col justify-start items-start pt-[7%]">
+    <div class="w-2/3 mx-auto">
+        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
+        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+    </div>
+</section>
 
-    <section class="w-full md:w-4/5 lg:w-3/5 mx-auto my-20">
-        <h1 class="my-20 text-center">{{ page.title }}</h1>
-        <div class="rich-text">{{ page.body|richtext }}</div>
-    </section>
+<section class="py-10">
+    <div class="w-2/3 mx-auto">
+        <div class="rich-text">
+            {{ page.body|richtext }}
+        </div>
+    </div>
+</section>
+
+<section class="w-2/3 mx-auto">
+    <h2>Team</h2>
+
+    {% regroup team by category as category_list %}
+    
+    {% for category in category_list %}
+    <h4>{{ category.grouper }}</h4>
+    <div class="my-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
+        {% for member in category.list %}
+            <div class="text-center">
+                {% image member.image original as image %}
+                <img src="{{ image.url }}" alt="" class="rounded-full w-full h-auto">
+                <h5 class="mt-5 mb-0">{{ member.name }}</h5>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% endfor %}
+
+
+
+</section>
 
 
 {% endblock %}

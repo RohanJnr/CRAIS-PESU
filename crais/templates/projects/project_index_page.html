@@ -5,50 +5,61 @@
 {% load wagtailimages_tags %}
 
 {% block content %}
-<section class="h-[50vh] bg-[#202020] flex flex-col justify-start items-center pt-[10%]">
-    <h1 class="text-center text-[#FFF] font-bold">{{ page.title }}</h1>
-    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</p>
+<section class="h-[50vh] bg-darkBg flex flex-col justify-start items-start pt-[7%]">
+    <div class="w-2/3 mx-auto">
+        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
+        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+    </div>
 </section>
 
 
-<section class="bg-body" x-data="{ selected: 'Research' }">
+<section class="" x-data="{ selected: 'Research', year: '' }">
 
-    <div class="grid grid-cols-3 text-center w-2/3 mx-auto translate-y-[-50px] shadow-md">
-        <a href=" #Research">
-            <h4 class="p-5 m-0 bg-white" x-on:click="selected = 'Research'"
-                x-bind:class="{ 'gradient-box text-white': selected === 'Research' }">
+    <div class="grid grid-cols-3 text-center w-2/3 mx-auto translate-y-[-50px]">
+        <a href="#Research">
+            <h4 class="p-5 m-0 translate-x-7 rounded bg-gray-200" x-on:click="selected = 'Research'"
+                x-bind:class="{ 'gradient-text-box text-white': selected === 'Research' }">
                 Research
             </h4>
         </a>
         <a href="#Internship">
-            <h4 class="p-5 m-0 bg-white" x-on:click="selected = 'Internship'"
-                x-bind:class="{ 'gradient-box text-white': selected === 'Internship' }">
+            <h4 class="p-5 m-0 translate-x-5 bg-gray-200 rounded" x-on:click="selected = 'Internship'"
+                x-bind:class="{ 'gradient-text-box text-white': selected === 'Internship' }">
                 Internship
             </h4>
         </a>
         <a href="#Funded">
-            <h4 class="p-5 m-0 bg-white" x-on:click="selected = 'Funded'"
-                x-bind:class="{ 'gradient-box text-white': selected === 'Funded' }">
+            <h4 class="p-5 m-0 bg-gray-200 rounded" x-on:click="selected = 'Funded'"
+                x-bind:class="{ 'gradient-text-box text-white': selected === 'Funded' }">
                 Funded
             </h4>
         </a>
     </div>
 
+ 
     {% regroup projectpages by specific.category as category_list %}
 
     {% for category in category_list %}
 
-    <div class="w-2/3 mx-auto flex flex-col gap-20 justify-around items-start pt-20 pb-40"
+    <div class="w-2/3 mx-auto flex flex-col gap-20 justify-around items-start pt-10 pb-40"
         x-show="selected === '{{ category.grouper }}'" x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
 
+
+        <select class="py-2 px-4 bg-secondary text-white text-xl" name="project_year" x-on:change="year = $el.value">
+            <option selected disabled>Year Published</option>
+            <option value="">All Years</option>
+            {% for year in project_years %}
+            <option value="{{year.date.year}}" x-on:click="year = '{{year.date.year}}'">{{year.date.year}}</option>
+            {% endfor %}
+        </select>
+
         {% for project in category.list %}
-        <div class="text-left">
+        <!-- <div class="text-left" x-show="year === '{{ project.specific.date.year }}' || year === ''"
+            x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100">
             <div class="flex items-center justify-start gap-2">
                 <h3>{{ project.title }}</h3>
-                <a href="{% pageurl project %}" class="inline">
-                    <span class="iconify text-[#4947BD] h-10 w-10" data-icon="bi:arrow-up-right-circle"></span>
-                </a>
             </div>
 
             <div class="bg-white shadow-md rounded-md grid grid-cols-3">
@@ -79,18 +90,47 @@
                 </div>
             </div>
 
+        </div> -->
+        <div class="text-left" x-show="year === '{{ project.specific.date.year }}' || year === ''"
+            x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100">
+            <div class="flex items-center justify-start gap-2">
+                <h3>{{ project.title }}</h3>
+            </div>
+
+            <div class="gradient-box shadow-md rounded-md grid grid-cols-3">
+                <div class="p-10 col-span-2 flex flex-col items-start justify-center">
+                    <small class="text-white">{{ project.specific.date }}</small>
+                    <p class="mt-5 text-white">
+                        <b>Status</b>: {{ project.specific.status }}
+                    </p>
+                    <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
+                        {% for tag in project.specific.tags.all %}
+                        <small class="px-2 py-1 bg-[#D9D9D9] text-text-100 font-semibold rounded">{{ tag }}</small>
+                        {% endfor %}
+                    </div>
+                    <p class="richtext text-white">
+                        {{ project.specific.intro | truncatewords:20 }}
+                    </p>
+
+                    <div class="mt-5">
+                        <a href="{% pageurl project %}" class="py-3 px-6 gradient-text-box text-white rounded">
+                            View Project
+                            <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+                {% image project.specific.banner original as banner %}
+                <div class="">
+                    <img src="{{ banner.url }}" alt="" class="h-full w-auto rounded">
+                </div>
+            </div>
+
         </div>
         {% endfor %}
     </div>
 
     {% endfor %}
-
-    <div class="w-2/3 mx-auto flex flex-col gap-20 justify-around items-start pt-20 pb-40">
-        {% for project in projectpages %}
-
-
-        {% endfor %}
-    </div>
 </section>
 
 

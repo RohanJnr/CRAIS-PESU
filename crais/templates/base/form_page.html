@@ -4,10 +4,14 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-<section class="h-[80vh] bg-[#202020] flex flex-col justify-start items-center pt-[10%]">
-    <h1 class="text-center text-[#FFF] font-bold">{{ page.title }}</h1>
-    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</p>
-    <div id="submission">
+
+<section class="h-[80vh] bg-darkBg flex flex-col justify-start items-start pt-[10%]">
+    <div class="w-4/5 mx-auto">
+
+        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
+        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+        <div id="submission">
+        </div>
     </div>
 </section>
 <section class="bg-body">
@@ -23,7 +27,7 @@
             </form>
 
         </div>
-        <div class="p-10 bg-darkBg">
+        <div class="p-10 bg-darkCardBg">
             <h2 class="mb-10 text-white">Contact Infomration</h2>
             <p class="text-white">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sapiente magnam qui esse soluta

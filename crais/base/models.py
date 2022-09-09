@@ -9,6 +9,8 @@ from wagtail.contrib.forms.models import AbstractForm, AbstractFormField
 from wagtail.fields import RichTextField
 from wagtail.models import Page
 
+from crais.users.models import Member
+
 
 
 class FormField(AbstractFormField):
@@ -83,3 +85,10 @@ class AboutPage(Page):
     ]
 
     parent_page_types = ("base.HomePage",)
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+
+        context["team"] = Member.objects.all().order_by("category")
+
+        return context

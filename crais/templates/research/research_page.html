@@ -11,12 +11,14 @@
         <h2 class="text-white w-2/3">{{ page.intro }}</h2>
     </div>
 </section> -->
-<section class="h-[50vh] bg-[#202020] flex flex-col justify-start items-center pt-[10%]">
-    <h1 class="text-center text-[#FFF] font-bold">{{ page.title }}</h1>
-    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</p>
+<section class="h-[50vh] bg-darkBg flex flex-col justify-start items-start pt-[7%]">
+    <div class="w-2/3 mx-auto">
+        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
+        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+    </div>
 </section>
 
-<section class="bg-white py-10">
+<section class="py-10">
     <div class="w-2/3 mx-auto">
         <div class="rich-text">
             {{ page.information|richtext }}
@@ -24,106 +26,59 @@
     </div>
 </section>
 
-<section class="bg-white py-20">
-    <div class="w-2/3 mx-auto" x-data="{ selected: 'publications' }">
+<section class="py-10 bg-white" id="research-content">
+    <div class="w-2/3 mx-auto p-10" x-data="{ selected: 'publications' }">
         <div class="grid grid-cols-2 text-center">
-            <h3 class="p-5 m-0 bg-body" x-on:click="selected = 'publications'"
-                x-bind:class="{ 'gradient-box text-white': selected === 'publications' }">
-                <a href="#publications">Publications</a>
+            <h3 class="p-5 m-0 bg-body rounded cursor-pointer flex justify-center items-center gap-10 text-2xl w-full"
+                x-on:click="selected = 'publications'"
+                x-bind:class="{ 'gradient-text-box text-white': selected === 'publications' }">
+                <span class="iconify h-20 w-20 " x-bind:class="{ 'text-white': selected === 'publications' }"
+                    data-icon="clarity:certificate-solid"></span>Publications
             </h3>
-            <h3 class="p-5 m-0 bg-body" x-on:click="selected = 'patents'"
-                x-bind:class="{ 'gradient-box text-white': selected === 'patents' }">
-                <a href="#patents">Patents</a>
+            <h3 class="p-5 m-0 bg-body rounded cursor-pointer flex justify-center items-center gap-10 text-2xl w-full"
+                x-on:click="selected = 'patents'"
+                x-bind:class="{ 'gradient-text-box text-white': selected === 'patents' }">
+                <span class="iconify h-20 w-20 " x-bind:class="{ 'text-white': selected === 'patents' }"
+                    data-icon="clarity:certificate-solid"></span>Patents
             </h3>
         </div>
 
-        <div>
-            <label>Publication Type</label>
-            <select name="publication_type" hx-get="/research" hx-target="#models" hx-indicator=".htmx-indicator">
-                <option value="journal">Journal</option>
-                <option value="conference">Conference</option>
-            </select>
-        </div>
-        <div id="models">
-             
-        </div>
 
-
-
-        <div class="mt-10" id="hi">
+        <div class="mt-20">
             <!-- PUBLICATIONS -->
             <div class="text-left rounded-lg flex flex-col items-start justify-start gap-10"
                 x-show="selected === 'publications'" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
 
-                {% for publ in publications %}
-                <div class="p-10 pb-10 bg-body shadow-md w-full">
-                    <h5 class="font-semibold m-0">{{ publ.title }}
-                    </h5>
-                    <small>{{ publ.date|date:"M, Y" }}</small>
-                    <div class="py-5">
-                        <small class="px-4 py-2 bg-slate-200 text-text-75">{{ publ.publication_category|title }}</small>
-                    </div>
-                    <div class="my-3">
-                        <p class="m-0"><b>Authors</b></p>
-                        <p class="m-0">
-                            {% for center_authors in publ.center_authors.all %}
-                            <i>{{ center_authors }}</i>,
-                            {% endfor %}
+                <div class="flex justifyp-center items-center gap-10">
+                    <select class="py-2 px-4 bg-secondary text-white text-xl" name="publication_category"
+                        hx-get="/research" hx-target="#publications" hx-indicator=".htmx-indicator">
+                        <option selected disabled>Publication Type</option>
+                        <option value="journal">Journal</option>
+                        <option value="conference">Conference</option>
+                    </select>
 
-                            {% for ext_authors in publ.external_authors.all %}
-                            {{ ext_authors }}
-                            {{ forloop.last|yesno:",&#44;"|safe }}
-                            {% endfor %}
-                        </p>
-                    </div>
-                    <div class="my-3">
-                        <p class="m-0"><b>Publication details</b></p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugiat atque dolorum
-                            eaque, sed vel ratione tempore quod a.
-                        </p>
-                    </div>
-                    <div class="mt-10">
-                        <a href="{{ publ.link }}" class="py-3 px-6 gradient-text-box shadow-md text-white rounded-full">
-                            Publication link
-                            <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
-                        </a>
-                    </div>
+                    <select class="py-2 px-4 bg-secondary text-white text-xl" name="publication_year" hx-get="/research"
+                        hx-target="#publications" hx-indicator=".htmx-indicator">
+                        <option selected disabled>Year Published</option>
+                        {% for year in pub_years %}
+                        <option value="{{year.date.year}}">{{year.date.year}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
-                {% endfor %}
+                <div id="publications">
+
+                    {% include "research/_partials/publications.html" %}
+                </div>
+
+
 
             </div>
+
 
             <!-- PATENTS -->
 
-            <div class="text-left rounded-lg flex flex-col items-start justify-start gap-10"
-                x-show="selected === 'patents'" x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
-                {% for patent in patents %}
-                <div class="p-10 pb-10 bg-body shadow-md w-full">
-                    <h5 class=" font-semibold m-0">{{ patent.title }}</h5>
-                    <small>{{ patent.date|date:"M, Y" }}</small>
-                    <div class="py-5">
-                        <small class="px-4 py-2 bg-slate-200 text-text-75">{{ patent.status|title }}</small>
-                    </div>
-                    <div class="my-3">
-                        <p class="m-0"><b>Inventors</b></p>
-                        <p class="m-0">
-                            {% for inv in patent.center_inventors.all %}
-                            <i>{{ inv }}</i>,
-                            {% endfor %}
-
-                            {% for inv in patent.external_inventors.all %}
-                            {{ inv }}
-                            {{ forloop.last|yesno:",&#44;"|safe }}
-                            {% endfor %}
-                        </p>
-                    </div>
-                </div>
-                {% endfor %}
-
-            </div>
+            {% include "research/_partials/patents.html" %}
 
         </div>
     </div>

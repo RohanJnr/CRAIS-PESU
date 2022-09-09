@@ -3,6 +3,8 @@ from wagtail.models import Page, Site
 
 from crais.base.models import AboutPage, FormPage, FormField, HomePage
 from crais.projects.models import ProjectIndexPage
+from crais.research.models import ResearchPage
+from crais.courses.models import CoursesIndexPage
 from crais.users.models import MemberCategory
 
 
@@ -32,6 +34,7 @@ class Command(BaseCommand):
         root_page.add_child(instance=home_page)
         home_page.save()
 
+        # Create projects page
         project_index_page = ProjectIndexPage(
             title="Projects and Events",
             intro="Projects by CRAIS of PES University.",
@@ -49,6 +52,7 @@ class Command(BaseCommand):
             is_default_site=True
         )
 
+        # Create about page
         about_page = AboutPage(
             title="About Us",
             intro=(
@@ -64,6 +68,21 @@ class Command(BaseCommand):
 
         home_page.add_child(instance=about_page)
         about_page.save()
+
+        # Create research page
+        research_page = ResearchPage(
+            title="About Us",
+            details=(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat "
+                "ligula nisl, ultrices accumsan lectus tincidunt ac. "
+            ),
+            slug="research"
+        )
+
+        home_page.add_child(instance=about_page)
+        about_page.save()
+
+
 
         # Create contact page
         contact_page = FormPage(

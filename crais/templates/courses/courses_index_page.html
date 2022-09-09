@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+<section class="h-[50vh] bg-darkBg flex flex-col justify-start items-start pt-[7%]">
+    <div class="w-2/3 mx-auto">
+        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
+        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+    </div>
+</section>
+
+<section class="w-2/3 mx-auto py-20" x-data="{ selected: '' }">
+        <select class="py-2 px-4 bg-secondary text-white text-xl">
+            <option x-on:click="selected = ''" selected>All University Programs</option>
+            <option x-on:click="selected = 'UG'" value="UG">UG</option>
+            <option x-on:click="selected = 'PG'" value="PG">PG</option>
+        </select>
+    <div>
+        {% regroup courses by program as program_list %}
+        {% for program in program_list %}
+        <div class="flex flex-col gap-20 justify-around items-start"
+            x-show="selected === '{{ program.grouper }}' || selected ===''" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
+            {% for course in program.list %}
+                <div class="bg-white shadow-md rounded w-full my-10">
+                    <div class="flex justify-between items-center p-5 bg-gray-200 shadow-none">
+                        <div>
+                            <h3 class="m-0">{{ course.title }}</h3>
+        
+                            <p class="text-primary">{{ course.credits }} Credits</p>
+                        </div>
+                        <h3 class="text-primary mx-2">{{ course.program }}</h3>
+                    </div>
+                    <div class="flex flex-col justify-around items-start p-5">
+                        <p>{{ course.synopsis }}</p>
+        
+                        <h5 class="text-primary mb-2">Faculty</h5>
+                        {% for faculty in course.faculties.all %}
+                        <p class="m-0">{{ faculty }}</p>
+                        {% endfor %}
+                    </div>
+        
+                </div>
+            {% endfor %}
+        </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

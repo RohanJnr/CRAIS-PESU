@@ -8,17 +8,24 @@ from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
 
-class CourseIndexPage(Page):
+class CoursesIndexPage(Page):
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [FieldPanel("intro")]
 
     parent_page_types = ("base.HomePage",)
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+
+        context["courses"] = Course.objects.all()
+
+        return context
+
 
 class CourseFaculty(Orderable):
 
-    page = ParentalKey("courses.CoursePage", related_name="faculties")
+    model = ParentalKey("courses.Course", related_name="faculties")
     faculty = models.ForeignKey(
         "users.Member",
         blank=True,
@@ -28,6 +35,9 @@ class CourseFaculty(Orderable):
     panels = [
         FieldPanel("faculty")
     ]
+
+    def __str__(self) -> str:
+        return self.faculty.name
 
 
 @register_snippet
@@ -41,9 +51,13 @@ class CourseProgram(index.Indexed, ClusterableModel):
     def __str__(self) -> str:
         return self.name
 
+    def __repr__(self) -> str:
+        return self.name
 
-class CoursePage(Page):
-    synopsis = RichTextField()
+@register_snippet
+class Course(index.Indexed, ClusterableModel):
+    title = models.CharField(max_length=256)
+    synopsis = models.TextField()
     credits = models.IntegerField()
     program = models.ForeignKey(
         "courses.CourseProgram",
@@ -51,7 +65,7 @@ class CoursePage(Page):
         null=True,
         on_delete=models.SET_NULL
     )
-    content_panels = Page.content_panels + [
+    panels = [
         FieldPanel("title"),
         FieldPanel("synopsis"),
         FieldPanel("credits"),
@@ -62,4 +76,4 @@ class CoursePage(Page):
         ),
     ]
 
-    parent_page_types = ("courses.CourseIndexPage",)
+    parent_page_types = ("courses.CoursesIndexPage",)

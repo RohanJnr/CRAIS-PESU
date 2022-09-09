@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Custom apps
     "crais.base",
     "crais.courses",
+    "crais.events",
     "crais.projects",
     "crais.research",
     "crais.users",

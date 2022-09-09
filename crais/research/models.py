@@ -52,13 +52,31 @@ class ResearchPage(Page):
             context["publications"] = publications
             return context
 
+        if year := request.GET.get("publication_year"):
+            print(year, type(year))
+            publications = Publication.objects.filter(date__year=int(year))
+            context["publications"] = publications
+            return context
+
         publications = Publication.objects.all()
+        pub_years = Publication.objects.order_by().values('date').distinct()
+
+
         patents = Patent.objects.all()
 
         context["publications"] = publications
         context["patents"] = patents
+        context["pub_years"] = pub_years
 
         return context
+    
+    def get_template(self, request, *args, **kwargs):
+        template = super().get_template(request, *args, **kwargs)
+
+        if request.GET.get("publication_category") or request.GET.get("publication_year"):
+            return "research/_partials/publications.html"
+        
+        return template
 
 # class ResearchAuthors(Orderable):
 
@@ -171,6 +189,10 @@ class Publication(index.Indexed, ClusterableModel):
         ),
     ]
 
+    class Meta:
+        ordering = ("date", )
+
+
     def __str__(self) -> str:
         return self.title
 
@@ -196,6 +218,9 @@ class Patent(index.Indexed, ClusterableModel):
             heading="External Inventors"
         ),
     ]
+
+    class Meta:
+        ordering = ("date", )
 
     def __str__(self) -> str:
         return self.title

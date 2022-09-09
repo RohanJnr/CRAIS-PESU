@@ -32,9 +32,13 @@ class ProjectIndexPage(Page):
     def get_context(self, request: HttpRequest, *args, **kwargs) -> dict:
         """Update context to include only published posts, ordered by reverse-chron."""
         context = super().get_context(request)
+
         projectpages = self.get_children().live().order_by("-first_published_at")
 
+        project_years = ProjectPage.objects.order_by().values('date').distinct()
+
         context["projectpages"] = projectpages
+        context["project_years"] = project_years
         return context
 
 

@@ -2,7 +2,7 @@ from wagtail.contrib.modeladmin.options import (
     ModelAdmin, ModelAdminGroup, modeladmin_register
 )
 
-from crais.courses.models import CoursePage, CourseProgram
+from crais.courses.models import Course, CourseProgram
 from crais.users.models import Intern, Member, MemberCategory
 from crais.projects.models import ProjectPage, ProjectCategory
 from crais.research.models import Patent, Publication
@@ -89,11 +89,11 @@ class ResearchModelAdminGroup(ModelAdminGroup):
     items = (PatentModelAdmin, PublicationModelAdmin)
 
 class CoursesModelAdmin(ModelAdmin):
-    model = CoursePage
+    model = Course
     menu_label = "Courses"
     menu_order = 400
-    list_display = ("title", "synopsys", "credits", "program")
-    search_fields = ("title", "synopsys")
+    list_display = ("title", "synopsis", "credits", "program")
+    search_fields = ("title", "synopsis")
 
 
 modeladmin_register(CategoryModelAdminGroup)

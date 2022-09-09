@@ -24,9 +24,13 @@ class MemberCategory(index.Indexed, models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def __repr__(self) -> str:
+        return self.name
+
     class Meta:
         verbose_name = "Member Category"
         verbose_name_plural = "Member Categories"
+        ordering = ("name", )
 
 @register_snippet
 class BaseMember(index.Indexed, ClusterableModel):
