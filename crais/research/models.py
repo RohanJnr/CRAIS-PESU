@@ -1,6 +1,7 @@
 from atexit import register
 from dataclasses import Field
 from secrets import choice
+from sre_parse import CATEGORIES
 from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
@@ -48,26 +49,29 @@ class ResearchPage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
 
+
         if category := request.GET.get("publication_category"):
-            publications = Publication.objects.filter(publication_category=category)
-            context["publications"] = publications
-            return context
+            if category != "all":
+                publications = Publication.objects.filter(publication_category=category)
+                context["publications"] = publications
+                return context
 
         if year := request.GET.get("publication_year"):
             print(year, type(year))
-            publications = Publication.objects.filter(date__year=int(year))
+            publications = publications.filter(date__year=int(year))
             context["publications"] = publications
             return context
 
         publications = Publication.objects.all()
-        pub_years = Publication.objects.order_by().values('date').distinct()
+        pub_dates = Publication.objects.dates('date', 'year')
+
 
 
         patents = Patent.objects.all()
 
         context["publications"] = publications
         context["patents"] = patents
-        context["pub_years"] = pub_years
+        context["pub_dates"] = pub_dates
 
         return context
     

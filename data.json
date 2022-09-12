@@ -1,0 +1,5574 @@
+[
+{
+  "model": "base.formfield",
+  "pk": 5,
+  "fields": {
+    "sort_order": 0,
+    "clean_name": "name",
+    "label": "Name",
+    "field_type": "singleline",
+    "required": true,
+    "choices": "",
+    "default_value": "",
+    "help_text": "",
+    "page": 12
+  }
+},
+{
+  "model": "base.formfield",
+  "pk": 6,
+  "fields": {
+    "sort_order": 1,
+    "clean_name": "email",
+    "label": "Email",
+    "field_type": "email",
+    "required": true,
+    "choices": "",
+    "default_value": "",
+    "help_text": "",
+    "page": 12
+  }
+},
+{
+  "model": "base.formfield",
+  "pk": 7,
+  "fields": {
+    "sort_order": 2,
+    "clean_name": "message",
+    "label": "Message",
+    "field_type": "multiline",
+    "required": true,
+    "choices": "",
+    "default_value": "",
+    "help_text": "",
+    "page": 12
+  }
+},
+{
+  "model": "courses.coursefaculty",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "model": 2,
+    "faculty": 1
+  }
+},
+{
+  "model": "courses.coursefaculty",
+  "pk": 2,
+  "fields": {
+    "sort_order": 0,
+    "model": 1,
+    "faculty": 1
+  }
+},
+{
+  "model": "courses.coursefaculty",
+  "pk": 3,
+  "fields": {
+    "sort_order": 1,
+    "model": 1,
+    "faculty": 2
+  }
+},
+{
+  "model": "courses.courseprogram",
+  "pk": 1,
+  "fields": {
+    "name": "UG"
+  }
+},
+{
+  "model": "courses.courseprogram",
+  "pk": 2,
+  "fields": {
+    "name": "PG"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 1,
+  "fields": {
+    "title": "Intelligent systems",
+    "synopsis": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia deserunt hic repellat. Ex dolorum                          atque quis sunt fugit eveniet natus, culpa voluptatum neque. Placeat, perferendis.",
+    "credits": 4,
+    "program": 1
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 2,
+  "fields": {
+    "title": "lhsdkjsdknsdf",
+    "synopsis": "asfasfasfsdfsdfsynopsis",
+    "credits": 2,
+    "program": 2
+  }
+},
+{
+  "model": "projects.projectcontributors",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "page": 9,
+    "contributor": 2
+  }
+},
+{
+  "model": "projects.projectcontributors",
+  "pk": 2,
+  "fields": {
+    "sort_order": 0,
+    "page": 10,
+    "contributor": 2
+  }
+},
+{
+  "model": "projects.projectcontributors",
+  "pk": 3,
+  "fields": {
+    "sort_order": 0,
+    "page": 11,
+    "contributor": 2
+  }
+},
+{
+  "model": "projects.projectcategory",
+  "pk": 1,
+  "fields": {
+    "name": "Research",
+    "description": "sdfds",
+    "slug": "research"
+  }
+},
+{
+  "model": "projects.projectcategory",
+  "pk": 2,
+  "fields": {
+    "name": "Internship",
+    "description": "asd",
+    "slug": "internship"
+  }
+},
+{
+  "model": "projects.projectcategory",
+  "pk": 3,
+  "fields": {
+    "name": "Funded",
+    "description": "dfd",
+    "slug": "funded"
+  }
+},
+{
+  "model": "projects.projecttag",
+  "pk": 5,
+  "fields": {
+    "tag": 1,
+    "content_object": 10
+  }
+},
+{
+  "model": "projects.projecttag",
+  "pk": 6,
+  "fields": {
+    "tag": 2,
+    "content_object": 10
+  }
+},
+{
+  "model": "projects.projecttag",
+  "pk": 7,
+  "fields": {
+    "tag": 1,
+    "content_object": 9
+  }
+},
+{
+  "model": "projects.projecttag",
+  "pk": 8,
+  "fields": {
+    "tag": 2,
+    "content_object": 9
+  }
+},
+{
+  "model": "projects.projecttag",
+  "pk": 11,
+  "fields": {
+    "tag": 1,
+    "content_object": 11
+  }
+},
+{
+  "model": "projects.projecttag",
+  "pk": 12,
+  "fields": {
+    "tag": 2,
+    "content_object": 11
+  }
+},
+{
+  "model": "research.centerauthor",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "model": 1,
+    "author": 1
+  }
+},
+{
+  "model": "research.centerauthor",
+  "pk": 2,
+  "fields": {
+    "sort_order": 0,
+    "model": 2,
+    "author": 2
+  }
+},
+{
+  "model": "research.externalauthor",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "model": 1,
+    "author": "Someone Else"
+  }
+},
+{
+  "model": "research.externalauthor",
+  "pk": 2,
+  "fields": {
+    "sort_order": 0,
+    "model": 2,
+    "author": "dsfdsf"
+  }
+},
+{
+  "model": "research.centerinventor",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "model": 1,
+    "inventor": 1
+  }
+},
+{
+  "model": "research.centerinventor",
+  "pk": 2,
+  "fields": {
+    "sort_order": 0,
+    "model": 2,
+    "inventor": 2
+  }
+},
+{
+  "model": "research.externalinventor",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "model": 1,
+    "inventor": "dsfsdf"
+  }
+},
+{
+  "model": "research.externalinventor",
+  "pk": 2,
+  "fields": {
+    "sort_order": 0,
+    "model": 2,
+    "inventor": "sdfsdf"
+  }
+},
+{
+  "model": "research.publication",
+  "pk": 1,
+  "fields": {
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "date": "2021-08-10",
+    "publication_details": "<p data-block-key=\"z4o8w\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem neque id rem beatae accusamus odio rerum, alias, obcaecati placeat, hic ullam mollitia nemo asperiores qui?</p>",
+    "publication_category": "journal",
+    "link": "https://google.com"
+  }
+},
+{
+  "model": "research.publication",
+  "pk": 2,
+  "fields": {
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures 2",
+    "date": "2019-08-15",
+    "publication_details": "<p data-block-key=\"6re7k\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation.</p>",
+    "publication_category": "conference",
+    "link": "https://google.com"
+  }
+},
+{
+  "model": "research.patent",
+  "pk": 1,
+  "fields": {
+    "title": "K. George, “A multiple-model approach to robust performance,” International Journal of Aerospace Innovations, 4(1&2):43-56, April 2010.",
+    "date": "2022-08-02",
+    "status": "filed"
+  }
+},
+{
+  "model": "research.patent",
+  "pk": 2,
+  "fields": {
+    "title": "K. George, “A multiple-model approach to robust dfsdfsdfs,” International Journal of Aerospace Innovations, 4(1&2):43-56, April 2010.dsf",
+    "date": "2022-08-09",
+    "status": "published"
+  }
+},
+{
+  "model": "users.membercategory",
+  "pk": 1,
+  "fields": {
+    "name": "Faculty",
+    "description": "s"
+  }
+},
+{
+  "model": "users.membercategory",
+  "pk": 2,
+  "fields": {
+    "name": "PhD Scholar",
+    "description": null
+  }
+},
+{
+  "model": "users.membercategory",
+  "pk": 3,
+  "fields": {
+    "name": "Research Assistant",
+    "description": "sad"
+  }
+},
+{
+  "model": "users.basemember",
+  "pk": 1,
+  "fields": {
+    "name": "Iceman Jelinsky",
+    "image": 1,
+    "email": "",
+    "linkedin_link": null,
+    "google_scholar_link": null
+  }
+},
+{
+  "model": "users.basemember",
+  "pk": 2,
+  "fields": {
+    "name": "Rohan Reddy Alleti",
+    "image": 1,
+    "email": "",
+    "linkedin_link": null,
+    "google_scholar_link": null
+  }
+},
+{
+  "model": "users.basemember",
+  "pk": 3,
+  "fields": {
+    "name": "Rohan Reddy",
+    "image": 3,
+    "email": "",
+    "linkedin_link": "https://google.com",
+    "google_scholar_link": "https://google.com"
+  }
+},
+{
+  "model": "users.member",
+  "pk": 1,
+  "fields": {
+    "category": 2,
+    "pes_faculty_profile_link": null
+  }
+},
+{
+  "model": "users.member",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "pes_faculty_profile_link": null
+  }
+},
+{
+  "model": "users.member",
+  "pk": 3,
+  "fields": {
+    "category": 3,
+    "pes_faculty_profile_link": "https://google.com"
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 1,
+  "fields": {
+    "autocomplete": "Root",
+    "title": "Root",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 2,
+  "fields": {
+    "autocomplete": "Home Page",
+    "title": "Home Page",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 3,
+  "fields": {
+    "autocomplete": "Projects",
+    "title": "Projects",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 4,
+  "fields": {
+    "autocomplete": "About Us",
+    "title": "About Us",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 6,
+  "fields": {
+    "autocomplete": "Research",
+    "title": "Research",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 7,
+  "fields": {
+    "autocomplete": "Courses",
+    "title": "Courses",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 8,
+  "fields": {
+    "autocomplete": "bird",
+    "title": "bird",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 9,
+  "fields": {
+    "autocomplete": "banner-2",
+    "title": "banner-2",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 10,
+  "fields": {
+    "autocomplete": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 11,
+  "fields": {
+    "autocomplete": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 12,
+  "fields": {
+    "autocomplete": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 13,
+  "fields": {
+    "autocomplete": "IMG20220820113421",
+    "title": "IMG20220820113421",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 14,
+  "fields": {
+    "autocomplete": "Contact Us",
+    "title": "Contact Us",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 15,
+  "fields": {
+    "autocomplete": "Events",
+    "title": "Events",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 16,
+  "fields": {
+    "autocomplete": "bg-projects",
+    "title": "bg-projects",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailcore.locale",
+  "pk": 1,
+  "fields": {
+    "language_code": "en"
+  }
+},
+{
+  "model": "wagtailcore.site",
+  "pk": 2,
+  "fields": {
+    "hostname": "localhost",
+    "port": 8000,
+    "site_name": "CRAIS PESU Site",
+    "root_page": 3,
+    "is_default_site": true
+  }
+},
+{
+  "model": "wagtailcore.collection",
+  "pk": 1,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 0,
+    "name": "Root"
+  }
+},
+{
+  "model": "wagtailcore.workflowpage",
+  "pk": 1,
+  "fields": {
+    "workflow": 1
+  }
+},
+{
+  "model": "wagtailcore.workflowtask",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "workflow": 1,
+    "task": 1
+  }
+},
+{
+  "model": "wagtailcore.workflow",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators approval",
+    "active": true
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 1,
+  "fields": {
+    "name": "some",
+    "slug": "some"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "tag",
+    "slug": "tag"
+  }
+},
+{
+  "model": "wagtailcore.task",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators approval",
+    "content_type": [
+      "wagtailcore",
+      "groupapprovaltask"
+    ],
+    "active": true
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "1",
+    "title_norm": 1.625,
+    "autocomplete": "Root",
+    "title": "Root",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "base",
+      "homepage"
+    ],
+    "object_id": "3",
+    "title_norm": 0.7222222222222222,
+    "autocomplete": "Home Page",
+    "title": "Home Page",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 3,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectindexpage"
+    ],
+    "object_id": "4",
+    "title_norm": 0.5614035087719298,
+    "autocomplete": "Projects",
+    "title": "Projects",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 4,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "object_id": "5",
+    "title_norm": 1.25,
+    "autocomplete": "About Us",
+    "title": "About Us",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 6,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "object_id": "7",
+    "title_norm": 1.2083333333333333,
+    "autocomplete": "Research",
+    "title": "Research",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 7,
+  "fields": {
+    "content_type": [
+      "courses",
+      "coursesindexpage"
+    ],
+    "object_id": "8",
+    "title_norm": 1.326530612244898,
+    "autocomplete": "Courses",
+    "title": "Courses",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 8,
+  "fields": {
+    "content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "object_id": "1",
+    "title_norm": 2.15625,
+    "autocomplete": "bird",
+    "title": "bird",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 9,
+  "fields": {
+    "content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "object_id": "2",
+    "title_norm": 1.0694444444444444,
+    "autocomplete": "banner-2",
+    "title": "banner-2",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 10,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "object_id": "9",
+    "title_norm": 0.18953488372093025,
+    "autocomplete": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 11,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "object_id": "10",
+    "title_norm": 0.26825633383010433,
+    "autocomplete": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 12,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "object_id": "11",
+    "title_norm": 0.3333333333333333,
+    "autocomplete": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 13,
+  "fields": {
+    "content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "object_id": "3",
+    "title_norm": 1.16289592760181,
+    "autocomplete": "IMG20220820113421",
+    "title": "IMG20220820113421",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 14,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "object_id": "12",
+    "title_norm": 1.9071428571428573,
+    "autocomplete": "Contact Us",
+    "title": "Contact Us",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 15,
+  "fields": {
+    "content_type": [
+      "events",
+      "eventindexpage"
+    ],
+    "object_id": "13",
+    "title_norm": 3.130952380952381,
+    "autocomplete": "Events",
+    "title": "Events",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 16,
+  "fields": {
+    "content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "object_id": "4",
+    "title_norm": 1.6606060606060604,
+    "autocomplete": "bg-projects",
+    "title": "bg-projects",
+    "body": ""
+  }
+},
+{
+  "model": "wagtailredirects.redirect",
+  "pk": 1,
+  "fields": {
+    "old_path": "/contact-uss",
+    "site": [
+      "localhost",
+      8000
+    ],
+    "is_permanent": true,
+    "redirect_page": 12,
+    "redirect_page_route_path": "",
+    "redirect_link": "",
+    "automatically_created": true,
+    "created_at": "2022-09-10T04:23:09.503Z"
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators",
+    "permissions": [
+      [
+        "access_admin",
+        "wagtailadmin",
+        "admin"
+      ],
+      [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "choose_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "delete_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "choose_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "delete_image",
+        "wagtailimages",
+        "image"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Editors",
+    "permissions": [
+      [
+        "access_admin",
+        "wagtailadmin",
+        "admin"
+      ],
+      [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "choose_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "delete_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "choose_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "delete_image",
+        "wagtailimages",
+        "image"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$6zo2XYPR6NkKNmtiJnTYXG$UT9XY6KhwSoy5fexFwI/qaOo58391/sYDgdNwA5zCa0=",
+    "last_login": "2022-09-10T04:02:10.537Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-08-10T15:59:34.466Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 7,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 8,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 9,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 4,
+    "comment_notifications": false
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 11,
+    "comment_notifications": false
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 5,
+    "comment_notifications": false
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 12,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "page": 13,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "label": "Welcome to your new Wagtail site!",
+    "action": "wagtail.delete",
+    "data": {},
+    "timestamp": "2022-08-10T15:59:37.630Z",
+    "uuid": null,
+    "user": null,
+    "revision": null,
+    "content_changed": false,
+    "deleted": true,
+    "page": 2
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "base",
+      "homepage"
+    ],
+    "label": "Home Page",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-10T15:59:37.686Z",
+    "uuid": null,
+    "user": null,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 3,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectindexpage"
+    ],
+    "label": "Projects and Events",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-10T15:59:37.717Z",
+    "uuid": null,
+    "user": null,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 4,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-10T15:59:37.755Z",
+    "uuid": null,
+    "user": null,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 5,
+  "fields": {
+    "content_type": [
+      "base",
+      "formpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-10T15:59:37.794Z",
+    "uuid": null,
+    "user": null,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 6
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 6,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T16:39:16.798Z",
+    "uuid": "2de23c41-54b3-4981-9fb2-426abc22fcb4",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 7,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-16T16:39:16.849Z",
+    "uuid": "2de23c41-54b3-4981-9fb2-426abc22fcb4",
+    "user": [
+      "admin"
+    ],
+    "revision": 1,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 8,
+  "fields": {
+    "content_type": [
+      "courses",
+      "coursesindexpage"
+    ],
+    "label": "Courses",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T16:40:04.685Z",
+    "uuid": "ec42a001-5ef6-4b8a-99b5-ed84628ee6e2",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 9,
+  "fields": {
+    "content_type": [
+      "courses",
+      "coursesindexpage"
+    ],
+    "label": "Courses",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-16T16:40:04.737Z",
+    "uuid": "ec42a001-5ef6-4b8a-99b5-ed84628ee6e2",
+    "user": [
+      "admin"
+    ],
+    "revision": 2,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 10,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:01:45.568Z",
+    "uuid": "ae0d7393-548a-4327-83d7-fcf4acd80fe9",
+    "user": [
+      "admin"
+    ],
+    "revision": 3,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 11,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T15:01:45.625Z",
+    "uuid": "ae0d7393-548a-4327-83d7-fcf4acd80fe9",
+    "user": [
+      "admin"
+    ],
+    "revision": 3,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 12,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:02:22.281Z",
+    "uuid": "37bc574a-d1b6-4913-9c54-c53e9ff6a01e",
+    "user": [
+      "admin"
+    ],
+    "revision": 4,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 13,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T15:02:22.338Z",
+    "uuid": "37bc574a-d1b6-4913-9c54-c53e9ff6a01e",
+    "user": [
+      "admin"
+    ],
+    "revision": 4,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 14,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:02:35.544Z",
+    "uuid": "58c0f87f-c7ba-48a8-b27e-abdcede987bc",
+    "user": [
+      "admin"
+    ],
+    "revision": 5,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 15,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T15:02:35.596Z",
+    "uuid": "58c0f87f-c7ba-48a8-b27e-abdcede987bc",
+    "user": [
+      "admin"
+    ],
+    "revision": 5,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 16,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:03:17.365Z",
+    "uuid": "a0c65da1-9a08-4f8a-842e-f61ae9e15e47",
+    "user": [
+      "admin"
+    ],
+    "revision": 6,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 17,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T15:03:17.421Z",
+    "uuid": "a0c65da1-9a08-4f8a-842e-f61ae9e15e47",
+    "user": [
+      "admin"
+    ],
+    "revision": 6,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 18,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:03:31.830Z",
+    "uuid": "59ca7baa-bc58-44bd-ba6a-01fb825c7a9c",
+    "user": [
+      "admin"
+    ],
+    "revision": 7,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 19,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "label": "Research",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T15:03:31.880Z",
+    "uuid": "59ca7baa-bc58-44bd-ba6a-01fb825c7a9c",
+    "user": [
+      "admin"
+    ],
+    "revision": 7,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 20,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T16:49:42.211Z",
+    "uuid": "65436f6e-91ae-4946-8495-2ceb3e9bb861",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 21,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T16:49:42.355Z",
+    "uuid": "65436f6e-91ae-4946-8495-2ceb3e9bb861",
+    "user": [
+      "admin"
+    ],
+    "revision": 8,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 22,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T16:50:35.274Z",
+    "uuid": "557fd0cd-fe3b-465d-8c85-3407b778a109",
+    "user": [
+      "admin"
+    ],
+    "revision": 9,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 23,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.rename",
+    "data": {
+      "title": {
+        "old": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+        "new": "A Survey on High-Throughput Non-Binary LDPC Decoderr."
+      }
+    },
+    "timestamp": "2022-08-17T16:50:35.404Z",
+    "uuid": "557fd0cd-fe3b-465d-8c85-3407b778a109",
+    "user": [
+      "admin"
+    ],
+    "revision": 9,
+    "content_changed": false,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 24,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.publish",
+    "data": {
+      "title": {
+        "old": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+        "new": "A Survey on High-Throughput Non-Binary LDPC Decoderr."
+      }
+    },
+    "timestamp": "2022-08-17T16:50:35.416Z",
+    "uuid": "557fd0cd-fe3b-465d-8c85-3407b778a109",
+    "user": [
+      "admin"
+    ],
+    "revision": 9,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 25,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectindexpage"
+    ],
+    "label": "Projects",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:58:25.308Z",
+    "uuid": "96722feb-6cb3-4d4e-bf3b-16b41ff52504",
+    "user": [
+      "admin"
+    ],
+    "revision": 10,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 26,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectindexpage"
+    ],
+    "label": "Projects",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T17:58:25.342Z",
+    "uuid": "96722feb-6cb3-4d4e-bf3b-16b41ff52504",
+    "user": [
+      "admin"
+    ],
+    "revision": 10,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 27,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T18:34:47.877Z",
+    "uuid": "ef8c043a-84e2-4ab1-bb9a-581781f30c65",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 10
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 28,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "action": "wagtail.copy",
+    "data": {
+      "page": {
+        "id": 10,
+        "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+        "locale": {
+          "id": 1,
+          "language_code": "en"
+        }
+      },
+      "source": {
+        "id": 4,
+        "title": "Projects"
+      },
+      "destination": {
+        "id": 4,
+        "title": "Projects"
+      },
+      "keep_live": true,
+      "source_locale": {
+        "id": 1,
+        "language_code": "en"
+      }
+    },
+    "timestamp": "2022-08-17T18:34:47.923Z",
+    "uuid": "ef8c043a-84e2-4ab1-bb9a-581781f30c65",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "page": 10
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 29,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T18:34:47.927Z",
+    "uuid": "ef8c043a-84e2-4ab1-bb9a-581781f30c65",
+    "user": [
+      "admin"
+    ],
+    "revision": 13,
+    "content_changed": false,
+    "deleted": false,
+    "page": 10
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 30,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T18:35:01.994Z",
+    "uuid": "eb3a7651-8c15-4399-8e89-75574f9b8f57",
+    "user": [
+      "admin"
+    ],
+    "revision": 14,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 31,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T18:35:02.045Z",
+    "uuid": "eb3a7651-8c15-4399-8e89-75574f9b8f57",
+    "user": [
+      "admin"
+    ],
+    "revision": 14,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 32,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T18:42:48.735Z",
+    "uuid": "476b821a-92af-4b79-aab5-a6fbc2a3bc46",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 33,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "action": "wagtail.copy",
+    "data": {
+      "page": {
+        "id": 11,
+        "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+        "locale": {
+          "id": 1,
+          "language_code": "en"
+        }
+      },
+      "source": {
+        "id": 4,
+        "title": "Projects"
+      },
+      "destination": {
+        "id": 4,
+        "title": "Projects"
+      },
+      "keep_live": false,
+      "source_locale": {
+        "id": 1,
+        "language_code": "en"
+      }
+    },
+    "timestamp": "2022-08-17T18:42:48.779Z",
+    "uuid": "476b821a-92af-4b79-aab5-a6fbc2a3bc46",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 34,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T18:42:58.046Z",
+    "uuid": "3466a5f2-032a-462d-bf49-dc449f162f1d",
+    "user": [
+      "admin"
+    ],
+    "revision": 19,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 35,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T18:42:58.099Z",
+    "uuid": "3466a5f2-032a-462d-bf49-dc449f162f1d",
+    "user": [
+      "admin"
+    ],
+    "revision": 19,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 36,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T18:51:39.583Z",
+    "uuid": "ad3e8531-c78b-4639-af37-9aa0df1d6bf2",
+    "user": [
+      "admin"
+    ],
+    "revision": 20,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 37,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-08-17T18:51:39.620Z",
+    "uuid": "ad3e8531-c78b-4639-af37-9aa0df1d6bf2",
+    "user": [
+      "admin"
+    ],
+    "revision": 20,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 38,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-09-10T04:04:07.105Z",
+    "uuid": "df867366-9361-42b6-b76e-f0b36f12a84a",
+    "user": [
+      "admin"
+    ],
+    "revision": 21,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 39,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:04:07.139Z",
+    "uuid": "df867366-9361-42b6-b76e-f0b36f12a84a",
+    "user": [
+      "admin"
+    ],
+    "revision": 21,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 40,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-09-10T04:04:29.919Z",
+    "uuid": "ada8bc73-5aa1-4425-81d1-fa2ae6d3451e",
+    "user": [
+      "admin"
+    ],
+    "revision": 22,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 41,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:04:29.955Z",
+    "uuid": "ada8bc73-5aa1-4425-81d1-fa2ae6d3451e",
+    "user": [
+      "admin"
+    ],
+    "revision": 22,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 42,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-09-10T04:05:28.065Z",
+    "uuid": "e6286c23-3f01-4fe8-ac46-de65fd4d2a48",
+    "user": [
+      "admin"
+    ],
+    "revision": 23,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 43,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:05:28.098Z",
+    "uuid": "e6286c23-3f01-4fe8-ac46-de65fd4d2a48",
+    "user": [
+      "admin"
+    ],
+    "revision": 23,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 44,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-09-10T04:07:25.209Z",
+    "uuid": "338267d0-db1b-4dff-9512-68ffc92984a4",
+    "user": [
+      "admin"
+    ],
+    "revision": 24,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 45,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:07:25.246Z",
+    "uuid": "338267d0-db1b-4dff-9512-68ffc92984a4",
+    "user": [
+      "admin"
+    ],
+    "revision": 24,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 46,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-09-10T04:08:19.662Z",
+    "uuid": "43d14e06-2fa8-4b78-a498-90471e843427",
+    "user": [
+      "admin"
+    ],
+    "revision": 25,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 47,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "label": "About Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:08:19.696Z",
+    "uuid": "43d14e06-2fa8-4b78-a498-90471e843427",
+    "user": [
+      "admin"
+    ],
+    "revision": 25,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 48,
+  "fields": {
+    "content_type": [
+      "base",
+      "formpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.unpublish",
+    "data": {},
+    "timestamp": "2022-09-10T04:20:18.461Z",
+    "uuid": "8d290f78-936e-4e2c-80c7-f29437eb66ae",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "page": 6
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 49,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-09-10T04:22:51.136Z",
+    "uuid": "f0fdda4d-302e-46d1-adea-d864f129bebe",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 12
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 50,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:22:51.202Z",
+    "uuid": "f0fdda4d-302e-46d1-adea-d864f129bebe",
+    "user": [
+      "admin"
+    ],
+    "revision": 26,
+    "content_changed": true,
+    "deleted": false,
+    "page": 12
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 51,
+  "fields": {
+    "content_type": [
+      "base",
+      "formpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.delete",
+    "data": {},
+    "timestamp": "2022-09-10T04:23:02.617Z",
+    "uuid": "861e6267-c312-482c-920b-5695c0659439",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": true,
+    "page": 6
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 52,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-09-10T04:23:09.462Z",
+    "uuid": "c0161bbe-8b2d-481c-96d1-26d1f7b3fd7e",
+    "user": [
+      "admin"
+    ],
+    "revision": 27,
+    "content_changed": true,
+    "deleted": false,
+    "page": 12
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 53,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "label": "Contact Us",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:23:09.514Z",
+    "uuid": "c0161bbe-8b2d-481c-96d1-26d1f7b3fd7e",
+    "user": [
+      "admin"
+    ],
+    "revision": 27,
+    "content_changed": true,
+    "deleted": false,
+    "page": 12
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 54,
+  "fields": {
+    "content_type": [
+      "events",
+      "eventindexpage"
+    ],
+    "label": "Events",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-09-10T04:31:13.742Z",
+    "uuid": "3f93bb9e-59c2-45f7-b15d-a1d1edcebe85",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 13
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 55,
+  "fields": {
+    "content_type": [
+      "events",
+      "eventindexpage"
+    ],
+    "label": "Events",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2022-09-10T04:31:13.803Z",
+    "uuid": "3f93bb9e-59c2-45f7-b15d-a1d1edcebe85",
+    "user": [
+      "admin"
+    ],
+    "revision": 28,
+    "content_changed": true,
+    "deleted": false,
+    "page": 13
+  }
+},
+{
+  "model": "wagtailcore.groupapprovaltask",
+  "pk": 1,
+  "fields": {
+    "groups": [
+      [
+        "Moderators"
+      ]
+    ]
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "7",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-16T16:39:16.807Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Research",
+    "content": {
+      "pk": 7,
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+      "locale": 1,
+      "title": "Research",
+      "draft_title": "Research",
+      "slug": "research",
+      "content_type": 66,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/research/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+      "information": "<p data-block-key=\"kfbxz\">asadasfrge</p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "courses",
+      "coursesindexpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "8",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-16T16:40:04.696Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Courses",
+    "content": {
+      "pk": 8,
+      "path": "000100010005",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "0962d546-e2a1-46df-abe9-8aa9bc35afc3",
+      "locale": 1,
+      "title": "Courses",
+      "draft_title": "Courses",
+      "slug": "courses",
+      "content_type": 51,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/courses/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "<p data-block-key=\"6hxqt\">This is intro</p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 3,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "7",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T15:01:45.534Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Research",
+    "content": {
+      "pk": 7,
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+      "locale": 1,
+      "title": "Research",
+      "draft_title": "Research",
+      "slug": "research",
+      "content_type": 66,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/research/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-16T16:39:16.829Z",
+      "last_published_at": "2022-08-16T16:39:16.829Z",
+      "latest_revision_created_at": "2022-08-16T16:39:16.807Z",
+      "live_revision": 1,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+      "information": "<p data-block-key=\"kfbxz\">The analysis and design of a system of dynamical systems that perceive,  reason, learn and act intelligently is the thrust area of research in   behavior the PES Centre for Intelligent Systems. The interconnection of simple  dynamical systems can lead to seemingly inexplicable complex overall  behaviour with the causes and effects not related. Aristotle  summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"cds3c\"></p><p data-block-key=\"4biur\">All systems that surround us today – economical, political,  ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"1jpf4\"></p><p data-block-key=\"1l2rq\">Cooperative systems are a class of system of dynamical systems with   each system being autonomous. The latter balances self-directedness and self-sufficiency with the ability to handle dynamically changing  environments. The possibility of integrating human and machine abilities  is well within the scope of this research. The focus is to develop and implement such autonomous systems, and the networking of such systems.  This includes embedded computational architectures and dependable and reconfigurable computing.</p><p data-block-key=\"2l6mr\"></p><p data-block-key=\"av7c0\">Decision support systems for healthcare are another class of system dynamicof dynamical systems, and telemedicine is a logical conclusion. An integral part of this would be interdisciplinary innovation in the design and development of intelligent medical instruments capable of non-invasive measurements and processing data toward intelligent reactions. This includes the development of intelligent algorithms for the analysis of bio-signals, medical image processing, biostatistics, health information dynamic ofsystems, clinical support systems, medical tele-communication and  net-working intelligent systems using both symbolic AI and computational  intelligence.</p><h3 data-block-key=\"7vvfn\"><b>OBJECTIVES</b></h3><ul><li data-block-key=\"836n8\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"56dj\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"5ln7u\">Develop  computationally efficient algorithms for mapping, localization, path  planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"3v9g6\">To  develop embedded computational architectures based on system-on-chip  methodology for real-time implementation of spatial and temporal signal  processing.</li><li data-block-key=\"2p3b1\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"41rlm\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"75i6c\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"9qr2j\">Conducting  extensive research on attention levels in students, and people  suffering from ADHD, and finding ways of improving it, one being Yoga,  in collaboration with NIMHANS.</li></ul>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 4,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "7",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T15:02:22.260Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Research",
+    "content": {
+      "pk": 7,
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+      "locale": 1,
+      "title": "Research",
+      "draft_title": "Research",
+      "slug": "research",
+      "content_type": 66,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/research/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-16T16:39:16.829Z",
+      "last_published_at": "2022-08-17T15:01:45.592Z",
+      "latest_revision_created_at": "2022-08-17T15:01:45.534Z",
+      "live_revision": 3,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+      "information": "<p data-block-key=\"kfbxz\">The analysis and design of a system of dynamical systems that perceive, reason, learn and act intelligently is the thrust area of research in behavior the PES Centre for Intelligent Systems. The interconnection of simple dynamical systems can lead to seemingly inexplicable complex overall behaviour with the causes and effects not related. Aristotle summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"cds3c\"></p><p data-block-key=\"4biur\">All systems that surround us today – economical, political, ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"7hefi\"></p><p data-block-key=\"ffb2r\"></p><h3 data-block-key=\"7vvfn\"><b>OBJECTIVES</b></h3><ul><li data-block-key=\"836n8\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"56dj\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"5ln7u\">Develop computationally efficient algorithms for mapping, localization, path planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"3v9g6\">To develop embedded computational architectures based on system-on-chip methodology for real-time implementation of spatial and temporal signal processing.</li><li data-block-key=\"2p3b1\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"41rlm\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"75i6c\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"9qr2j\">Conducting extensive research on attention levels in students, and people suffering from ADHD, and finding ways of improving it, one being Yoga, in collaboration with NIMHANS.</li></ul>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 5,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "7",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T15:02:35.522Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Research",
+    "content": {
+      "pk": 7,
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+      "locale": 1,
+      "title": "Research",
+      "draft_title": "Research",
+      "slug": "research",
+      "content_type": 66,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/research/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-16T16:39:16.829Z",
+      "last_published_at": "2022-08-17T15:02:22.301Z",
+      "latest_revision_created_at": "2022-08-17T15:02:22.260Z",
+      "live_revision": 4,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+      "information": "<p data-block-key=\"kfbxz\">The analysis and design of a system of dynamical systems that perceive, reason, learn and act intelligently is the thrust area of research in behavior the PES Centre for Intelligent Systems. The interconnection of simple dynamical systems can lead to seemingly inexplicable complex overall behaviour with the causes and effects not related. Aristotle summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"cds3c\"></p><p data-block-key=\"4biur\">All systems that surround us today – economical, political, ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"7hefi\"></p><p data-block-key=\"ffb2r\"><br/><br/></p><h3 data-block-key=\"7vvfn\"><b>OBJECTIVES</b></h3><ul><li data-block-key=\"836n8\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"56dj\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"5ln7u\">Develop computationally efficient algorithms for mapping, localization, path planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"3v9g6\">To develop embedded computational architectures based on system-on-chip methodology for real-time implementation of spatial and temporal signal processing.</li><li data-block-key=\"2p3b1\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"41rlm\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"75i6c\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"9qr2j\">Conducting extensive research on attention levels in students, and people suffering from ADHD, and finding ways of improving it, one being Yoga, in collaboration with NIMHANS.</li></ul>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 6,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "7",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T15:03:17.345Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Research",
+    "content": {
+      "pk": 7,
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+      "locale": 1,
+      "title": "Research",
+      "draft_title": "Research",
+      "slug": "research",
+      "content_type": 66,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/research/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-16T16:39:16.829Z",
+      "last_published_at": "2022-08-17T15:02:35.561Z",
+      "latest_revision_created_at": "2022-08-17T15:02:35.522Z",
+      "live_revision": 5,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+      "information": "<h3 data-block-key=\"kfbxz\">Heading</h3><p data-block-key=\"c2im1\">The analysis and design of a system of dynamical systems that perceive, reason, learn and act intelligently is the thrust area of research in behavior the PES Centre for Intelligent Systems. The interconnection of simple dynamical systems can lead to seemingly inexplicable complex overall behaviour with the causes and effects not related. Aristotle summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"cds3c\"></p><p data-block-key=\"4biur\">All systems that surround us today – economical, political, ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"7hefi\"></p><p data-block-key=\"ffb2r\"><br/></p><h3 data-block-key=\"7vvfn\">OBJECTIVES</h3><ul><li data-block-key=\"836n8\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"56dj\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"5ln7u\">Develop computationally efficient algorithms for mapping, localization, path planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"3v9g6\">To develop embedded computational architectures based on system-on-chip methodology for real-time implementation of spatial and temporal signal processing.</li><li data-block-key=\"2p3b1\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"41rlm\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"75i6c\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"9qr2j\">Conducting extensive research on attention levels in students, and people suffering from ADHD, and finding ways of improving it, one being Yoga, in collaboration with NIMHANS.</li></ul>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 7,
+  "fields": {
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "7",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T15:03:31.808Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Research",
+    "content": {
+      "pk": 7,
+      "path": "000100010004",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+      "locale": 1,
+      "title": "Research",
+      "draft_title": "Research",
+      "slug": "research",
+      "content_type": 66,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/research/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-16T16:39:16.829Z",
+      "last_published_at": "2022-08-17T15:03:17.384Z",
+      "latest_revision_created_at": "2022-08-17T15:03:17.345Z",
+      "live_revision": 6,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+      "information": "<h3 data-block-key=\"kfbxz\">HEADING</h3><p data-block-key=\"c2im1\">The analysis and design of a system of dynamical systems that perceive, reason, learn and act intelligently is the thrust area of research in behavior the PES Centre for Intelligent Systems. The interconnection of simple dynamical systems can lead to seemingly inexplicable complex overall behaviour with the causes and effects not related. Aristotle summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"cds3c\"></p><p data-block-key=\"4biur\">All systems that surround us today – economical, political, ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"7hefi\"></p><p data-block-key=\"ffb2r\"><br/></p><h3 data-block-key=\"7vvfn\">OBJECTIVES</h3><ul><li data-block-key=\"836n8\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"56dj\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"5ln7u\">Develop computationally efficient algorithms for mapping, localization, path planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"3v9g6\">To develop embedded computational architectures based on system-on-chip methodology for real-time implementation of spatial and temporal signal processing.</li><li data-block-key=\"2p3b1\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"41rlm\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"75i6c\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"9qr2j\">Conducting extensive research on attention levels in students, and people suffering from ADHD, and finding ways of improving it, one being Yoga, in collaboration with NIMHANS.</li></ul>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 8,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "9",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T16:49:42.242Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "content": {
+      "pk": 9,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional  Neural Networks (CNNs) are popular in Advanced Driver Assistance  Systems (ADAS) for camera perception. The versatility of the algorithm  makes it applicable in multiple applications like object detection, lane  detection and semantic segmentation. For image processing to be viable  in driver assistance systems, the throughput requirement ranges in the  order of a few tens of TeraMACs per second (TMACs). In addition, high  accuracy levels of image detection and recognition cannot be compromised  for the need for high throughput.</p><p data-block-key=\"esn72\">In  this paper, we present TileNET, a novel tiled architecture for  ternary-weighted CNNs. TileNET is modular and scalable across variations  in network organization and device configurations. Two modes of the  implementation are presented, viz., systolic and streaming. A high-level  estimation technique has been developed that facilitates fast  performance evaluation through design space exploration among a range of  target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance  has been verified for area and throughput estimation for Xilinx Virtex,  Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7  (XC7VX1140T) results in a throughput of about 16 Tera-operations per  second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the  45nm standard cell implementation of TileNet shows a throughput of  about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 1,
+          "sort_order": 0,
+          "page": 9,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": 1,
+          "tag": 1,
+          "content_object": 9
+        },
+        {
+          "pk": 2,
+          "tag": 2,
+          "content_object": 9
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 9,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "9",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T16:50:35.242Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "content": {
+      "pk": 9,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-17T16:49:42.300Z",
+      "last_published_at": "2022-08-17T16:49:42.300Z",
+      "latest_revision_created_at": "2022-08-17T16:49:42.242Z",
+      "live_revision": 8,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 1,
+          "sort_order": 0,
+          "page": 9,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 9
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 9
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 10,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectindexpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "4",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T17:58:25.294Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Projects",
+    "content": {
+      "pk": 4,
+      "path": "000100010001",
+      "depth": 3,
+      "numchild": 1,
+      "translation_key": "5d1ffa12-0f98-434d-a9b2-71279cfb3db5",
+      "locale": 1,
+      "title": "Projects",
+      "draft_title": "Projects and Events",
+      "slug": "projects",
+      "content_type": 57,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "Projects by CRAIS of PES University.",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 11,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "10",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T16:49:42.242Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "content": {
+      "pk": 10,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional  Neural Networks (CNNs) are popular in Advanced Driver Assistance  Systems (ADAS) for camera perception. The versatility of the algorithm  makes it applicable in multiple applications like object detection, lane  detection and semantic segmentation. For image processing to be viable  in driver assistance systems, the throughput requirement ranges in the  order of a few tens of TeraMACs per second (TMACs). In addition, high  accuracy levels of image detection and recognition cannot be compromised  for the need for high throughput.</p><p data-block-key=\"esn72\">In  this paper, we present TileNET, a novel tiled architecture for  ternary-weighted CNNs. TileNET is modular and scalable across variations  in network organization and device configurations. Two modes of the  implementation are presented, viz., systolic and streaming. A high-level  estimation technique has been developed that facilitates fast  performance evaluation through design space exploration among a range of  target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance  has been verified for area and throughput estimation for Xilinx Virtex,  Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7  (XC7VX1140T) results in a throughput of about 16 Tera-operations per  second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the  45nm standard cell implementation of TileNet shows a throughput of  about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 2,
+          "sort_order": 0,
+          "page": 10,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 10
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 10
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 12,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "10",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T16:50:35.242Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "content": {
+      "pk": 10,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-17T16:49:42.300Z",
+      "last_published_at": "2022-08-17T16:49:42.300Z",
+      "latest_revision_created_at": "2022-08-17T16:49:42.242Z",
+      "live_revision": 8,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 2,
+          "sort_order": 0,
+          "page": 10,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 10
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 10
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 13,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "10",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T18:34:47.899Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "content": {
+      "pk": 10,
+      "path": "0001000100010002",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "af318d40-a773-4067-87ca-909a3bc2c0de",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures-323",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures-323/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-17T16:49:42.300Z",
+      "last_published_at": "2022-08-17T16:50:35.329Z",
+      "latest_revision_created_at": "2022-08-17T16:50:35.242Z",
+      "live_revision": 9,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 2,
+          "sort_order": 0,
+          "page": 10,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": 5,
+          "tag": 1,
+          "content_object": 10
+        },
+        {
+          "pk": 6,
+          "tag": 2,
+          "content_object": 10
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 14,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "9",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T18:35:01.979Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "content": {
+      "pk": 9,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-17T16:49:42.300Z",
+      "last_published_at": "2022-08-17T16:50:35.329Z",
+      "latest_revision_created_at": "2022-08-17T16:50:35.242Z",
+      "live_revision": 9,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2021-08-04",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 1,
+          "sort_order": 0,
+          "page": 9,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 9
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 9
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 15,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "11",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T16:49:42.242Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "content": {
+      "pk": 11,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional  Neural Networks (CNNs) are popular in Advanced Driver Assistance  Systems (ADAS) for camera perception. The versatility of the algorithm  makes it applicable in multiple applications like object detection, lane  detection and semantic segmentation. For image processing to be viable  in driver assistance systems, the throughput requirement ranges in the  order of a few tens of TeraMACs per second (TMACs). In addition, high  accuracy levels of image detection and recognition cannot be compromised  for the need for high throughput.</p><p data-block-key=\"esn72\">In  this paper, we present TileNET, a novel tiled architecture for  ternary-weighted CNNs. TileNET is modular and scalable across variations  in network organization and device configurations. Two modes of the  implementation are presented, viz., systolic and streaming. A high-level  estimation technique has been developed that facilitates fast  performance evaluation through design space exploration among a range of  target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance  has been verified for area and throughput estimation for Xilinx Virtex,  Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7  (XC7VX1140T) results in a throughput of about 16 Tera-operations per  second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the  45nm standard cell implementation of TileNet shows a throughput of  about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 3,
+          "sort_order": 0,
+          "page": 11,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 11
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 11
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 16,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "11",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T16:50:35.242Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "content": {
+      "pk": 11,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-17T16:49:42.300Z",
+      "last_published_at": "2022-08-17T16:49:42.300Z",
+      "latest_revision_created_at": "2022-08-17T16:49:42.242Z",
+      "live_revision": 8,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2022-08-15",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 3,
+          "sort_order": 0,
+          "page": 11,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 11
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 11
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 17,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "11",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T18:35:01.979Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "content": {
+      "pk": 11,
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+      "content_type": 56,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2022-08-17T16:49:42.300Z",
+      "last_published_at": "2022-08-17T16:50:35.329Z",
+      "latest_revision_created_at": "2022-08-17T16:50:35.242Z",
+      "live_revision": 9,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2021-08-04",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 3,
+          "sort_order": 0,
+          "page": 11,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 11
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 11
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 18,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "11",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T18:42:48.767Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "content": {
+      "pk": 11,
+      "path": "0001000100010003",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "1c14e211-566e-478c-a7c4-4fb0f432f8e8",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-asadasdrchitectures",
+      "content_type": 56,
+      "live": false,
+      "has_unpublished_changes": true,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": "2022-08-17T16:50:35.329Z",
+      "latest_revision_created_at": "2022-08-17T18:35:01.979Z",
+      "live_revision": 9,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 1,
+      "date": "2021-08-04",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 3,
+          "sort_order": 0,
+          "page": 11,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 11
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 11
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 19,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "11",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T18:42:58.029Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "content": {
+      "pk": 11,
+      "path": "0001000100010003",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "1c14e211-566e-478c-a7c4-4fb0f432f8e8",
+      "locale": 1,
+      "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+      "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+      "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-asadasdrchitectures",
+      "content_type": 56,
+      "live": false,
+      "has_unpublished_changes": true,
+      "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-asadasdrchitectures/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": "2022-08-17T16:50:35.329Z",
+      "latest_revision_created_at": "2022-08-17T18:42:48.767Z",
+      "live_revision": 9,
+      "alias_of": null,
+      "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+      "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+      "banner": 2,
+      "category": 2,
+      "date": "2021-08-04",
+      "status": "Completed",
+      "wagtail_admin_comments": [],
+      "project_images": [],
+      "contributors": [
+        {
+          "pk": 3,
+          "sort_order": 0,
+          "page": 11,
+          "contributor": 2
+        }
+      ],
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 11
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 11
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 20,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "5",
+    "submitted_for_moderation": false,
+    "created_at": "2022-08-17T18:51:39.557Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "About Us",
+    "content": {
+      "pk": 5,
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+      "locale": 1,
+      "title": "About Us",
+      "draft_title": "About Us",
+      "slug": "about-us",
+      "content_type": 45,
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home/about-us/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": null,
+      "last_published_at": null,
+      "latest_revision_created_at": null,
+      "live_revision": null,
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat ligula nisl, ultrices accumsan lectus tincidunt ac.",
+      "body": "<h3 data-block-key=\"mvwpg\">HEADING</h3><p data-block-key=\"5tpba\">The analysis and design of a system of dynamical systems that perceive, reason, learn and act intelligently is the thrust area of research in behavior the PES Centre for Intelligent Systems. The interconnection of simple dynamical systems can lead to seemingly inexplicable complex overall behaviour with the causes and effects not related. Aristotle summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"4uqas\"></p><p data-block-key=\"4kc2h\">All systems that surround us today – economical, political, ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"79o6f\"></p><p data-block-key=\"f7hij\"><br/></p><h3 data-block-key=\"1rl6q\">OBJECTIVES</h3><ul><li data-block-key=\"2h9bo\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"4h1kl\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"2outt\">Develop computationally efficient algorithms for mapping, localization, path planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"408as\">To develop embedded computational architectures based on system-on-chip methodology for real-time implementation of spatial and temporal signal processing.</li><li data-block-key=\"7qcuc\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"2munl\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"2hq74\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"ehp0b\">Conducting extensive research on attention levels in students, and people suffering from ADHD, and finding ways of improving it, one being Yoga, in collaboration with NIMHANS.</li></ul>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 21,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "5",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:04:07.090Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "About Us",
+    "content": {
+      "pk": 5,
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+      "locale": 1,
+      "latest_revision": 20,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2022-08-17T18:51:39.598Z",
+      "last_published_at": "2022-08-17T18:51:39.598Z",
+      "live_revision": 20,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "About Us",
+      "draft_title": "About Us",
+      "slug": "about-us",
+      "content_type": 45,
+      "url_path": "/home/about-us/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2022-08-17T18:51:39.557Z",
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat ligula nisl, ultrices accumsan lectus tincidunt ac.",
+      "body": "<p data-block-key=\"mvwpg\">Quisque ut nulla sapien. Nullam vitae risus iaculis, consequat enim nec,  bibendum quam. Cras aliquam nibh nec odio consequat, non placerat urna  condimentum. Curabitur mattis vel neque venenatis efficitur. Suspendisse  et ligula quis eros laoreet molestie. </p><p data-block-key=\"76bu8\"></p><hr/><p data-block-key=\"71odd\"></p><p data-block-key=\"7nb0a\">Vestibulum sed felis faucibus  nisi venenatis sagittis id ultricies ipsum. Suspendisse facilisis  maximus enim, sed euismod risus dictum ut. Etiam in hendrerit urna.  </p><h3 data-block-key=\"f2db6\">Heading 3</h3><p data-block-key=\"a9in6\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis  sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in  pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et  ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet  finibus justo vestibulum sit amet. Sed tincidunt est at suscipit  ultricies. Pellentesque consequat vel est pulvinar hendrerit.</p><p data-block-key=\"9e7vm\"></p><embed alt=\"\" embedtype=\"image\" format=\"left\" id=\"2\"/><p data-block-key=\"bucbk\"></p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 22,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "5",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:04:29.903Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "About Us",
+    "content": {
+      "pk": 5,
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+      "locale": 1,
+      "latest_revision": 21,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2022-08-17T18:51:39.598Z",
+      "last_published_at": "2022-09-10T04:04:07.117Z",
+      "live_revision": 21,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "About Us",
+      "draft_title": "About Us",
+      "slug": "about-us",
+      "content_type": 45,
+      "url_path": "/home/about-us/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2022-09-10T04:04:07.090Z",
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat ligula nisl, ultrices accumsan lectus tincidunt ac.",
+      "body": "<p data-block-key=\"mvwpg\">Quisque ut nulla sapien. Nullam vitae risus iaculis, consequat enim nec, bibendum quam. Cras aliquam nibh nec odio consequat, non placerat urna condimentum. Curabitur mattis vel neque venenatis efficitur. Suspendisse et ligula quis eros laoreet molestie.</p><p data-block-key=\"76bu8\"></p><hr/><p data-block-key=\"71odd\"></p><p data-block-key=\"7nb0a\">Vestibulum sed felis faucibus nisi venenatis sagittis id ultricies ipsum. Suspendisse facilisis maximus enim, sed euismod risus dictum ut. Etiam in hendrerit urna.</p><h3 data-block-key=\"f2db6\">Heading 3</h3><p data-block-key=\"a9in6\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est pulvinar hendrerit.</p><p data-block-key=\"9e7vm\"></p><embed alt=\"\" embedtype=\"image\" format=\"fullwidth\" id=\"2\"/><p data-block-key=\"bucbk\"></p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 23,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "5",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:05:28.050Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "About Us",
+    "content": {
+      "pk": 5,
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+      "locale": 1,
+      "latest_revision": 22,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2022-08-17T18:51:39.598Z",
+      "last_published_at": "2022-09-10T04:04:29.932Z",
+      "live_revision": 22,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "About Us",
+      "draft_title": "About Us",
+      "slug": "about-us",
+      "content_type": 45,
+      "url_path": "/home/about-us/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2022-09-10T04:04:29.903Z",
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat ligula nisl, ultrices accumsan lectus tincidunt ac.",
+      "body": "<p data-block-key=\"mvwpg\">Quisque ut nulla sapien. Nullam vitae risus iaculis, consequat enim nec, bibendum quam. Cras aliquam nibh nec odio consequat, non placerat urna condimentum. Curabitur mattis vel neque venenatis efficitur. Suspendisse et ligula quis eros laoreet molestie.</p><p data-block-key=\"76bu8\"></p><hr/><p data-block-key=\"71odd\"></p><p data-block-key=\"7nb0a\">Vestibulum sed felis faucibus nisi venenatis sagittis id ultricies ipsum. Suspendisse facilisis maximus enim, sed euismod risus dictum ut. Etiam in hendrerit urna.</p><h3 data-block-key=\"f2db6\">Heading 3</h3><p data-block-key=\"a9in6\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est pulvinar hendrerit.</p><p data-block-key=\"9e7vm\"></p><embed alt=\"\" embedtype=\"image\" format=\"fullwidth\" id=\"2\"/><p data-block-key=\"bucbk\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt <b>est at suscipit ultricies.</b> Pellentesque consequat vel est pulvinar hendrerit. Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; <i>Duis aliquet</i> eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est <a href=\"https://google.com\">pulvinar hendrerit.</a></p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 24,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "5",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:07:25.197Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "About Us",
+    "content": {
+      "pk": 5,
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+      "locale": 1,
+      "latest_revision": 23,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2022-08-17T18:51:39.598Z",
+      "last_published_at": "2022-09-10T04:05:28.078Z",
+      "live_revision": 23,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "About Us",
+      "draft_title": "About Us",
+      "slug": "about-us",
+      "content_type": 45,
+      "url_path": "/home/about-us/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2022-09-10T04:05:28.050Z",
+      "alias_of": null,
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat ligula nisl, ultrices accumsan lectus tincidunt ac.",
+      "body": "<p data-block-key=\"mvwpg\">Quisque ut nulla sapien. Nullam vitae risus iaculis, consequat enim nec, bibendum quam. Cras aliquam nibh nec odio consequat, non placerat urna condimentum. Curabitur mattis vel neque venenatis efficitur. Suspendisse et ligula quis eros laoreet molestie.</p><p data-block-key=\"76bu8\"></p><hr/><p data-block-key=\"71odd\"></p><p data-block-key=\"7nb0a\">Vestibulum sed felis faucibus nisi venenatis sagittis id ultricies ipsum. Suspendisse facilisis maximus enim, sed euismod risus dictum ut. Etiam in hendrerit urna.</p><h3 data-block-key=\"f2db6\">Heading 3</h3><p data-block-key=\"a9in6\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est pulvinar hendrerit.</p><p data-block-key=\"9e7vm\"></p><embed alt=\"\" embedtype=\"image\" format=\"left\" id=\"2\"/><p data-block-key=\"bucbk\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt <b>est at suscipit ultricies.</b> Pellentesque consequat vel est pulvinar hendrerit. Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; <i>Duis aliquet</i> eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est <a href=\"https://google.com\">pulvinar hendrerit.</a></p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 25,
+  "fields": {
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "5",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:08:19.648Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "About Us",
+    "content": {
+      "pk": 5,
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+      "locale": 1,
+      "latest_revision": 24,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2022-08-17T18:51:39.598Z",
+      "last_published_at": "2022-09-10T04:07:25.223Z",
+      "live_revision": 24,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "About Us",
+      "draft_title": "About Us",
+      "slug": "about-us",
+      "content_type": 45,
+      "url_path": "/home/about-us/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2022-09-10T04:07:25.197Z",
+      "alias_of": null,
+      "intro": "Know what we are and what we do!",
+      "body": "<p data-block-key=\"mvwpg\">Quisque ut nulla sapien. Nullam vitae risus iaculis, consequat enim nec, bibendum quam. Cras aliquam nibh nec odio consequat, non placerat urna condimentum. Curabitur mattis vel neque venenatis efficitur. Suspendisse et ligula quis eros laoreet molestie.</p><p data-block-key=\"76bu8\"></p><hr/><p data-block-key=\"71odd\"></p><p data-block-key=\"7nb0a\">Vestibulum sed felis faucibus nisi venenatis sagittis id ultricies ipsum. Suspendisse facilisis maximus enim, sed euismod risus dictum ut. Etiam in hendrerit urna.</p><h3 data-block-key=\"f2db6\">Heading 3</h3><p data-block-key=\"a9in6\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est pulvinar hendrerit.</p><p data-block-key=\"9e7vm\"></p><embed alt=\"\" embedtype=\"image\" format=\"left\" id=\"2\"/><p data-block-key=\"bucbk\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt <b>est at suscipit ultricies.</b> Pellentesque consequat vel est pulvinar hendrerit. Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; <i>Duis aliquet</i> eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est <a href=\"https://google.com\">pulvinar hendrerit.</a></p>",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 26,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "12",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:22:51.148Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Contact Us",
+    "content": {
+      "pk": 12,
+      "path": "000100010006",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "2d6b5c95-31d6-4d26-bb96-a4280b7d4213",
+      "locale": 1,
+      "latest_revision": null,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "live_revision": null,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Contact Us",
+      "draft_title": "Contact Us",
+      "slug": "contact-uss",
+      "content_type": 71,
+      "url_path": "/home/contact-uss/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": null,
+      "alias_of": null,
+      "intro": "<p data-block-key=\"t5ru3\">We&#x27;d love to hear from you! Drop us a line to let us know what you liked or didn&#x27;t like about your recent store visit, or if you have comments or questions about this site.</p>",
+      "thank_you_text": "Thank you for the submission! We will get back to you soon!",
+      "general_information": "We'd love to hear from you! Drop us a line to let us know what you liked or didn't like about your recent store visit, or if you have comments or questions about this site.",
+      "contact_email": "rais@pes.edu",
+      "contact_phone": "9876543210",
+      "contact_address": "100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085",
+      "wagtail_admin_comments": [],
+      "form_fields": [
+        {
+          "pk": 5,
+          "sort_order": 0,
+          "clean_name": "name",
+          "label": "Name",
+          "field_type": "singleline",
+          "required": true,
+          "choices": "",
+          "default_value": "",
+          "help_text": "",
+          "page": 12
+        },
+        {
+          "pk": 6,
+          "sort_order": 1,
+          "clean_name": "email",
+          "label": "Email",
+          "field_type": "email",
+          "required": true,
+          "choices": "",
+          "default_value": "",
+          "help_text": "",
+          "page": 12
+        },
+        {
+          "pk": 7,
+          "sort_order": 2,
+          "clean_name": "message",
+          "label": "Message",
+          "field_type": "multiline",
+          "required": true,
+          "choices": "",
+          "default_value": "",
+          "help_text": "",
+          "page": 12
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 27,
+  "fields": {
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "12",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:23:09.447Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Contact Us",
+    "content": {
+      "pk": 12,
+      "path": "000100010006",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "2d6b5c95-31d6-4d26-bb96-a4280b7d4213",
+      "locale": 1,
+      "latest_revision": 26,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2022-09-10T04:22:51.174Z",
+      "last_published_at": "2022-09-10T04:22:51.174Z",
+      "live_revision": 26,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Contact Us",
+      "draft_title": "Contact Us",
+      "slug": "contact-us",
+      "content_type": 71,
+      "url_path": "/home/contact-uss/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2022-09-10T04:22:51.148Z",
+      "alias_of": null,
+      "intro": "<p data-block-key=\"t5ru3\">We&#x27;d love to hear from you! Drop us a line to let us know what you liked or didn&#x27;t like about your recent store visit, or if you have comments or questions about this site.</p>",
+      "thank_you_text": "Thank you for the submission! We will get back to you soon!",
+      "general_information": "We'd love to hear from you! Drop us a line to let us know what you liked or didn't like about your recent store visit, or if you have comments or questions about this site.",
+      "contact_email": "rais@pes.edu",
+      "contact_phone": "9876543210",
+      "contact_address": "100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085",
+      "wagtail_admin_comments": [],
+      "form_fields": [
+        {
+          "pk": 5,
+          "sort_order": 0,
+          "clean_name": "name",
+          "label": "Name",
+          "field_type": "singleline",
+          "required": true,
+          "choices": "",
+          "default_value": "",
+          "help_text": "",
+          "page": 12
+        },
+        {
+          "pk": 6,
+          "sort_order": 1,
+          "clean_name": "email",
+          "label": "Email",
+          "field_type": "email",
+          "required": true,
+          "choices": "",
+          "default_value": "",
+          "help_text": "",
+          "page": 12
+        },
+        {
+          "pk": 7,
+          "sort_order": 2,
+          "clean_name": "message",
+          "label": "Message",
+          "field_type": "multiline",
+          "required": true,
+          "choices": "",
+          "default_value": "",
+          "help_text": "",
+          "page": 12
+        }
+      ]
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 28,
+  "fields": {
+    "content_type": [
+      "events",
+      "eventindexpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "13",
+    "submitted_for_moderation": false,
+    "created_at": "2022-09-10T04:31:13.753Z",
+    "user": [
+      "admin"
+    ],
+    "object_str": "Events",
+    "content": {
+      "pk": 13,
+      "path": "000100010007",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "993de037-14c5-45c9-865e-52e725d766be",
+      "locale": 1,
+      "latest_revision": null,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "live_revision": null,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Events",
+      "draft_title": "Events",
+      "slug": "events",
+      "content_type": 72,
+      "url_path": "/home/events/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": null,
+      "alias_of": null,
+      "intro": "Quisque ut nulla sapien.",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 1,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 1,
+    "translation_key": "95dddb72-2bda-4794-bb98-56273f141c88",
+    "locale": 1,
+    "latest_revision": null,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Root",
+    "draft_title": "Root",
+    "slug": "root",
+    "content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "url_path": "/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": null,
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 3,
+  "fields": {
+    "path": "00010001",
+    "depth": 2,
+    "numchild": 6,
+    "translation_key": "6000bd93-2602-4fba-a2ef-cbc100a1ee4c",
+    "locale": 1,
+    "latest_revision": null,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Home Page",
+    "draft_title": "Home Page",
+    "slug": "home",
+    "content_type": [
+      "base",
+      "homepage"
+    ],
+    "url_path": "/home/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": null,
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 4,
+  "fields": {
+    "path": "000100010001",
+    "depth": 3,
+    "numchild": 3,
+    "translation_key": "5d1ffa12-0f98-434d-a9b2-71279cfb3db5",
+    "locale": 1,
+    "latest_revision": 10,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-17T17:58:25.320Z",
+    "last_published_at": "2022-08-17T17:58:25.320Z",
+    "live_revision": 10,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Projects",
+    "draft_title": "Projects",
+    "slug": "projects",
+    "content_type": [
+      "projects",
+      "projectindexpage"
+    ],
+    "url_path": "/home/projects/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-08-17T17:58:25.294Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 5,
+  "fields": {
+    "path": "000100010002",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "10012157-42da-4026-857f-80b21ef48627",
+    "locale": 1,
+    "latest_revision": 25,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-17T18:51:39.598Z",
+    "last_published_at": "2022-09-10T04:08:19.674Z",
+    "live_revision": 25,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "About Us",
+    "draft_title": "About Us",
+    "slug": "about-us",
+    "content_type": [
+      "base",
+      "aboutpage"
+    ],
+    "url_path": "/home/about-us/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-09-10T04:08:19.648Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 7,
+  "fields": {
+    "path": "000100010004",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "15fc5a29-a4cb-486a-b139-f6632c385cb1",
+    "locale": 1,
+    "latest_revision": 7,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-16T16:39:16.829Z",
+    "last_published_at": "2022-08-17T15:03:31.847Z",
+    "live_revision": 7,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Research",
+    "draft_title": "Research",
+    "slug": "research",
+    "content_type": [
+      "research",
+      "researchpage"
+    ],
+    "url_path": "/home/research/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-08-17T15:03:31.808Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 8,
+  "fields": {
+    "path": "000100010005",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "0962d546-e2a1-46df-abe9-8aa9bc35afc3",
+    "locale": 1,
+    "latest_revision": 2,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-16T16:40:04.716Z",
+    "last_published_at": "2022-08-16T16:40:04.716Z",
+    "live_revision": 2,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Courses",
+    "draft_title": "Courses",
+    "slug": "courses",
+    "content_type": [
+      "courses",
+      "coursesindexpage"
+    ],
+    "url_path": "/home/courses/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-08-16T16:40:04.696Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 9,
+  "fields": {
+    "path": "0001000100010001",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "983c22c5-56f3-47a2-be0d-2a8f7bc3fd33",
+    "locale": 1,
+    "latest_revision": 14,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-17T16:49:42.300Z",
+    "last_published_at": "2022-08-17T18:35:02.014Z",
+    "live_revision": 14,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr.",
+    "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures",
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-08-17T18:35:01.979Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 10,
+  "fields": {
+    "path": "0001000100010002",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "af318d40-a773-4067-87ca-909a3bc2c0de",
+    "locale": 1,
+    "latest_revision": 13,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-17T18:34:47.899Z",
+    "last_published_at": "2022-08-17T18:34:47.899Z",
+    "live_revision": 13,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. 3r23423",
+    "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures-323",
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-architectures-323/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-08-17T18:34:47.899Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 11,
+  "fields": {
+    "path": "0001000100010003",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "1c14e211-566e-478c-a7c4-4fb0f432f8e8",
+    "locale": 1,
+    "latest_revision": 19,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-08-17T18:42:58.067Z",
+    "last_published_at": "2022-08-17T18:42:58.067Z",
+    "live_revision": 19,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "draft_title": "A Survey on High-Throughput Non-Binary LDPC Decoderr. INTERN",
+    "slug": "a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-asadasdrchitectures",
+    "content_type": [
+      "projects",
+      "projectpage"
+    ],
+    "url_path": "/home/projects/a-survey-on-high-throughput-non-binary-ldpc-decoders-asic-fpga-and-gpu-asadasdrchitectures/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-08-17T18:42:58.029Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 12,
+  "fields": {
+    "path": "000100010006",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "2d6b5c95-31d6-4d26-bb96-a4280b7d4213",
+    "locale": 1,
+    "latest_revision": 27,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-09-10T04:22:51.174Z",
+    "last_published_at": "2022-09-10T04:23:09.478Z",
+    "live_revision": 27,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Contact Us",
+    "draft_title": "Contact Us",
+    "slug": "contact-us",
+    "content_type": [
+      "base",
+      "contactpage"
+    ],
+    "url_path": "/home/contact-us/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-09-10T04:23:09.447Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 13,
+  "fields": {
+    "path": "000100010007",
+    "depth": 3,
+    "numchild": 1,
+    "translation_key": "993de037-14c5-45c9-865e-52e725d766be",
+    "locale": 1,
+    "latest_revision": 28,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2022-09-10T04:31:13.775Z",
+    "last_published_at": "2022-09-10T04:31:13.775Z",
+    "live_revision": 28,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Events",
+    "draft_title": "Events",
+    "slug": "events",
+    "content_type": [
+      "events",
+      "eventindexpage"
+    ],
+    "url_path": "/home/events/",
+    "owner": [
+      "admin"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2022-09-10T04:31:13.753Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "courses",
+      "courseprogram"
+    ],
+    "label": "UG",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T17:51:38.718Z",
+    "uuid": "bf246d3e-9db8-4fac-8097-fecbd03b5ac1",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "courses",
+      "courseprogram"
+    ],
+    "label": "PG",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T17:51:47.910Z",
+    "uuid": "f8bffdf9-30ea-491a-b73d-1b2749305cb2",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 3,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (1)",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T17:51:54.437Z",
+    "uuid": "8f0bb82b-18be-4db8-8d79-59456163944a",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 4,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (1)",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-16T17:54:45.655Z",
+    "uuid": "058bfc59-f180-4a23-973f-7701792eb12b",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 5,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (2)",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T18:00:00.726Z",
+    "uuid": "a4c6e2fb-e6b3-4edc-b54d-129aa8cc421e",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 6,
+  "fields": {
+    "content_type": [
+      "users",
+      "member"
+    ],
+    "label": "Iceman Jelinsky",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T18:28:22.881Z",
+    "uuid": "a1046506-9f7e-40cf-9575-ee95ab77886d",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 7,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (2)",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-16T18:28:30.284Z",
+    "uuid": "7eee1f51-aa55-4717-9b7b-e106a783448a",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 8,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (1)",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-16T18:30:49.843Z",
+    "uuid": "b24963be-ee18-446f-8370-3b68fef5758f",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 9,
+  "fields": {
+    "content_type": [
+      "users",
+      "member"
+    ],
+    "label": "Rohan Reddy Alleti",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-16T18:31:06.948Z",
+    "uuid": "8289216c-72dd-4cfe-b752-7162f0ef99a0",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 10,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (1)",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-16T18:31:40.662Z",
+    "uuid": "fe515573-f1d9-42f6-91bc-aa8ad9981158",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 11,
+  "fields": {
+    "content_type": [
+      "courses",
+      "course"
+    ],
+    "label": "Course object (1)",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-16T18:31:56.032Z",
+    "uuid": "c6187154-50ac-485f-b273-040eee99f5f4",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 12,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T15:24:32.131Z",
+    "uuid": "e3e663ad-a93e-44fa-bc4b-a2a0ed87b37a",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 13,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T15:25:14.149Z",
+    "uuid": "03feea8e-6db0-4e19-a2b4-0d0be687db45",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 14,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:28:18.749Z",
+    "uuid": "511e0711-23dc-470d-8e2c-6d71699ae32c",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 15,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T15:28:29.145Z",
+    "uuid": "f3f25883-b201-46a9-aa66-3635f0b73b6d",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 16,
+  "fields": {
+    "content_type": [
+      "research",
+      "patent"
+    ],
+    "label": "K. George, “A multiple-model approach to robust performance,” International Journal of Aerospace Innovations, 4(1&2):43-56, April 2010.",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T16:36:00.826Z",
+    "uuid": "fe63020b-a335-4189-8e39-0a000534b8a9",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 17,
+  "fields": {
+    "content_type": [
+      "research",
+      "patent"
+    ],
+    "label": "K. George, “A multiple-model approach to robust dfsdfsdfs,” International Journal of Aerospace Innovations, 4(1&2):43-56, April 2010.dsf",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T16:36:35.948Z",
+    "uuid": "96399250-8fc1-416a-842b-5a05a6014e9f",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 18,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectcategory"
+    ],
+    "label": "Internship",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T16:49:24.920Z",
+    "uuid": "733ef6a1-1975-4de9-a357-d93cc8c2910f",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 19,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectcategory"
+    ],
+    "label": "Research",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T16:50:06.956Z",
+    "uuid": "5557460e-7650-417a-a6fe-ef08b1eb0f10",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 20,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectcategory"
+    ],
+    "label": "Internship",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T17:40:56.407Z",
+    "uuid": "f88ebdad-17f9-435d-8cf8-eadee5426c19",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 21,
+  "fields": {
+    "content_type": [
+      "projects",
+      "projectcategory"
+    ],
+    "label": "Funded",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-08-17T17:41:08.099Z",
+    "uuid": "123eb53c-2a83-4f38-875f-8abbee8e406b",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "3"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 22,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:50:05.716Z",
+    "uuid": "36f90209-6329-4cec-b7d7-01247a783a06",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 23,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:50:35.514Z",
+    "uuid": "83338c0c-949f-4c60-bad0-ad3a6b37fee2",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 24,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:52:03.388Z",
+    "uuid": "6011a168-5222-4330-ba9b-08156d18c6e9",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 25,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures 2",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:52:25.277Z",
+    "uuid": "5d767cc8-a576-47d7-8792-6c2b2283fdd8",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 26,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures 2",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:55:26.140Z",
+    "uuid": "23a00ae3-c310-441c-aece-ce57361b886f",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 27,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures 2",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T17:55:39.324Z",
+    "uuid": "547b9afe-9a82-43a8-beb2-c846662cd92c",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 28,
+  "fields": {
+    "content_type": [
+      "research",
+      "publication"
+    ],
+    "label": "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA and GPU Architectures",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T18:28:09.746Z",
+    "uuid": "b3122d01-ab22-41bb-9ddd-b511d7a546e7",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 29,
+  "fields": {
+    "content_type": [
+      "users",
+      "member"
+    ],
+    "label": "Rohan Reddy Alleti",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T18:52:41.182Z",
+    "uuid": "3a672c88-1bf1-481e-bdea-e4c374d00cab",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "2"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 30,
+  "fields": {
+    "content_type": [
+      "users",
+      "member"
+    ],
+    "label": "Iceman Jelinsky",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T19:02:50.004Z",
+    "uuid": "a9e5b984-bac7-4347-863f-c73f5185cb0b",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 31,
+  "fields": {
+    "content_type": [
+      "users",
+      "membercategory"
+    ],
+    "label": "Faculty",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T19:03:49.084Z",
+    "uuid": "702774a8-d81f-4476-b488-0b4734e38f09",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "1"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 32,
+  "fields": {
+    "content_type": [
+      "users",
+      "membercategory"
+    ],
+    "label": "Research Assistant",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2022-08-17T19:07:13.298Z",
+    "uuid": "0f6ae960-11e6-43bd-a97d-626b1936ed86",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "object_id": "3"
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 33,
+  "fields": {
+    "content_type": [
+      "users",
+      "member"
+    ],
+    "label": "Rohan Reddy",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2022-09-10T04:11:08.627Z",
+    "uuid": "c3d270ee-3efe-4049-bd1b-991b21e00e9c",
+    "user": [
+      "admin"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "object_id": "3"
+  }
+},
+{
+  "model": "wagtailimages.image",
+  "pk": 1,
+  "fields": {
+    "collection": 1,
+    "title": "bird",
+    "file": "original_images/bird_sNeOs2m.png",
+    "width": 390,
+    "height": 382,
+    "created_at": "2022-08-16T18:28:15.927Z",
+    "uploaded_by_user": [
+      "admin"
+    ],
+    "focal_point_x": null,
+    "focal_point_y": null,
+    "focal_point_width": null,
+    "focal_point_height": null,
+    "file_size": 12019,
+    "file_hash": "ed458bc12e60db5d4e63cdfbd20a7cb3e9ab5754"
+  }
+},
+{
+  "model": "wagtailimages.image",
+  "pk": 2,
+  "fields": {
+    "collection": 1,
+    "title": "banner-2",
+    "file": "original_images/banner-2.jpg",
+    "width": 1920,
+    "height": 1280,
+    "created_at": "2022-08-17T16:49:13.549Z",
+    "uploaded_by_user": [
+      "admin"
+    ],
+    "focal_point_x": null,
+    "focal_point_y": null,
+    "focal_point_width": null,
+    "focal_point_height": null,
+    "file_size": 283877,
+    "file_hash": "eaa552e1811aa55581382ee50d5d3b1b502f55e0"
+  }
+},
+{
+  "model": "wagtailimages.image",
+  "pk": 3,
+  "fields": {
+    "collection": 1,
+    "title": "IMG20220820113421",
+    "file": "original_images/IMG20220820113421.jpg",
+    "width": 3456,
+    "height": 4608,
+    "created_at": "2022-09-10T04:10:46.618Z",
+    "uploaded_by_user": [
+      "admin"
+    ],
+    "focal_point_x": null,
+    "focal_point_y": null,
+    "focal_point_width": null,
+    "focal_point_height": null,
+    "file_size": 2994674,
+    "file_hash": "9638cbc35866519156ac4db7bcccc1484f7f0e3e"
+  }
+},
+{
+  "model": "wagtailimages.image",
+  "pk": 4,
+  "fields": {
+    "collection": 1,
+    "title": "bg-projects",
+    "file": "original_images/bg-projects.jpg",
+    "width": 1920,
+    "height": 1280,
+    "created_at": "2022-09-10T04:34:29.013Z",
+    "uploaded_by_user": [
+      "admin"
+    ],
+    "focal_point_x": null,
+    "focal_point_y": null,
+    "focal_point_width": null,
+    "focal_point_height": null,
+    "file_size": 415800,
+    "file_hash": "50a4fd3f575766f7f94fc7e81e98ad7dccfa1636"
+  }
+},
+{
+  "model": "research.researchpage",
+  "pk": 7,
+  "fields": {
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies in odio sed blandit. Cras quis nulla libero. Sed neque justo, aliquet vel velit vel, tempor efficitur nibh.",
+    "information": "<h3 data-block-key=\"kfbxz\">HEADING</h3><p data-block-key=\"c2im1\">The analysis and design of a system of dynamical systems that perceive, reason, learn and act intelligently is the thrust area of research in behavior the PES Centre for Intelligent Systems. The interconnection of simple dynamical systems can lead to seemingly inexplicable complex overall behaviour with the causes and effects not related. Aristotle summed up well: “The whole is greater than the sum of its parts.”</p><p data-block-key=\"cds3c\"></p><p data-block-key=\"4biur\">All systems that surround us today – economical, political, ecological, or social – consist of diverse, interconnected,behavior, and interdependent entities which adapt to their environments. The overall behaviour of such systems is often unpredictable as a system of systems is inherently complex, nonlinear and time-varying. Complex systems are about indirect effects. The objective here is the development of tools for the analysis and design of such complex systems.</p><p data-block-key=\"7hefi\"></p><p data-block-key=\"ffb2r\"><br/></p><h3 data-block-key=\"7vvfn\">OBJECTIVES</h3><ul><li data-block-key=\"836n8\">To understand the behaviour of complex systems, and to design controllers for such systems.</li><li data-block-key=\"56dj\">Using a systems approach to arrive at computationally intelligent algorithms for spatial and temporal signal processing.</li><li data-block-key=\"5ln7u\">Develop computationally efficient algorithms for mapping, localization, path planning and navigational support for autonomous mobile robotics.</li><li data-block-key=\"3v9g6\">To develop embedded computational architectures based on system-on-chip methodology for real-time implementation of spatial and temporal signal processing.</li><li data-block-key=\"2p3b1\">Leverage advantages offered by reconfiguration at system-, sensor- and computational-levels for area and power-optimal designs.</li><li data-block-key=\"41rlm\">Developing emotion recognition system for autistic children.</li><li data-block-key=\"75i6c\">Design and development of a medical device for the assessment of vascular risk.</li><li data-block-key=\"9qr2j\">Conducting extensive research on attention levels in students, and people suffering from ADHD, and finding ways of improving it, one being Yoga, in collaboration with NIMHANS.</li></ul>"
+  }
+},
+{
+  "model": "projects.projectpage",
+  "pk": 9,
+  "fields": {
+    "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+    "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+    "banner": 2,
+    "category": 1,
+    "date": "2021-08-04",
+    "status": "Completed"
+  }
+},
+{
+  "model": "projects.projectpage",
+  "pk": 10,
+  "fields": {
+    "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+    "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+    "banner": 2,
+    "category": 1,
+    "date": "2022-08-15",
+    "status": "Completed"
+  }
+},
+{
+  "model": "projects.projectpage",
+  "pk": 11,
+  "fields": {
+    "intro": "gital communications led to the investigation of optimized nbldpc decoding algorithms and efficient implementations that target high throughput and low energy consumption levels. We carried out a comprehensive survey of existing nbldpc decoding hardware t",
+    "description": "<p data-block-key=\"41zvw\">Convolutional Neural Networks (CNNs) are popular in Advanced Driver Assistance Systems (ADAS) for camera perception. The versatility of the algorithm makes it applicable in multiple applications like object detection, lane detection and semantic segmentation. For image processing to be viable in driver assistance systems, the throughput requirement ranges in the order of a few tens of TeraMACs per second (TMACs). In addition, high accuracy levels of image detection and recognition cannot be compromised for the need for high throughput.</p><p data-block-key=\"esn72\">In this paper, we present TileNET, a novel tiled architecture for ternary-weighted CNNs. TileNET is modular and scalable across variations in network organization and device configurations. Two modes of the implementation are presented, viz., systolic and streaming. A high-level estimation technique has been developed that facilitates fast performance evaluation through design space exploration among a range of target devices and varying CNN models.</p><p data-block-key=\"9mdhm\">Performance has been verified for area and throughput estimation for Xilinx Virtex, Artix, Kintex and Zynq devices. TileNET implemented on Virtex-7 (XC7VX1140T) results in a throughput of about 16 Tera-operations per second (TOPs) for LeNet, AlexNet, ResNet-50 and VGG-16. In addition, the 45nm standard cell implementation of TileNet shows a throughput of about 30 TOPs respectively.</p>",
+    "banner": 2,
+    "category": 2,
+    "date": "2021-08-04",
+    "status": "Completed"
+  }
+},
+{
+  "model": "projects.projectindexpage",
+  "pk": 4,
+  "fields": {
+    "intro": "Projects by CRAIS of PES University."
+  }
+},
+{
+  "model": "events.eventindexpage",
+  "pk": 13,
+  "fields": {
+    "intro": "Quisque ut nulla sapien."
+  }
+},
+{
+  "model": "courses.coursesindexpage",
+  "pk": 8,
+  "fields": {
+    "intro": "<p data-block-key=\"6hxqt\">This is intro</p>"
+  }
+},
+{
+  "model": "base.aboutpage",
+  "pk": 5,
+  "fields": {
+    "intro": "Know what we are and what we do!",
+    "body": "<p data-block-key=\"mvwpg\">Quisque ut nulla sapien. Nullam vitae risus iaculis, consequat enim nec, bibendum quam. Cras aliquam nibh nec odio consequat, non placerat urna condimentum. Curabitur mattis vel neque venenatis efficitur. Suspendisse et ligula quis eros laoreet molestie.</p><p data-block-key=\"76bu8\"></p><hr/><p data-block-key=\"71odd\"></p><p data-block-key=\"7nb0a\">Vestibulum sed felis faucibus nisi venenatis sagittis id ultricies ipsum. Suspendisse facilisis maximus enim, sed euismod risus dictum ut. Etiam in hendrerit urna.</p><h3 data-block-key=\"f2db6\">Heading 3</h3><p data-block-key=\"a9in6\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est pulvinar hendrerit.</p><p data-block-key=\"9e7vm\"></p><embed alt=\"\" embedtype=\"image\" format=\"left\" id=\"2\"/><p data-block-key=\"bucbk\">Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis aliquet eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt <b>est at suscipit ultricies.</b> Pellentesque consequat vel est pulvinar hendrerit. Phasellus auctor semper mi, at tincidunt lacus elementum non. Nulla quis sapien rhoncus nisi maximus rutrum. Nam iaculis congue purus in pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; <i>Duis aliquet</i> eros nulla, sit amet finibus justo vestibulum sit amet. Sed tincidunt est at suscipit ultricies. Pellentesque consequat vel est <a href=\"https://google.com\">pulvinar hendrerit.</a></p>"
+  }
+},
+{
+  "model": "base.homepage",
+  "pk": 3,
+  "fields": {
+    "intro": "This is intro",
+    "about_us": "About us description",
+    "image_1": null
+  }
+},
+{
+  "model": "base.contactpage",
+  "pk": 12,
+  "fields": {
+    "contact_email": "rais@pes.edu",
+    "contact_phone": "9876543210",
+    "contact_address": "100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085"
+  }
+},
+{
+  "model": "base.formpage",
+  "pk": 12,
+  "fields": {
+    "intro": "<p data-block-key=\"t5ru3\">We&#x27;d love to hear from you! Drop us a line to let us know what you liked or didn&#x27;t like about your recent store visit, or if you have comments or questions about this site.</p>",
+    "thank_you_text": "Thank you for the submission! We will get back to you soon!",
+    "general_information": "We'd love to hear from you! Drop us a line to let us know what you liked or didn't like about your recent store visit, or if you have comments or questions about this site."
+  }
+}
+]

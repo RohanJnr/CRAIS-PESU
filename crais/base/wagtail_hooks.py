@@ -3,6 +3,7 @@ from wagtail.contrib.modeladmin.options import (
 )
 
 from crais.courses.models import Course, CourseProgram
+from crais.events.models import EventPage
 from crais.users.models import Intern, Member, MemberCategory
 from crais.projects.models import ProjectPage, ProjectCategory
 from crais.research.models import Patent, Publication
@@ -62,11 +63,19 @@ class ProjectModelAdmin(ModelAdmin):
     list_filter = ("category", "tags")
     search_fields = ("title", "intro", "description")
 
+
+class EventModelAdmin(ModelAdmin):
+    model = EventPage
+    menu_label = "Events"
+    list_display = ("title", "status", "timestamp", "venue")
+    search_fields = ("title", "intro", "description")
+
+
 class ContentAdminModel(ModelAdminGroup):
     menu_label = "Content"
     menu_icon = "folder-open-inverse"
     menu_order = 300
-    items = (ProjectModelAdmin,)
+    items = (ProjectModelAdmin, EventModelAdmin)
 
 class PublicationModelAdmin(ModelAdmin):
     model = Publication

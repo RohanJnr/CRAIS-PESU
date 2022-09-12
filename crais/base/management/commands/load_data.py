@@ -1,7 +1,9 @@
+from asyncio import events
 from django.core.management.base import BaseCommand
 from wagtail.models import Page, Site
 
-from crais.base.models import AboutPage, FormPage, FormField, HomePage
+from crais.base.models import AboutPage, FormField, HomePage, ContactPage
+from crais.events.models import EventIndexPage
 from crais.projects.models import ProjectIndexPage
 from crais.research.models import ResearchPage
 from crais.courses.models import CoursesIndexPage
@@ -72,26 +74,55 @@ class Command(BaseCommand):
         # Create research page
         research_page = ResearchPage(
             title="About Us",
-            information=(
+            intro=(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat "
                 "ligula nisl, ultrices accumsan lectus tincidunt ac. "
             ),
+            information="Information",
             slug="research"
         )
 
         home_page.add_child(instance=research_page)
         research_page.save()
 
+        # Courses Page
+        courses_page = CoursesIndexPage(
+            title="Courses",
+            intro=(
+                "Courses offered by us!"
+            ),
+            slug="courses"
+        )
+
+        home_page.add_child(instance=courses_page)
+        courses_page.save()
+
+        # events Page
+        events_page = EventIndexPage(
+            title="Events",
+            intro=(
+                "Courses offered by us!"
+            ),
+            slug="events"
+        )
+
+        home_page.add_child(instance=events_page)
+        events_page.save()
+
 
 
         # Create contact page
-        contact_page = FormPage(
+        contact_page = ContactPage(
             title="Contact Us",
             intro=(
                 "We'd love to hear from you! Drop us a line to let us know what you liked or didn't like about "
                 "your recent store visit, or if you have comments or questions about this site."
             ),
             thank_you_text="Thank you for the submission! We will get back to you soon!",
+            general_information="Information",
+            contact_email="rais@pes.edu",
+            contact_phone="9876543210",
+            contact_address="address",
             form_fields=[
                 FormField(label="Name", field_type="singleline"),
                 FormField(label="Email", field_type="email"),

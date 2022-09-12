@@ -20,12 +20,20 @@ EVENT_STATUS_CHOICES = (
 class EventTimelineNode(Orderable):
 
     page = ParentalKey("events.EventPage", related_name="timelineNode")
-    node = models.CharField(
+    node_name = models.CharField(
         max_length=255
+    )
+    node_description = models.TextField()
+    datetime_begin = models.DateTimeField()
+    datetime_end = models.DateTimeField(
+        null=True, blank=True
     )
 
     panels = [
-        FieldPanel("node")
+        FieldPanel("node_name"),
+        FieldPanel("node_description"),
+        FieldPanel("datetime_begin"),
+        FieldPanel("datetime_end")
     ]
 
 
@@ -72,7 +80,7 @@ class EventPage(Page):
         FieldPanel("venue"),
         FieldPanel("status"),
         MultiFieldPanel(
-            [InlinePanel("timelineNode", min_num=1, label="timelineNode")],
+            [InlinePanel("timelineNode", label="timelineNode")],
             heading="Event Timeline",
         ),
     ]

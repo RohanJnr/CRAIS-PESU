@@ -1,15 +1,15 @@
-
+{% load wagtailcore_tags %}
 {% for publ in publications %}
-<div class="p-10 my-5 pb-10 gradient-box shadow-md w-full text-white rounded">
-    <h5 class="font-semibold m-0 text-white">{{ publ.title }}
+<div class="p-10 my-5 pb-10 bg-white border-[1px] shadow-sm w-full text-white rounded">
+    <h5 class="font-semibold m-0">{{ publ.title }}
     </h5>
-    <small class="text-white">{{ publ.date|date:"M, Y" }}</small>
+    <small class="">{{ publ.date|date:"M, Y" }}</small>
     <div class="py-5">
         <small class="px-4 py-2 bg-slate-200 text-text-100">{{ publ.publication_category|title }}</small>
     </div>
     <div class="my-3">
-        <p class="m-0 text-white"><b>Authors</b></p>
-        <p class="m-0 text-gray-200">
+        <p class="m-0"><b>Authors</b></p>
+        <p class="m-0 text-gray-500">
             {% for center_authors in publ.center_authors.all %}
             <i>{{ center_authors }}</i>,
             {% endfor %}
@@ -21,10 +21,9 @@
         </p>
     </div>
     <div class="my-3">
-        <p class="m-0 text-white"><b>Publication details</b></p>
-        <p class="text-gray-200">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugiat atque dolorum
-            eaque, sed vel ratione tempore quod a.
+        <p class="m-0 "><b>Publication details</b></p>
+        <p class="text-gray-500">
+            {{ publ.publication_details|richtext }}
         </p>
     </div>
     <div class="mt-10">

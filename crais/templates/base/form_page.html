@@ -8,12 +8,12 @@
 <section class="bg-darkBg flex flex-col justify-start items-start py-[10%]">
     <div class="w-4/5 mx-auto">
 
-        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
-        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+        <h4 class="text-primary font-bold">{{ page.title }}</h4>
+        <h1 class="text-white">{{ page.intro }}</h1>
         <div id="submission">
         </div>
     </div>
-    <div class="bg-white w-4/5 mx-auto grid grid-cols-2 shadow-md">
+    <div class="bg-white w-4/5 mx-auto grid grid-cols-2 shadow-md my-5">
         <div class="p-10 flex flex-col items-start justify-center">
 
             <form class="w-full custom-form" hx-post="{% pageurl page %}" hx-swap="outerHTML">
@@ -25,11 +25,9 @@
             </form>
 
         </div>
-        <div class="p-10 bg-darkCardBg">
-            <h2 class="mb-10 text-white">Registration Information</h2>
-            <p class="text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sapiente magnam qui esse soluta
-                tempore inventore cupiditate officiis error.
+        <div class="p-10 bg-body">
+            <div class="rich-text text-white">
+                {{ page.general_information|richtext }}
             </p>
         </div>
 

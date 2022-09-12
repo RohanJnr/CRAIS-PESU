@@ -18,9 +18,9 @@ class FormField(AbstractFormField):
 
 
 class FormPage(AbstractForm):
-    intro = RichTextField(blank=True)
+    intro = models.CharField(max_length=128)
     thank_you_text = models.CharField(max_length=255)
-    general_information = models.TextField()
+    general_information = RichTextField()
 
 
     content_panels = AbstractForm.content_panels + [
@@ -30,7 +30,7 @@ class FormPage(AbstractForm):
         FieldPanel('thank_you_text', classname="full"),
     ]
 
-    parent_page_types = ("projects.ProjectPage",)
+    parent_page_types = ("events.EventPage",)
 
     def serve(self, request, *args, **kwargs):
         if request.method == "POST":

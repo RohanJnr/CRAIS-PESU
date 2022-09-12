@@ -17,19 +17,19 @@
 
     <div class="grid grid-cols-3 text-center w-2/3 mx-auto translate-y-[-50px]">
         <a href="#Research">
-            <h4 class="p-5 m-0 translate-x-7 rounded bg-gray-200" x-on:click="selected = 'Research'"
+            <h4 class="p-5 m-0 translate-x-7 rounded bg-body-2" x-on:click="selected = 'Research'"
                 x-bind:class="{ 'gradient-text-box text-white': selected === 'Research' }">
                 Research
             </h4>
         </a>
         <a href="#Internship">
-            <h4 class="p-5 m-0 translate-x-5 bg-gray-200 rounded" x-on:click="selected = 'Internship'"
+            <h4 class="p-5 m-0 translate-x-5 bg-body-2 rounded" x-on:click="selected = 'Internship'"
                 x-bind:class="{ 'gradient-text-box text-white': selected === 'Internship' }">
                 Internship
             </h4>
         </a>
         <a href="#Funded">
-            <h4 class="p-5 m-0 bg-gray-200 rounded" x-on:click="selected = 'Funded'"
+            <h4 class="p-5 m-0 bg-body-2 rounded" x-on:click="selected = 'Funded'"
                 x-bind:class="{ 'gradient-text-box text-white': selected === 'Funded' }">
                 Funded
             </h4>
@@ -98,10 +98,10 @@
                 <h3>{{ project.title }}</h3>
             </div>
 
-            <div class="gradient-box shadow-md rounded-md grid grid-cols-3">
+            <div class="bg-white border-[1px] shadow-sm rounded-md grid grid-cols-3">
                 <div class="p-10 col-span-2 flex flex-col items-start justify-center">
-                    <small class="text-white">{{ project.specific.date }}</small>
-                    <p class="mt-5 text-white">
+                    <small class="">{{ project.specific.date }}</small>
+                    <p class="mt-5">
                         <b>Status</b>: {{ project.specific.status }}
                     </p>
                     <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
@@ -109,7 +109,7 @@
                         <small class="px-2 py-1 bg-[#D9D9D9] text-text-100 font-semibold rounded">{{ tag }}</small>
                         {% endfor %}
                     </div>
-                    <p class="richtext text-white">
+                    <p class="richtext ">
                         {{ project.specific.intro | truncatewords:20 }}
                     </p>
 

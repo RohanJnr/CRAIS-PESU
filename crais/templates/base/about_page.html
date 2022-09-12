@@ -8,7 +8,7 @@
 <section class="h-[50vh] bg-darkBg flex flex-col justify-start items-start pt-[7%]">
     <div class="w-2/3 mx-auto">
         <h4 class="gradient-text font-bold">{{ page.title }}</h4>
-        <h1 class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</h1>
+        <h1 class="text-white">{{ page.intro }}</h1>
     </div>
 </section>
 
@@ -26,13 +26,18 @@
     {% regroup team by category as category_list %}
     
     {% for category in category_list %}
-    <h4>{{ category.grouper }}</h4>
+    <!-- <h4>{{ category.grouper }}</h4> -->
+    <h5 class="text-primary font-bold m-0">{{ category.grouper }}</h5>
     <div class="my-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
         {% for member in category.list %}
             <div class="text-center">
-                {% image member.image original as image %}
+                {% image member.image fill-200x200 as image %}
                 <img src="{{ image.url }}" alt="" class="rounded-full w-full h-auto">
-                <h5 class="mt-5 mb-0">{{ member.name }}</h5>
+                <div class="flex justify-center items-center gap-10 my-5">
+                    <a href="{{ member.linkedin_link }}"><span class="iconify text-darkBg h-8 w-8" data-icon="akar-icons:linkedin-box-fill"></span></a>
+                    <a href="{{ member.google_scholar_link }}"><span class="iconify text-darkBg h-8 w-8" data-icon="academicons:google-scholar-square"></span></a>
+                </div>
+                <h4 class="mt-5 mb-0 font-semibold ">{{ member.name }}</h4>
             </div>
         {% endfor %}
     </div>

@@ -23,7 +23,7 @@
 
 </section>
 
-<section class="py-10 bg-white">
+<section class="py-10 bg-body-2">
 
   <div class="gradient-box w-2/3 mx-auto p-10 flex items-center justify-around translate-y-[-8rem] rounded">
     <div class="flex flex-col items-center justify-around">
@@ -50,14 +50,14 @@
   </div>
 
   <div class="w-2/3 mx-auto text-center">
-    <h5 class="text-primary font-bold m-0">Featured</h5>
+    <h2 class="text-primary font-bold m-0">Featured</h2>
     <h3 class="font-semibold m-0">Check out our latest projects</h3>
 
     <div class="flex flex-col items-center justify-around gap-20 my-20 rounded">
 
-      <div class="w-4/5 bg-body shadow-md grid grid-cols-2 text-left rounded-lg">
+      <div class="w-4/5 bg-body border-[1px] shadow-md grid grid-cols-2 text-left rounded-lg">
         <div class="p-10 pb-10">
-          <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h3>
+          <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h4>
           <div class="">
             <small class="px-2 py-1 bg-slate-200 text-text-75">Arduino</small>
             <small class="px-2 py-1 bg-slate-200 text-text-75">Python</small>
@@ -75,9 +75,9 @@
         </div>
       </div>
 
-      <div class="w-4/5 bg-body shadow-md grid grid-cols-2 text-left rounded-lg">
+      <div class="w-4/5 bg-body border-[1px] shadow-md grid grid-cols-2 text-left rounded-lg">
         <div class="p-10 pb-10">
-          <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h3>
+          <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h4>
           <div class="">
             <small class="px-2 py-1 bg-slate-200 text-text-75">Arduino</small>
             <small class="px-2 py-1 bg-slate-200 text-text-75">Python</small>
@@ -106,15 +106,16 @@
 
 
   <div class="w-2/3 mx-auto text-center">
-    <h5 class="text-primary font-bold m-0">Recents</h5>
+    <h2 class="text-primary font-bold m-0">Recents</h2>
     <h3 class="font-semibold m-0">Check out the latest events we conducted</h3>
 
     <div class="flex flex-col items-start justify-around gap-10 my-20 rounded">
 
-      <h3 class="text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h3>
-      <div>
-        <img src="{% static 'images/sample.jpg' %}" alt="" class="h-full w-auto rounded">
+      <div class="flex flex-col items-center justify-center gap-20 w-4/5 mx-auto">
+        <img src="{% static 'images/event2.png' %}" alt="" class="h-[500px] w-full rounded hover:scale-[1.02] ease-in duration-200 cursor-pointer hover:shadow-md hover:shadow-secondary">
+        <img src="{% static 'images/event3.png' %}" alt="" class="h-[500px] w-full rounded hover:scale-[1.02] ease-in duration-200 cursor-pointer hover:shadow-md hover:shadow-secondary">
       </div>
+      
     </div>
 
 
@@ -130,7 +131,7 @@
     {
       "particles": {
         "number": {
-          "value": 12,
+          "value": 16,
           "density": {
             "enable": true,
             "value_area": 800

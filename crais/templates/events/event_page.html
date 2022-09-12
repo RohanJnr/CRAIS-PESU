@@ -5,54 +5,63 @@
 
 {% block content_w %}
 <section class="pt-20 pb-5">
-    <h1 class="">{{ page.title }}</h1>
-    <p>{{ page.date }}</p>
-    {% image page.banner original as banner %}
-    <div class="w-full">
-        <img src="{{ banner.url }}" alt="" class="w-auto h-4/5 rounded-md">
-    </div>
-    <div class="grid grid-cols-4 mt-10">
-        <section class="w-full lg:w-4/5 col-span-3">
+    <h1 class="mb-10 text-primary font-semibold">{{ page.title }}</h1>
 
-
+    <div class="grid grid-cols-2 gap-10">
+        <div>
             <div>
-                <h3>About the event</h3>
-                <p>{{ page.intro }}</p>
+                <p>Starting on: <span class="text-secondary font-semibold">{{ page.timestamp }}</span></p>
             </div>
-
-            <div class="rich-text">
-                {{ page.description|richtext }}
+            <div>
+                <p>Location: <span class="text-secondary font-semibold">{{ page.venue }}</span></p>
             </div>
-
-            <a href="{{ page.get_parent.url }}" class="text-primary">Return to Events</a>
-        </section>
-
-        <aside>
-            <h3>Details</h3>
-            <div class="w-full h-fit bg-darkBg p-5 shadow-lg rounded flex flex-col justify-center items-start">
-                <div class="flex flex-col justify-between items-start">
-                    <h5 class="text-white font-bold m-0">Date and Time</h5>
-                    <p class="text-[#bbbbbb]">{{ page.timestamp }}</p>
-                </div>
-                <div class="flex flex-col justify-between items-start">
-                    <h5 class="text-white font-bold m-0">Location</h5>
-                    <p class="text-[#bbbbbb]">{{ page.venue }}</p>
-                </div>
         
+            {% image page.banner min-600x250 as banner %}
+            <div class="w-full">
+                <img src="{{ banner.url }}" alt="" class="w-auto h-4/5 rounded-md">
             </div>
-
-            <div class="mt-5">
+            <div class="mt-10">
                 <a href="{% pageurl register_page %}" class="py-3 px-6 gradient-text-box text-white rounded">
                     Register
                     <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
                 </a>
             </div>
+        </div>
+        <div class="w-full">
 
-            </ul>
+            <div class="rich-text">
+                {{ page.description|richtext }}
+            </div>
 
-        </aside>
-
+        </div>
     </div>
+    {% if page.timelineNode %}
+    <h2 class="text-primary text-center my-20">Event Timeline</h2>
+    <div class="container bg-body-2 mx-auto w-full h-full my-20">
+        <div class="relative wrap overflow-hidden p-10 h-full">
+            <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
+            {% for node in page.timelineNode.all %}
+            <div
+                class=" {% cycle 'mb-8 flex justify-between items-center w-full right-timeline' 'mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline' %}">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-darkBg shadow-xl w-8 h-8 rounded-full">
+                    <h1 class="my-0 mx-auto font-semibold text-lg text-white">{{ forloop.counter }}</h1>
+                </div>
+                <div class="order-1 bg-body rounded-lg shadow-xl w-5/12 px-6 py-4">
+                    <h3 class="mb-3 font-bold text-gray-800 text-xl">{{ node.node_name }}</h3>
+                    <p>{{ node.datetime_begin }}
+                        {% if node.datetime_end %}
+                        <span class="font-bold">-</span> {{ node.datetime_end }}
+                    </p>
+                    {% endif %}
+                    <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{{ node.node_description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
 </section>
 
 {% endblock %}
