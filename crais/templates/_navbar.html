@@ -1,26 +1,31 @@
 {% load static %}
 {% load wagtailcore_tags %}
 <!-- Navbar -->
-<header class="bg-white shadow-md">
+<header class="bg-white shadow-md border-b-4 border-text-100">
     <nav class="relative mx-auto text-text-75 w-2/3">
         <!-- Flex container -->
         <div class="flex items-center justify-between py-5">
             <!-- Logo -->
             <div class="pt-2 md:flex justify-around items-center gap-10">
                 <a href="{% slugurl 'home' %}" class="text-2xl ">
-                    <img class="h-7 w-auto" src="{% static 'images/logo.png' %}" alt="" />
+                    <img class="h-[60px] w-auto" src="{% static 'images/pes.png' %}" alt="" />
                     <!-- LOGO -->
                 </a>
-                <a href="{% slugurl 'about-us' %}" class="underline-hover-effect ">About Us</a>
-                <a href="{% slugurl 'research' %}" class="underline-hover-effect ">Research</a>
-                <a href="{% slugurl 'projects' %}" class="underline-hover-effect ">Projects</a>
-                <a href="{% slugurl 'courses' %}" class="underline-hover-effect ">Courses</a>
-                <a href="{% slugurl 'events' %}" class="underline-hover-effect ">Events</a>
+                <a href="{% slugurl 'home' %}" class="text-2xl ">
+                    <img class="h-[40px] w-auto" src="{% static 'images/logo.png' %}" alt="" />
+                    <!-- LOGO -->
+                </a>
             </div>
 
             <!-- Menu Items -->
             <div class="hidden pt-2 md:flex justify-around items-center gap-10">
-                <a href="{% slugurl 'contact-us' %}" class="border-primary border-[1.5px]  rounded-full py-1 px-3">Contact Us</a>
+                <a href="{% slugurl 'about-us' %}" class="underline-hover-effect uppercase font-semibold">About Us</a>
+                <a href="{% slugurl 'research' %}" class="underline-hover-effect uppercase font-semibold">Research</a>
+                <a href="{% slugurl 'projects' %}" class="underline-hover-effect uppercase font-semibold">Projects</a>
+                <a href="{% slugurl 'courses' %}" class="underline-hover-effect uppercase font-semibold">Courses</a>
+                <a href="{% slugurl 'events' %}" class="underline-hover-effect uppercase font-semibold">Events</a>
+                <a href="{% slugurl 'news' %}" class="underline-hover-effect uppercase font-semibold">News</a>
+                <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect uppercase font-semibold">Contact Us</a>
             </div>
             <!-- Hamburger Icon -->
             <button id="menu-btn" class="hamburger md:hidden focus:outline-none flex flex-col items-center justify-around">

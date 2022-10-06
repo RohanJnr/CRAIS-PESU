@@ -1,3 +1,5 @@
+from email.policy import default
+from enum import unique
 from django.db import models
 from django import forms
 from django.http import HttpRequest
@@ -35,9 +37,11 @@ class ProjectIndexPage(Page):
         projectpages = self.get_children().live().order_by("-first_published_at")
 
         project_years = ProjectPage.objects.order_by().values('date').distinct()
+        project_categories = ProjectCategory.objects.all()
 
         context["projectpages"] = projectpages
         context["project_years"] = project_years
+        context["project_categories"] = project_categories
         return context
 
 
@@ -75,17 +79,10 @@ class ProjectContributors(Orderable):
 
 @register_snippet
 class ProjectCategory(index.Indexed, models.Model):
-    name = models.CharField(max_length=255)
-    description = models.CharField(max_length=512)
-    slug = models.SlugField(
-        max_length=255,
-        help_text="Path for category."
-    )
+    name = models.CharField(max_length=255, unique=True)
 
     panels = [
         FieldPanel("name"),
-        FieldPanel("description", widget=forms.Textarea),
-        FieldPanel("slug"),
     ]
 
     def __str__(self) -> str:
@@ -122,6 +119,7 @@ class ProjectPage(Page):
     date = models.DateField(blank=True, null=True)
 
     status = models.CharField(max_length=32, choices=PROJECT_STATUS_CHOICES)
+    featured = models.BooleanField(default=False)
 
     content_panels = Page.content_panels + [
         FieldPanel("intro"),
@@ -131,6 +129,7 @@ class ProjectPage(Page):
         FieldPanel('tags'),
         FieldPanel("date"),
         FieldPanel("status"),
+        FieldPanel("featured"),
         MultiFieldPanel(
             [InlinePanel("contributors", min_num=1, label="Contributors")],
             heading="Project Contributors",

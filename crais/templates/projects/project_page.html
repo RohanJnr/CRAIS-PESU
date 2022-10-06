@@ -3,32 +3,33 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 
-{% block content_w %}
-<section class="pt-20 pb-5">
-    <h1 class="">{{ page.title }}</h1>
-    <p>{{ page.date }}</p>
-    {% image page.banner original as banner %}
-    <div class="w-full">
-        <img src="{{ banner.url }}" alt="" class="w-full h-[70vh] rounded-md">
+{% block content %}
+<section class="py-[4%] bg-home">
+    <div class="w-2/3 mx-auto grid grid-cols-2 gap-32">
+        {% image page.banner original as banner %}
+        <div class="h-[300px] flex justify-center">
+            <img src="{{ banner.url }}" alt="" class="w-auto h-full rounded-md">
+        </div>
+        <div class="w-full px-10 md:px-0 mx-auto">
+            <h1 class="text-white font-semibold">{{ page.title }}</h1>
+            <p class="w-full text-white">{{ page.intro }}</p>
+        </div>
     </div>
+
+</section>
+<section class="pt-5 pb-5 w-2/3 mx-auto">
     <div class="grid grid-cols-4 mt-10">
         <section class="w-full lg:w-4/5 col-span-3">
-
-
-            <div>
-                <h3>Introduction</h3>
                 <p>{{ page.intro }}</p>
-            </div>
 
             <div class="rich-text">
                 {{ page.description|richtext }}
             </div>
 
-            <a href="{{ page.get_parent.url }}" class="text-primary">Return to Projects</a>
         </section>
 
         <aside>
-            <h3>Contributors</h3>
+            <h3 class="mt-0 mb-3">Contributors</h3>
                 {% for contrib in page.contributors.all %}
                 <div class="flex items-center justify-start gap-2">
                     <p><span class="iconify" data-icon="dashicons:arrow-right"></span></p>

@@ -60,15 +60,16 @@ class ProjectModelAdmin(ModelAdmin):
     model = ProjectPage
     menu_label = "Projects"
     list_display = ("title", "category", "tags", "status")
-    list_filter = ("category", "tags")
+    list_filter = ("category", "tags", "featured")
     search_fields = ("title", "intro", "description")
 
 
 class EventModelAdmin(ModelAdmin):
     model = EventPage
     menu_label = "Events"
-    list_display = ("title", "status", "timestamp", "venue")
+    list_display = ("title", "timestamp", "venue")
     search_fields = ("title", "intro", "description")
+    list_filter = ("featured",)
 
 
 class ContentAdminModel(ModelAdminGroup):

@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import HttpRequest
 from django.template.response import TemplateResponse
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import (
@@ -10,6 +11,9 @@ from wagtail.fields import RichTextField
 from wagtail.models import Page
 
 from crais.users.models import Member
+from crais.projects.models import ProjectPage
+from crais.events.models import EventPage
+from crais.news.models import NewsPage
 
 
 
@@ -90,6 +94,19 @@ class HomePage(Page):
     ]
 
     max_count = 1
+
+    def get_context(self, request: HttpRequest, *args, **kwargs) -> dict:
+        context = super().get_context(request, *args, **kwargs)
+
+        featured_projects = ProjectPage.objects.filter(featured=True)
+        featured_events = EventPage.objects.filter(featured=True)
+        featured_news = NewsPage.objects.filter(featured=True, live=True)
+
+        context["featured_projects"] = featured_projects
+        context["featured_events"] = featured_events
+        context["featured_news"] = featured_news
+
+        return context
 
 
 class AboutPage(Page):

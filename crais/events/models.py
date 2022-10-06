@@ -69,8 +69,7 @@ class EventPage(Page):
 
     timestamp = models.DateTimeField(verbose_name="Date and Time")
     venue = models.CharField(max_length=255)
-
-    status = models.CharField(max_length=32, choices=EVENT_STATUS_CHOICES)
+    featured = models.BooleanField(default=False)
 
     content_panels = Page.content_panels + [
         FieldPanel("intro"),
@@ -78,7 +77,7 @@ class EventPage(Page):
         FieldPanel("banner"),
         FieldPanel("timestamp"),
         FieldPanel("venue"),
-        FieldPanel("status"),
+        FieldPanel("featured"),
         MultiFieldPanel(
             [InlinePanel("timelineNode", label="timelineNode")],
             heading="Event Timeline",

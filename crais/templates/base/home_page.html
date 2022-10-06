@@ -1,29 +1,53 @@
 {% extends "_base.html" %}
 {% load static %}
-
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 {% block content %}
-<div id="particles-js" class="h-[50vh] w-full absolute z-[-1]"></div>
-<section class="z-1">
-  <div class="w-3/5 mx-auto text-center py-[9%]">
-    <h1 class="font-semibold">
-      <span class="gradient-text">C</span>enter for <span class="gradient-text">R</span>obotics, <span
-        class="gradient-text">A</span>utomation and <span class="gradient-text">I</span>ntelligent <span
-        class="gradient-text">S</span>ystems
-    </h1>
-    <p>of PES University</p>
-    <div class="mt-10">
-
-      <a href="" class="text-2xl py-3 px-6 gradient-box text-white rounded-full">
-        About Us
-        <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
-      </a>
+<!-- <div id="particles-js" class="h-[50vh] w-full absolute"></div> -->
+<section class="z-1 bg-home">
+  <div class="w-2/3 mx-auto pb-[12%] pt-[6%] grid grid-cols-5">
+    <div class="col-span-3">
+      <!-- <h1 class="font-semibold m-0">
+        <span class="gradient-text">C</span>enter for <span class="gradient-text">R</span>obotics, <span
+          class="gradient-text">A</span>utomation and <span class="gradient-text">I</span>ntelligent <span
+          class="gradient-text">S</span>ystems
+      </h1> -->
+      <h1 class="font-bold text-white text-5xl leading-relaxed">Center for Robotics, Automation and Intelligent Systems</h1>
+      <p class="w-2/3 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat a dolore iusto totam similique! Ea maxime labore aliquam voluptas explicabo, esse voluptatum voluptatibus nisi harum.</p>
+      <div class="mt-20">
+  
+        <a href="{% slugurl 'about-us' %}" class="text-xl border-2 border-white text-md py-3 px-6 text-white rounded-full hover:bg-white hover:text-text-100 ease-in duration-200">
+          About Us
+          <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+        </a>
+      </div>
     </div>
+    <div class="bg-white px-5 py-2 rounded-lg relative news-card col-span-2">
+      <h4 class="border-b-[1px] pb-1 w-fit">Featured News</h4>
+      <div class="overflow-y-scroll max-h-[60%] bg-body-2 rounded p-5">
+        {% for news in featured_news %}
+        <a href="{% slugurl 'news' %}#{{ news.slug }}">
+          <p class="hover:text-blue-400 cursor-pointer">
+            <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span> <span class="border-b-[1px] w-fit border-blue">{{ news.title | truncatewords:10 }}</span>
+          </p>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="absolute bottom-0 mb-10">
+        <a href="{% slugurl 'news' %}" class="border-2 border-text-100 text-md py-3 px-6 rounded-full hover:bg-text-100 hover:text-white ease-in duration-200">
+          All News
+          <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+        </a>
+      </div>
+    </div>
+
+
   </div>
 
 
 </section>
 
-<section class="py-10 bg-body-2">
+<section class="py-10 bg-body">
 
   <div class="gradient-box w-2/3 mx-auto p-10 flex items-center justify-around translate-y-[-8rem] rounded">
     <div class="flex flex-col items-center justify-around">
@@ -50,51 +74,42 @@
   </div>
 
   <div class="w-2/3 mx-auto text-center">
-    <h2 class="text-primary font-bold m-0">Featured</h2>
-    <h3 class="font-semibold m-0">Check out our latest projects</h3>
+    <div
+      class="my-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
+      <h3 class="text-3xl font-semibold">Featured Projects</h3>
+      <span class="text-sm font-bold tracking-wider uppercase text-gray-400">Check out our latest projects</span>
+    </div>
 
-    <div class="flex flex-col items-center justify-around gap-20 my-20 rounded">
+    <div class="grid grid-cols-3 gap-10 my-20 rounded">
+      {% for project in featured_projects %}
+      <div class="text-left rounded-lg">
+        {% image project.banner original as banner %}
+        <div class="h-[265px]">
+          <img src="{{ banner.url }}" alt="" class="h-full w-full rounded border-[#b9b9b9]">
+        </div>
 
-      <div class="w-4/5 bg-body border-[1px] shadow-md grid grid-cols-2 text-left rounded-lg">
-        <div class="p-10 pb-10">
-          <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h4>
-          <div class="">
-            <small class="px-2 py-1 bg-slate-200 text-text-75">Arduino</small>
-            <small class="px-2 py-1 bg-slate-200 text-text-75">Python</small>
-          </div>
-          <div class="mt-10">
-            <a href="" class="py-3 px-6 gradient-text-box shadow-md text-white rounded-full">
+        <div class="">
+          <h5 class="font-semibold">{{ project.title }}</h5>
+          <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
+            <small class="px-2 py-1 bg-slate-200 text-green-600">{{ project.status }}</small>
+            {% for tag in project.specific.tags.all %}
+            <small class="px-2 py-1 bg-slate-200 text-text-75">{{ tag }}</small>
+            {% endfor %}
+        </div>
+
+        <small>{{ project.specific.intro | truncatewords:20 }}</small>
+
+          <div class="mt-5">
+            <a href="" class="text-blue-400 rounded-full">
               View Project
               <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
             </a>
           </div>
 
         </div>
-        <div>
-          <img src="{% static 'images/about-banner.jpg' %}" alt="" class="h-full w-auto rounded">
-        </div>
+
       </div>
-
-      <div class="w-4/5 bg-body border-[1px] shadow-md grid grid-cols-2 text-left rounded-lg">
-        <div class="p-10 pb-10">
-          <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolores.</h4>
-          <div class="">
-            <small class="px-2 py-1 bg-slate-200 text-text-75">Arduino</small>
-            <small class="px-2 py-1 bg-slate-200 text-text-75">Python</small>
-          </div>
-          <div class="mt-10">
-            <a href="" class="py-3 px-6 gradient-text-box shadow-md text-white rounded-full">
-              View Project
-              <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
-            </a>
-          </div>
-
-        </div>
-        <div>
-          <img src="{% static 'images/about-banner.jpg' %}" alt="" class="h-full w-auto rounded">
-        </div>
-      </div>
-
+      {% endfor %}
 
     </div>
 
@@ -106,16 +121,53 @@
 
 
   <div class="w-2/3 mx-auto text-center">
-    <h2 class="text-primary font-bold m-0">Recents</h2>
-    <h3 class="font-semibold m-0">Check out the latest events we conducted</h3>
+    <div
+      class="my-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
+      <h3 class="text-3xl font-semibold">Events</h3>
+      <span class="text-sm font-bold tracking-wider uppercase text-gray-400">Checkout our upcoming and past
+        events.</span>
+    </div>
 
-    <div class="flex flex-col items-start justify-around gap-10 my-20 rounded">
+    <div class="grid grid-cols-3 gap-10 my-20 rounded">
 
-      <div class="flex flex-col items-center justify-center gap-20 w-4/5 mx-auto">
-        <img src="{% static 'images/event2.png' %}" alt="" class="h-[500px] w-full rounded hover:scale-[1.02] ease-in duration-200 cursor-pointer hover:shadow-md hover:shadow-secondary">
-        <img src="{% static 'images/event3.png' %}" alt="" class="h-[500px] w-full rounded hover:scale-[1.02] ease-in duration-200 cursor-pointer hover:shadow-md hover:shadow-secondary">
+      {% for event in featured_events %}
+    <div class="text-left mt-10" x-transition:enter="transition ease-out duration-300"
+      x-show="year === '{{ event.specific.date.year }}' || year === ''" x-transition:enter-start="opacity-0 scale-90"
+      x-transition:enter-end="opacity-100 scale-100">
+      <div class="">
+        {% image event.specific.banner original as banner %}
+        <div class="h-[265px]">
+          <a href="{% pageurl event %}">
+            <img src="{{ banner.url }}" alt="" class="h-full w-full border-[1px] rounded border-[#b9b9b9]">
+          </a>
+        </div>
+
+        <div class="">
+          <h4 class="font-normal">{{ event.title }}</h4>
+          <div class="my-5">
+            <small class="px-2 py-1 bg-slate-200 text-text-75">UPCOMING</small>
+          </div>
+          <small>{{ event.specific.intro }}</small>
+
+
+
+
+          <div class="mt-5">
+            <a href="{% pageurl event %}" class="text-blue-400 rounded-full">
+              View Event
+              <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+            </a>
+          </div>
+
+        </div>
+
       </div>
-      
+
+    </div>
+
+
+    {% endfor %}
+
     </div>
 
 

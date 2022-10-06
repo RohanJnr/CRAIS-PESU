@@ -5,13 +5,11 @@
 
 {% block content %}
 
-<section class="h-[50vh] bg-darkBg flex flex-col justify-start items-start pt-[10%]">
-    <div class="w-2/3 mx-auto">
-
-        <h4 class="gradient-text font-bold">{{ page.title }}</h4>
-        <h1 class="text-white">Lorem ipsum dolor sit!</h1>
-        <div id="submission">
-        </div>
+<section class="flex flex-col justify-start items-start py-[7%] bg-page">
+    <div class="w-full px-10 md:px-0 md:w-2/3 mx-auto">
+        <h1 class="text-white font-bold">{{ page.title }}</h1>
+        <h5 class="w-full text-white font-bold">{{ page.intro }}</h5>
+        <div id="submission"></div>
     </div>
 </section>
 <section class="w-[70%] mx-auto">

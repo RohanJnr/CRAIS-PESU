@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "crispy_tailwind",
     'crispy_forms',
     # Custom apps
+    "crais.news",
     "crais.base",
     "crais.courses",
     "crais.events",
