@@ -85,8 +85,8 @@
           <h3 class="mt-0 text-white font-normal">Internships </h3>
         </div>
       </div>
-  </div>
-  
+    </div>
+
   </div>
 
 </div>
@@ -105,7 +105,7 @@
           {{ page.about_us_body|richtext }}
         </div>
 
-<!-- 
+        <!-- 
         <div class="my-10">
 
           <a href="{% slugurl 'about-us'%}"
@@ -125,47 +125,52 @@
 </section>
 <section class="py-10 bg-body">
 
-
-
   <div class="w-2/3 mx-auto text-center">
     <div
       class="my-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
       <h3 class="text-3xl font-semibold">Featured Projects</h3>
       <span class="text-sm font-bold tracking-wider uppercase text-gray-400">Check out our latest projects</span>
     </div>
+    <div class="buttons">
+      <button id="prev">prev</button>
+      <button id="next">next</button>
+    </div>
+    <div class="my-10" id="slideshow">
+      <div id="slideshow-wrapper">
 
-    <div class="grid grid-cols-3 gap-10 my-10 rounded">
-      {% for project in featured_projects %}
-      <div class="text-left rounded-lg">
-        {% image project.banner original as banner %}
-        <div class="h-[265px]">
-          <img src="{{ banner.url }}" alt="" class="h-full w-full border-[1px] rounded border-[#b9b9b9]">
-        </div>
-
-        <div class="">
-          <h4 class="font-semibold">{{ project.title }}</h4>
-          <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
-            <small class="px-2 py-1 bg-slate-200 text-green-600">{{ project.status }}</small>
-            {% for tag in project.specific.tags.all %}
-            <small class="px-2 py-1 bg-slate-200 text-text-75">{{ tag }}</small>
-            {% endfor %}
+        {% for project in featured_projects %}
+        <div class="text-left rounded-lg slide">
+          {% image project.banner original as banner %}
+          <div class="h-[265px] w-[400px]">
+            <img src="{{ banner.url }}" alt="" class="h-full w-full border-[1px] rounded border-[#b9b9b9]">
           </div>
 
-          <small>{{ project.specific.intro | truncatewords:20 }}</small>
+          <div class="">
+            <h4 class="font-semibold">{{ project.title }} - {{ forloop.counter }}</h4>
+            <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
+              <small class="px-2 py-1 bg-slate-200 text-green-600">{{ project.status }}</small>
+              {% for tag in project.specific.tags.all %}
+              <small class="px-2 py-1 bg-slate-200 text-text-75">{{ tag }}</small>
+              {% endfor %}
+            </div>
 
-          <div class="mt-5">
-            <a href="" class="text-blue-400 rounded-full">
-              View Project
-              <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
-            </a>
+            <small>{{ project.specific.intro | truncatewords:20 }}</small>
+
+            <div class="mt-5">
+              <a href="" class="text-blue-400 rounded-full">
+                View Project
+                <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+              </a>
+            </div>
+
           </div>
 
         </div>
-
+        {% endfor %}
       </div>
-      {% endfor %}
 
     </div>
+
 
   </div>
 </section>
@@ -224,124 +229,50 @@
 
     </div>
 
-
-
   </div>
 
   </div>
 </section>
 
 
+
+
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  particlesJS("particles-js",
-    {
-      "particles": {
-        "number": {
-          "value": 16,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#44323E"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#44323E"
-          },
-          "polygon": {
-            "nb_sides": 5
-          },
-          "image": {
-            "src": "img/github.svg",
-            "width": 100,
-            "height": 100
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 40,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#44323E",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 4,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 400,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 20,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    }
-  )
+  let xTransformed = 0
+  const toTranslateX = 420
+  const step = 3
+  const wrapper = document.getElementById("slideshow-wrapper")
+  const next = document.getElementById("next")
+  const prev = document.getElementById("prev")
+  const slideshow = document.getElementById("slideshow")
+
+  slideshow.style.width = `${toTranslateX * step}px`
+  wrapper.style.width = `${toTranslateX * wrapper.childElementCount}px`
+
+  const xTransformedMax = toTranslateX * (wrapper.childElementCount - 1)
+
+  const checkBtns = () => {
+    prev.disabled = !Boolean(xTransformed)
+    console.log(xTransformed, xTransformedMax)
+    next.disabled = Math.abs(xTransformed - (toTranslateX * step)) > xTransformedMax ? true : false
+  }
+
+
+  next.addEventListener("click", e => {
+    xTransformed -= toTranslateX
+    wrapper.style.transform = `translateX(${xTransformed}px)`
+    checkBtns()
+  })
+
+  prev.addEventListener("click", e => {
+    xTransformed += toTranslateX
+    wrapper.style.transform = `translateX(${xTransformed}px)`
+    checkBtns()
+  })
+
+  checkBtns()
+
 </script>
 
 {% endblock content %}
