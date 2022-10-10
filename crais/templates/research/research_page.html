@@ -51,7 +51,7 @@
                 x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
 
                 <div class="flex justifyp-center items-center gap-10">
-                    <select class="py-2 px-4 bg-secondary text-white text-xl" name="publication_category"
+                    <select class="py-2 px-4 mr-5 bg-text-100 text-white text-xl rounded" name="publication_category"
                         hx-get="/research" hx-target="#publications" hx-indicator=".htmx-indicator">
                         <option selected disabled>Publication Type</option>
                         <option value="all">All Publications</option>
@@ -59,7 +59,7 @@
                         <option value="conference">Conference</option>
                     </select>
 
-                    <select class="py-2 px-4 bg-secondary text-white text-xl" name="publication_year" hx-get="/research"
+                    <select class="py-2 px-4 mr-5 bg-text-100 text-white text-xl rounded" name="publication_year" hx-get="/research"
                         hx-target="#publications" hx-indicator=".htmx-indicator">
                         <option selected disabled>Year Published</option>
                         {% for date in pub_dates %}

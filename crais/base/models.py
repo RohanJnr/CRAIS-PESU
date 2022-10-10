@@ -78,8 +78,10 @@ class ContactPage(FormPage):
 
 class HomePage(Page):
     intro = models.TextField()
-    about_us = RichTextField()
-    image_1 = models.ForeignKey(
+    about_us_title = models.CharField(max_length=32)
+    about_us_tagline = models.CharField(max_length=128)
+    about_us_body = RichTextField()
+    about_us_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
         blank=True,
@@ -89,8 +91,10 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel("intro"),
-        FieldPanel("about_us"),
-        FieldPanel("image_1"),
+        FieldPanel("about_us_title"),
+        FieldPanel("about_us_tagline"),
+        FieldPanel("about_us_body"),
+        FieldPanel("about_us_image"),
     ]
 
     max_count = 1
