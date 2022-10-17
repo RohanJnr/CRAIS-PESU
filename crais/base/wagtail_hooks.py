@@ -67,7 +67,7 @@ class ProjectModelAdmin(ModelAdmin):
 class EventModelAdmin(ModelAdmin):
     model = EventPage
     menu_label = "Events"
-    list_display = ("title", "timestamp", "venue")
+    list_display = ("title", "start_timestamp", "end_timestamp", "venue")
     search_fields = ("title", "intro", "description")
     list_filter = ("featured",)
 

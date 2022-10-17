@@ -5,118 +5,113 @@
 {% block content %}
 <!-- <div id="particles-js" class="h-[50vh] w-full absolute"></div> -->
 <section class="z-1 bg-home">
-  <div class="w-2/3 mx-auto pb-[8%] pt-[6%] grid grid-cols-5">
+  <div class="w-2/3 mx-auto pb-[5%] pt-[5%] grid grid-cols-5">
     <div class="col-span-3">
       <!-- <h1 class="font-semibold m-0">
         <span class="text-secondary">C</span>enter for <span class="text-secondary">R</span>obotics, <span
           class="text-secondary">A</span>utomation and <span class="text-secondary">I</span>ntelligent <span
           class="text-secondary">S</span>ystems
       </h1> -->
-      <h1 class="font-bold text-white text-5xl leading-relaxed">Center for Robotics, Automation and Intelligent Systems
+      <h1 class="font-bold text-secondary text-5xl leading-relaxed">Center for Robotics, Automation and Intelligent Systems
       </h1>
-      <p class="w-2/3 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat a dolore iusto totam
+      <p class="w-2/3 text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat a dolore iusto totam
         similique! Ea maxime labore aliquam voluptas explicabo, esse voluptatum voluptatibus nisi harum.</p>
       <div class="mt-20">
 
         <a href="{% slugurl 'about-us' %}"
-          class="text-xl border-2 border-white text-md py-3 px-6 text-white rounded-full hover:bg-white hover:text-text-100 ease-in duration-200">
+          class="font-bold uppercase border-2 border-secondary text-md py-3 px-6 text-secondary rounded-full hover:bg-secondary hover:text-white ease-in duration-100">
           About Us
           <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
         </a>
       </div>
     </div>
-    <div class="bg-white px-5 py-2 rounded-lg relative news-card col-span-2 h-[100%]">
+    <div class="bg-white px-5 py-2 shadow-lg rounded-lg relative news-card col-span-2 h-[100%]">
       <h4 class="border-b-[1px] pb-1 w-fit">Featured News</h4>
       <div class="overflow-y-scroll max-h-[60%] bg-body-2 rounded p-5">
         {% for news in featured_news %}
         <a href="{% slugurl 'news' %}#{{ news.slug }}">
-          <p class="hover:text-blue-400 cursor-pointer">
+          <p class="hover:text-blue-400 cursor-pointer hover:underline">
             <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span> <span
-              class="border-b-[1px] w-fit border-blue">{{ news.title | truncatewords:10 }}</span>
+              class="w-fit">{{ news.title | truncatewords:10 }}</span>
           </p>
         </a>
         {% endfor %}
       </div>
       <div class="absolute bottom-0 mb-10">
         <a href="{% slugurl 'news' %}"
-          class="border-2 border-text-100 text-md py-3 px-6 rounded-full hover:bg-text-100 hover:text-white ease-in duration-200">
+          class="text-secondary text-sm py-3 px-6 rounded-full hover:text-blue-500">
           All News
-          <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
+          <span class="iconify ml-1 mb-1 inline w-4 h-4" data-icon="charm:arrow-right"></span>
         </a>
       </div>
     </div>
 
 
   </div>
-
-
-</section>
-<div class="gradient-box shadow-md p-10 rounded flex justify-center items-center">
-  <div class="w-2/3 mx-auto">
-    <div class="grid grid-cols-3 gap-10 w-full">
-      <div class="flex items-center justify-center gap-10">
-        <div class="flex justify-center items-center">
-          <span class="text-white iconify h-16 w-16 p-0 m-0 " data-icon="octicon:project-24"></span>
+  <div class="p-10 rounded flex justify-center items-center">
+    <div class="w-2/3 mx-auto">
+      <div class="grid grid-cols-3 gap-10 w-full">
+        <div class="flex items-center justify-center gap-10">
+          <div class="flex justify-center items-center">
+            <span class="text-secondary iconify h-16 w-16 p-0 m-0 " data-icon="octicon:project-24"></span>
+          </div>
+          <div class="flex flex-col justify-center items-start">
+            <h1 class="mb-0 text-secondary font-bold">21</h1>
+            <h3 class="mt-0 font-normal text-secondary">Projects</h3>
+          </div>
+  
+  
         </div>
-        <div class="flex flex-col justify-center items-start">
-          <h1 class="mb-0 text-white font-bold">21</h1>
-          <h3 class="mt-0 font-normal text-white">Projects</h3>
+        <div class="flex items-center justify-center gap-10">
+          <div class="flex justify-center items-center">
+            <span class="text-secondary iconify h-16 w-16 p-0 m-0 " data-icon="file-icons:electron"></span>
+          </div>
+          <div class="flex flex-col justify-center items-start">
+  
+            <h1 class="mb-0 text-secondary font-bold">8</h1>
+            <h3 class="mt-0 font-normal text-secondary">Publications</h3>
+          </div>
         </div>
-
-
-      </div>
-      <div class="flex items-center justify-center gap-10">
-        <div class="flex justify-center items-center">
-          <span class="text-white iconify h-16 w-16 p-0 m-0 " data-icon="file-icons:electron"></span>
-        </div>
-        <div class="flex flex-col justify-center items-start">
-
-          <h1 class="mb-0 text-white font-bold">8</h1>
-          <h3 class="mt-0 font-normal text-white">Publications</h3>
-        </div>
-      </div>
-      <div class="flex items-center justify-center gap-10">
-        <div class="flex justify-center items-start">
-          <span class="text-white iconify h-16 w-16 p-0 m-0 " data-icon="clarity:employee-group-line"></span>
-        </div>
-        <div class="flex flex-col justify-center items-start">
-
-          <h1 class="mb-0 text-white font-bold">28</h1>
-          <h3 class="mt-0 text-white font-normal">Internships </h3>
+        <div class="flex items-center justify-center gap-10">
+          <div class="flex justify-center items-start">
+            <span class="text-secondary iconify h-16 w-16 p-0 m-0 " data-icon="clarity:employee-group-line"></span>
+          </div>
+          <div class="flex flex-col justify-center items-start">
+  
+            <h1 class="mb-0 text-secondary font-bold">28</h1>
+            <h3 class="mt-0 text-secondary font-normal">Internships </h3>
+          </div>
         </div>
       </div>
+  
     </div>
-
+  
   </div>
 
-</div>
-<section id="home-about" class="gradient-image">
+</section>
 
-  <div class="w-2/3 mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10">
+<section id="home-about" class=" bg-body-2 py-20">
 
-    <div class="w-full mx-auto lg:px-0 px-10 py-10">
+  <div class="w-4/5 mx-auto grid grid-cols-1 xl:grid-cols-2 gap-20">
+
+    <div class="lg:px-0 px-10">
       <div
-        class="my-10 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
+        class="text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-[#313C71]">
         <h3 class="text-3xl font-semibold">{{ page.about_us_title }}</h3>
         <span class="text-sm font-bold tracking-wider uppercase text-gray-400">{{ page.about_us_tagline }}</span>
       </div>
       <div class="w-full">
-        <div>
+        <div class="rich-text w-[90%]">
           {{ page.about_us_body|richtext }}
         </div>
-
-        <!-- 
-        <div class="my-10">
-
-          <a href="{% slugurl 'about-us'%}"
-            class="duration-100 ease-in px-4 py-2 text-white bg-gradient-to-r from-primary to-secondary rounded-full hover:from-white hover:to-white hover:text-primary hover:outline-secondary hover:outline hover:outline-2 md:flex flex justify-around gap-5 items-center w-fit">
-            Get Involved <span class="iconify h-5 w-5" data-icon="fluent:send-28-filled"></span>
-          </a>
-        </div> -->
 
 
       </div>
 
+    </div>
+    {% image page.about_us_image original as image_1 %}
+    <div class="h-full">
+        <img src="{{ image_1.url }}" class="max-h-full w-full object-cover border-[1px] rounded border-[#b9b9b9] shadow-md" alt="">
     </div>
 
   </div>
@@ -127,26 +122,27 @@
 
   <div class="w-2/3 mx-auto text-center">
     <div
-      class="my-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
+      class="mt-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-[#313C71]">
       <h3 class="text-3xl font-semibold">Featured Projects</h3>
       <span class="text-sm font-bold tracking-wider uppercase text-gray-400">Check out our latest projects</span>
     </div>
-    <div class="buttons">
-      <button id="prev">prev</button>
-      <button id="next">next</button>
+    <div class="w-full flex justify-between items-center translate-y-[30vh]">
+      <button id="prev" class="nav-btn translate-x-[-140px]">&#10094;</button>
+      <button id="next" class="nav-btn translate-x-[140px]">&#10095;</button>
     </div>
-    <div class="my-10" id="slideshow">
+    <div id="slideshow">
+
       <div id="slideshow-wrapper">
 
         {% for project in featured_projects %}
-        <div class="text-left rounded-lg slide">
+        <div class="text-left rounded-lg slide w-full">
           {% image project.banner original as banner %}
           <div class="h-[265px] w-[400px]">
             <img src="{{ banner.url }}" alt="" class="h-full w-full border-[1px] rounded border-[#b9b9b9]">
           </div>
 
           <div class="">
-            <h4 class="font-semibold">{{ project.title }} - {{ forloop.counter }}</h4>
+            <h4 class="font-semibold">{{ project.title| truncatewords:10 }}</h4>
             <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
               <small class="px-2 py-1 bg-slate-200 text-green-600">{{ project.status }}</small>
               {% for tag in project.specific.tags.all %}
@@ -154,7 +150,7 @@
               {% endfor %}
             </div>
 
-            <small>{{ project.specific.intro | truncatewords:20 }}</small>
+            <small>{{ project.specific.intro | truncatewords:10 }}</small>
 
             <div class="mt-5">
               <a href="" class="text-blue-400 rounded-full">
@@ -167,6 +163,7 @@
 
         </div>
         {% endfor %}
+
       </div>
 
     </div>
@@ -181,11 +178,12 @@
 
   <div class="w-2/3 mx-auto text-center">
     <div
-      class="my-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
+      class="my-5 text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-[#313C71]">
       <h3 class="text-3xl font-semibold">Events</h3>
       <span class="text-sm font-bold tracking-wider uppercase text-gray-400">Checkout our upcoming and past
         events.</span>
     </div>
+    
 
     <div class="grid grid-cols-3 gap-10 my-10 rounded">
 
@@ -202,11 +200,11 @@
           </div>
 
           <div class="">
-            <h4 class="font-semibold">{{ event.title }}</h4>
+            <h4 class="font-semibold">{{ event.title | truncatewords:10 }}</h4>
             <div class="my-5">
               <small class="px-2 py-1 bg-slate-200 text-text-75">UPCOMING</small>
             </div>
-            <small>{{ event.specific.intro }}</small>
+            <small>{{ event.specific.intro | truncatewords:10 }}</small>
 
 
 

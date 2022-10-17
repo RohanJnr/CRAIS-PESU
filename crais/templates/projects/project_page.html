@@ -11,24 +11,25 @@
             <img src="{{ banner.url }}" alt="" class="w-auto h-full rounded-md">
         </div>
         <div class="w-full px-10 md:px-0 mx-auto">
-            <h1 class="text-white font-semibold">{{ page.title }}</h1>
-            <p class="w-full text-white">{{ page.intro }}</p>
+            <h1 class="text-secondary font-semibold">{{ page.title }}</h1>
+            <p class="w-full text-secondary">{{ page.intro }}</p>
         </div>
     </div>
 
 </section>
-<section class="pt-5 pb-5 w-2/3 mx-auto">
-    <div class="grid grid-cols-4 mt-10">
-        <section class="w-full lg:w-4/5 col-span-3">
+<section class="pt-5 bg-body-2 pb-20">
+
+    <div class="grid grid-cols-4 mt-10 w-2/3 mx-auto">
+        <div class="bg-white p-10 shadow-md rounded w-full lg:w-4/5 col-span-3">
                 <p>{{ page.intro }}</p>
 
             <div class="rich-text">
                 {{ page.description|richtext }}
             </div>
 
-        </section>
+        </div>
 
-        <aside>
+        <aside class="bg-white p-10 shadow-md rounded h-fit">
             <h3 class="mt-0 mb-3">Contributors</h3>
                 {% for contrib in page.contributors.all %}
                 <div class="flex items-center justify-start gap-2">

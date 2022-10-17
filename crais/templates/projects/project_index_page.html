@@ -5,15 +5,10 @@
 {% load wagtailimages_tags %}
 
 {% block content %}
-<section class="flex flex-col justify-start items-start py-[7%] bg-page">
-    <div class="w-full px-10 md:px-0 md:w-2/3 mx-auto">
-        <h1 class="text-white font-bold">{{ page.title }}</h1>
-        <h5 class="w-full text-white font-bold">{{ page.intro }}</h5>
-    </div>
-</section>
+{% include "_snippets/_intro_section.html" %}
 
 
-<section class="py-10 bg-body-2" x-data="{ selected: 'all', year: '' }">
+<section class="py-10 bg-body" x-data="{ selected: 'all', year: '' }">
     <div class="w-2/3 mx-auto ">
 
 
@@ -49,8 +44,9 @@
                         </div>
 
                         <div class="">
-                            <h4 class="font-normal">{{ project.title }}</h4>
+                            <h4 class="font-normal">{{ project.title | truncatewords:10 }}</h4>
                             <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
+                                <small class="px-2 py-1 bg-slate-200 text-text-75">{{ project.specific.status }}</small>
                                 {% for tag in project.specific.tags.all %}
                                 <small class="px-2 py-1 bg-slate-200 text-text-75">{{ tag }}</small>
                                 {% endfor %}
@@ -58,12 +54,12 @@
                             <small>{{ project.specific.intro | truncatewords:20 }}</small>
 
                             <div class="my-5">
-                                <small class="px-2 py-1 bg-slate-200 text-text-75">{{ project.specific.status }}</small>
+                                
                             </div>
 
 
                             <div class="mt-5">
-                                <a href="{% pageurl project %}" class="text-blue-400 rounded-full">
+                                <a href="{% pageurl project %}" class="text-blue-400 font-normal rounded-full hover:underline">
                                     View Project
                                     <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
                                 </a>

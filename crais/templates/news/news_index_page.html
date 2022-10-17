@@ -17,7 +17,7 @@
     {% for news in news_posts %}
     <div class="bg-body-2 p-5 my-10">
         <a href="#{{ news.slug }}">
-        <h4 id="{{ news.slug }}" class="mb-0 text-secondary"># {{ news.title }}</h4>
+        <h3 id="{{ news.slug }}" class="mb-0 text-secondary hover:underline"># {{ news.title }}</h3>
     </a>
         <p class="my-5"><small>{{ news.specific.posted_at }}</small></p>
         <div class="rich-text">
