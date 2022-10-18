@@ -2,7 +2,7 @@
     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
     x-transition:enter-end="opacity-100 scale-100">
     {% for patent in patents %}
-    <div class="p-10 pb-10 bg-white border-[1px] shadow-sm w-full rounded">
+    <div class="p-10 pb-10 bg-white border-[1px] shadow-md w-full rounded">
         <h5 class=" font-semibold m-0">{{ patent.title }}</h5>
         <small class="">{{ patent.date|date:"M, Y" }}</small>
         <div class="py-5">

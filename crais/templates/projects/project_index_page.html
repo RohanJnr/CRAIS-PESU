@@ -12,7 +12,7 @@
     <div class="w-2/3 mx-auto ">
 
 
-        <select class="py-2 px-4 mr-5 bg-text-100 text-white text-xl rounded" name="project_category"
+        <select class="py-2 px-4 bg-secondary text-white text-xl mr-5" name="project_category"
             x-on:change="selected = $el.value">
             <option selected disabled>Project Category</option>
             <option value="all" x-on:click="selected = 'all'">All Projects</option>
@@ -21,7 +21,7 @@
             {% endfor %}
         </select>
 
-        <select class="py-2 px-4 mr-5 bg-text-100 text-white text-xl rounded" name="project_year"
+        <select class="py-2 px-4 bg-secondary text-white text-xl" name="project_year"
             x-on:change="year = $el.value">
             <option selected disabled>Year Published</option>
             <option value="">All Years</option>
@@ -46,9 +46,9 @@
                         <div class="">
                             <h4 class="font-normal">{{ project.title | truncatewords:10 }}</h4>
                             <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
-                                <small class="px-2 py-1 bg-slate-200 text-text-75">{{ project.specific.status }}</small>
+                                <small class="px-2 py-1 bg-secondary text-white rounded">{{ project.specific.status }}</small>
                                 {% for tag in project.specific.tags.all %}
-                                <small class="px-2 py-1 bg-slate-200 text-text-75">{{ tag }}</small>
+                                <small class="px-2 py-1 bg-slate-200 text-text-75 rounded">{{ tag }}</small>
                                 {% endfor %}
                             </div>
                             <small>{{ project.specific.intro | truncatewords:20 }}</small>

@@ -73,9 +73,6 @@ class ProjectContributors(Orderable):
         FieldPanel("contributor")
     ]
 
-    def __str__(self) -> str:
-        return self.contributor.name
-
 
 @register_snippet
 class ProjectCategory(index.Indexed, models.Model):

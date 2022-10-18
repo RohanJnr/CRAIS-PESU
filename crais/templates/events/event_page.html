@@ -21,17 +21,17 @@
     <div class="w-2/3 mx-auto">
 
         <div class="grid grid-cols-5 gap-10">
-            <div class="col-span-1 bg-body shadow-md p-10 rounded">
-                <h3 class="flex justify-start gap-5 items-center"><span class="iconify text-darkBg h-10 w-10" data-icon="fontisto:date"></span>Date and Time</h3>
-                <p class="text-xl">{{ page.start_timestamp.date }} To {{ page.end_timestamp.date }}</p>
+            <div class="col-span-1 bg-body shadow-md p-10 rounded h-fit">
+                <h5 class="flex justify-start gap-5 items-center"><span class="iconify text-darkBg h-10 w-10" data-icon="fontisto:date"></span>Date and Time</h5>
+                <p class="text-center">{{ page.start_timestamp.date }} To {{ page.end_timestamp.date }}</p>
             </div>
             <div class="rich-text col-span-3 bg-body shadow-md p-10 rounded">
                 {{ page.description|richtext }}
             </div>
-            <div class="col-span-1 bg-body shadow-md p-10 rounded">
+            <div class="col-span-1 bg-body shadow-md p-10 rounded h-fit">
                 
-                <h3 class="flex justify-start gap-5 items-center"><span class="iconify text-darkBg h-10 w-10" data-icon="cil:location-pin"></span>Venue</h3>
-                <p class="text-xl">{{ page.venue }}</p>
+                <h5 class="flex justify-start gap-5 items-center"><span class="iconify text-darkBg h-10 w-10" data-icon="cil:location-pin"></span>Venue</h5>
+                <p class="text-center">{{ page.venue }}</p>
             </div>
         </div>
     

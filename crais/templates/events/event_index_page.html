@@ -8,7 +8,7 @@
 {% include "_snippets/_intro_section.html" %}
 
 <section class="w-2/3 mx-auto py-20" x-data="{ year: '' }">
-  <select class="py-2 px-4 mr-5 bg-text-100 text-white text-xl rounded" name="event_year" x-on:change="year = $el.value">
+  <select class="py-2 px-4 bg-secondary text-white text-xl" name="event_year" x-on:change="year = $el.value">
     <option selected disabled>Year Conducted</option>
     <option value="">All Years</option>
     {% for timestamp in event_timestamps %}

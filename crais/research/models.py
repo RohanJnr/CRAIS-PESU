@@ -83,19 +83,6 @@ class ResearchPage(Page):
         
         return template
 
-# class ResearchAuthors(Orderable):
-
-#     page = ParentalKey("research.Base", related_name="authors")
-#     author = models.ForeignKey(
-#         "users.BaseMember",
-#         blank=True,
-#         on_delete=models.CASCADE,
-#     )
-
-#     panels = [
-#         FieldPanel("author")
-#     ]
-
 
 class Base(index.Indexed, models.Model):
     title = models.CharField(max_length=512)
@@ -209,11 +196,13 @@ class Patent(index.Indexed, ClusterableModel):
         max_length=64,
         choices=PATENT_STATUS
     )
+    link = models.URLField()
     
     panels = [
         FieldPanel("title"),
         FieldPanel("date"),
         FieldPanel("status"),
+        FieldPanel("link"),
         MultiFieldPanel(
             [InlinePanel("center_inventors", min_num=1, label="Center Inventors")],
             heading="Center Inventors",

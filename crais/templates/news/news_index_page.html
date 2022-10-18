@@ -5,26 +5,24 @@
 {% load wagtailimages_tags %}
 
 {% block content %}
-<section class="flex flex-col justify-start items-start py-[7%] bg-page">
-    <div class="w-full px-10 md:px-0 md:w-2/3 mx-auto">
-        <h1 class="text-white font-bold">{{ page.title }}</h1>
-        <h5 class="w-full text-white font-bold">{{ page.intro }}</h5>
-    </div>
-</section>
+{% include "_snippets/_intro_section.html" %}
 
 
-<section class="md:w-2/3 mx-auto my-20">
-    {% for news in news_posts %}
-    <div class="bg-body-2 p-5 my-10">
-        <a href="#{{ news.slug }}">
-        <h3 id="{{ news.slug }}" class="mb-0 text-secondary hover:underline"># {{ news.title }}</h3>
-    </a>
-        <p class="my-5"><small>{{ news.specific.posted_at }}</small></p>
-        <div class="rich-text">
-            {{ news.specific.body|richtext }}
+<section class="bg-body-2">
+    <div class="md:w-2/3 mx-auto py-20">
+        
+        {% for news in news_posts %}
+        <div class="bg-body p-5 shadow-md rounded">
+            <a href="#{{ news.slug }}">
+            <h3 id="{{ news.slug }}" class="mb-0 text-secondary hover:underline"># {{ news.title }}</h3>
+        </a>
+            <p class="my-5"><small>{{ news.specific.posted_at }}</small></p>
+            <div class="rich-text">
+                {{ news.specific.body|richtext }}
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
 </section>
 

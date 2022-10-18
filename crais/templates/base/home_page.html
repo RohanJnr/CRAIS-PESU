@@ -25,14 +25,14 @@
         </a>
       </div>
     </div>
-    <div class="bg-white px-5 py-2 shadow-lg rounded-lg relative news-card col-span-2 h-[100%]">
+    <div class="bg-white px-5 py-2 shadow-lg rounded-lg relative news-card col-span-2 h-full">
       <h4 class="border-b-[1px] pb-1 w-fit">Featured News</h4>
       <div class="overflow-y-scroll max-h-[60%] bg-body-2 rounded p-5">
         {% for news in featured_news %}
         <a href="{% slugurl 'news' %}#{{ news.slug }}">
           <p class="hover:text-blue-400 cursor-pointer hover:underline">
             <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span> <span
-              class="w-fit">{{ news.title | truncatewords:10 }}</span>
+              class="w-fit">{{ news.title | truncatewords:15 }}</span>
           </p>
         </a>
         {% endfor %}
@@ -100,11 +100,11 @@
         <h3 class="text-3xl font-semibold">{{ page.about_us_title }}</h3>
         <span class="text-sm font-bold tracking-wider uppercase text-gray-400">{{ page.about_us_tagline }}</span>
       </div>
-      <div class="w-full">
+      <div class="w-full my-10">
         <div class="rich-text w-[90%]">
           {{ page.about_us_body|richtext }}
         </div>
-
+        Rohan Reddy Alleti
 
       </div>
 
@@ -144,16 +144,16 @@
           <div class="">
             <h4 class="font-semibold">{{ project.title| truncatewords:10 }}</h4>
             <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
-              <small class="px-2 py-1 bg-slate-200 text-green-600">{{ project.status }}</small>
+              <small class="px-2 py-1 bg-secondary text-white rounded">{{ project.status }}</small>
               {% for tag in project.specific.tags.all %}
-              <small class="px-2 py-1 bg-slate-200 text-text-75">{{ tag }}</small>
+              <small class="px-2 py-1 bg-slate-200 text-text-75 rounded">{{ tag }}</small>
               {% endfor %}
             </div>
 
             <small>{{ project.specific.intro | truncatewords:10 }}</small>
 
             <div class="mt-5">
-              <a href="" class="text-blue-400 rounded-full">
+              <a href="{% pageurl project %}" class="text-blue-400 rounded-full">
                 View Project
                 <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
               </a>
@@ -202,7 +202,7 @@
           <div class="">
             <h4 class="font-semibold">{{ event.title | truncatewords:10 }}</h4>
             <div class="my-5">
-              <small class="px-2 py-1 bg-slate-200 text-text-75">UPCOMING</small>
+              <small class="px-2 py-1 bg-secondary text-white rounded uppercase">{{ event.specific.get_status }}</small>
             </div>
             <small>{{ event.specific.intro | truncatewords:10 }}</small>
 

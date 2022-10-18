@@ -9,7 +9,7 @@ from wagtail.snippets.models import register_snippet
 
 
 class CoursesIndexPage(Page):
-    intro = RichTextField(blank=True)
+    intro = models.CharField(max_length=255)
 
     content_panels = Page.content_panels + [FieldPanel("intro")]
 
