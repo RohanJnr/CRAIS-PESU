@@ -1,5 +1,6 @@
 from atexit import register
 from dataclasses import Field
+from hashlib import blake2b
 from secrets import choice
 from sre_parse import CATEGORIES
 from django.db import models
@@ -163,7 +164,7 @@ class Publication(index.Indexed, ClusterableModel):
         choices=PUBLICATION_CATEGORY_CHOICES
     )
 
-    link = models.URLField()
+    link = models.URLField(blank=True, null=True)
     
     panels = [
         FieldPanel("title"),
@@ -191,16 +192,18 @@ class Publication(index.Indexed, ClusterableModel):
 @register_snippet
 class Patent(index.Indexed, ClusterableModel):
     title = models.CharField(max_length=512)
-    date = models.DateField()
+    date_filed = models.DateField()
+    date_granted = models.DateField(blank=True, null=True)
     status = models.CharField(
         max_length=64,
         choices=PATENT_STATUS
     )
-    link = models.URLField()
+    link = models.URLField(blank=True, null=True)
     
     panels = [
         FieldPanel("title"),
-        FieldPanel("date"),
+        FieldPanel("date_filed"),
+        FieldPanel("date_granted"),
         FieldPanel("status"),
         FieldPanel("link"),
         MultiFieldPanel(
@@ -214,7 +217,7 @@ class Patent(index.Indexed, ClusterableModel):
     ]
 
     class Meta:
-        ordering = ("date", )
+        ordering = ("date_filed", )
 
     def __str__(self) -> str:
         return self.title

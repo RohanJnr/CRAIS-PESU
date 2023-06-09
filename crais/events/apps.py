@@ -10,4 +10,4 @@ class EventsConfig(AppConfig):
         from .signals import create_event_registration_form
 
         EventPage: type = self.get_model("EventPage")
-        post_save.connect(create_event_registration_form, sender=EventPage)
+        # post_save.connect(create_event_registration_form, sender=EventPage)

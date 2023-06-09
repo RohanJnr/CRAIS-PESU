@@ -88,8 +88,8 @@ class PublicationModelAdmin(ModelAdmin):
 class PatentModelAdmin(ModelAdmin):
     model = Patent
     menu_label = "Patents"
-    list_display = ("title", "date", "status",)
-    search_fields = ("title", "date", "status", "center_authors", "external_authors")
+    list_display = ("title", "date_filed", "status",)
+    search_fields = ("title", "date_filed", "status", "center_authors", "external_authors")
 
 
 class ResearchModelAdminGroup(ModelAdminGroup):

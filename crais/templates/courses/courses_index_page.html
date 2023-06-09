@@ -9,9 +9,9 @@
 
 <section class="w-2/3 mx-auto py-20" x-data="{ selected: '' }">
         <select class="py-2 px-4 bg-secondary text-white text-xl">
-            <option x-on:click="selected = ''" selected>All University Programs</option>
-            <option x-on:click="selected = 'UG'" value="UG">UG</option>
-            <option x-on:click="selected = 'PG'" value="PG">PG</option>
+            <option x-on:click="selected = ''" selected>All Courses</option>
+            <option x-on:click="selected = 'UG'" value="UG">UG Courses</option>
+            <option x-on:click="selected = 'PG'" value="PG">PG Courses</option>
         </select>
     <div>
         {% regroup courses by program as program_list %}

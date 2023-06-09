@@ -323,6 +323,7 @@ a.underline-hover-effect {
 
 *::-webkit-scrollbar {
     width: 5px;
+    height: 5px; 
     background-color: #F5F5F5;
 }
 
@@ -350,8 +351,17 @@ a.underline-hover-effect {
     overflow-x: hidden;
     width: 100%;
     text-align: center;
+    padding-bottom: 40px;
 }
 
+@media (max-width: 1250px) {
+    #slideshow {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+}
 
 .nav-btn {
     padding: 10px 20px;
@@ -370,6 +380,7 @@ a.underline-hover-effect {
     color: white;
     cursor: pointer;
 }
+
 .nav-btn:disabled {
     background-color: white;
     border-color: rgb(185, 185, 185);

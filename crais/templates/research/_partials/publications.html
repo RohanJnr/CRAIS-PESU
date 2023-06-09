@@ -26,11 +26,13 @@
             {{ publ.publication_details|richtext }}
         </p>
     </div>
+    {% if publ.link %}
     <div class="mt-10">
         <a href="{{ publ.link }}" class="py-3 px-6 gradient-text-box shadow-md text-white rounded-full">
             Publication link
             <span class="iconify ml-1 mb-1 inline w-5 h-5" data-icon="charm:arrow-right"></span>
         </a>
     </div>
+    {% endif %}
 </div>
 {% endfor %}
