@@ -23,7 +23,7 @@ jobs:
         run: poetry install
 
       - name: Install Pre-Commit
-        run: poetry run task precommit
+        run: poetry run pre-commit uninstall & poetry run pre-commit install
 
       - name: Lint
         run: poetry run task lint
