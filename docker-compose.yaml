@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5000:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: crais
+      POSTGRES_PASSWORD: crais
+      POSTGRES_USER: crais

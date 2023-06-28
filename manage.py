@@ -8,14 +8,12 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
 
+
 try:
     from dotenv import load_dotenv
-
     load_dotenv()  # take environment variables from .env.c
-    print("dotenv file loaded.")
 except ModuleNotFoundError:
-    print("DOTENV not loaded.")
-
+    pass
 
 DEFAULT_USERNAME_DEBUG = "admin"
 DEFAULT_PASSWORD_DEBUG = "admin"
@@ -43,10 +41,13 @@ def pre_run() -> None:
         os.environ.get("SUPERUSER_USERNAME"), os.environ.get("SUPERUSER_PASSWORD")
     )
 
-
 def main() -> None:
     """Run administrative tasks."""
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "crais.settings.dev")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "crais.settings")
+    # if bool(os.getenv("PRODUCTION")):
+    #     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "crais.settings.production")
+    # else:
+    #     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "crais.settings.dev")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

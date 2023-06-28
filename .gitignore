@@ -142,3 +142,6 @@ reset_migrations.sh
 
 # media
 media/
+
+# staticfiles - static root
+staticfiles/

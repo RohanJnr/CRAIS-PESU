@@ -28,8 +28,10 @@ class Command(BaseCommand):
 
         home_page = HomePage(
             title="Home Page",
+            about_us_title="title",
+            about_us_tagline="tagline",
+            about_us_body="body",
             intro="This is intro",
-            about_us="About us description",
             slug="home"
         )
 
@@ -116,7 +118,6 @@ class Command(BaseCommand):
             title="Contact Us",
             intro=(
                 "We'd love to hear from you! Drop us a line to let us know what you liked or didn't like about "
-                "your recent store visit, or if you have comments or questions about this site."
             ),
             thank_you_text="Thank you for the submission! We will get back to you soon!",
             general_information="Information",
