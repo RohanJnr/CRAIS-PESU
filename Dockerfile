@@ -1,77 +1,49 @@
-# Use an official Python runtime based on Debian 10 "buster" as a parent image.
-FROM python:3.11-slim-buster
+# Stage 1: Build environment
+FROM python:3.11-slim-buster AS build
 
-# Port used by this container to serve HTTP.
-EXPOSE 8000
-
-# Set environment variables.
-# 1. Force Python stdout and stderr streams to be unbuffered.
-# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
-#    command.
+# Install dependencies to system without creaeting venv.
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8000 \
     POETRY_VIRTUALENVS_CREATE=false
 
-# Install system packages required by Wagtail and Django.
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    libmariadbclient-dev \
-    libjpeg62-turbo-dev \
-    zlib1g-dev \
-    libwebp-dev \
- && rm -rf /var/lib/apt/lists/*
-
-# Install the application server.
-RUN pip install "gunicorn==20.0.4"
-
-# Install the project requirements.
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
-
-# Use /app folder as a directory where the source code is stored.
 WORKDIR /app
 
-# Set this directory to be owned by the "wagtail" user. This Wagtail project
-# uses SQLite, the folder needs to be owned by the user that
-# will be writing to the database file.
-RUN chown wagtail:wagtail /app
+# Install poetry.
+RUN pip install poetry
 
-# Copy the source code of the project into the container.
-COPY --chown=wagtail:wagtail . .
+# Install dependencies to system /usr/local/lib/python3.11/site-packages
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --without dev
 
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
+# Install Node.js and NPM
+RUN apt-get update && apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
 
-# Collect static files.
-RUN python manage.py collectstatic --noinput --clear
+COPY ./static/src/input.css ./
 
-# Runtime command that executes when "docker run" is called, it does the
-# following:
-#   1. Migrate the database.
-#   2. Start the application server.
-# WARNING:
-#   Migrating database at the same time as starting the server IS NOT THE BEST
-#   PRACTICE. The database should be migrated manually or using the release
-#   phase facilities of your hosting platform. This is used only so the
-#   Wagtail instance can be started with a simple "docker run" command.
-CMD set -xe; python manage.py migrate --noinput; gunicorn crais.wsgi:application
+# Install Tailwind CSS and compile the styles
+RUN npm install tailwindcss && \
+    npx tailwindcss-cli@latest build -i input.css -o output.css
 
+RUN python manage.py collectstatic
 
-#FROM python:3.10-slim-buster
-#
-#ENV POETRY_VIRTUALENVS_CREATE=false
-#ENV PYTHONDONTWRITEBYTECODE=1
-#ENV PYTHONUNBUFFERED=1
-#
-## Install poetry
-#RUN pip install -U poetry
-#
-#WORKDIR /app
-#
-#COPY pyproject.toml poetry.lock ./
-#RUN poetry install --no-dev
-#
-#RUN mkdir media
-#
-#COPY . .
+CMD ["bash"]
+
+# Stage 2: Production environment
+FROM python:3.11-slim-buster
+
+# Set working directory
+WORKDIR /app
+# /usr/local/lib/python3.11/site-packages
+# Copy the compiled Tailwind CSS and Django project code from the build stage
+COPY --from=build /app/static/src/output.css /app/static/src/output.css
+COPY --from=build /app /app
+
+# Install minimal dependencies for production
+RUN pip install --no-cache-dir gunicorn
+
+# Expose the necessary port
+EXPOSE 8000
+
+# Define the command to run the Django application
+CMD ["gunicorn", "yourproject.wsgi:application", "--bind", "0.0.0.0:8000"]

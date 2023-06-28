@@ -12,7 +12,7 @@ jobs:
     container: python:3.11-buster
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
@@ -23,7 +23,7 @@ jobs:
         run: poetry install
 
       - name: Install Pre-Commit
-        run: poetry run pre-commit uninstall & poetry run pre-commit install
+        run: poetry run pre-commit uninstall && poetry run pre-commit install
 
       - name: Lint
         run: poetry run task lint
