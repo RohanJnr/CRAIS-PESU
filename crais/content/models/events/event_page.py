@@ -26,6 +26,7 @@ class EventImages(Orderable):
 
 
 class EventTimelineNode(Orderable):
+    """Model for event timeline node."""
 
     page = ParentalKey("content.EventPage", related_name="timelinenode")
     node_name = models.CharField(
@@ -45,9 +46,13 @@ class EventTimelineNode(Orderable):
     ]
 
 class EventTag(TaggedItemBase):
+    """Event tags."""
+
     content_object = ParentalKey('content.EventPage', on_delete=models.CASCADE, related_name='tagged_items')
 
 class EventPage(Page):
+    """Page for events conducted by CRAIS."""
+
     intro = models.CharField(max_length=255)
     body = RichTextField()
     timestamp = models.DateTimeField(verbose_name="Date and Time")
@@ -61,7 +66,11 @@ class EventPage(Page):
     )
     registration_form = models.BooleanField(default=False)
     external_link_display_text = models.CharField(max_length=255, blank=True, null=True)
-    external_link = models.URLField(blank=True, null=True, help_text="This field takes more priority over registration form page.")
+    external_link = models.URLField(
+        blank=True,
+        null=True,
+        help_text="This field takes more priority over registration form page."
+    )
     tags = ClusterTaggableManager(through=EventTag, blank=True)
     featured = models.BooleanField(default=False)
 
@@ -93,7 +102,7 @@ class EventPage(Page):
         return self.title
 
     def is_upcoming(self) -> bool:
-        print(self.timestamp, timezone.now())
+        """Compute if event is upcoming or done."""
         if self.timestamp > timezone.now():
             return True
         return False

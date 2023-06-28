@@ -1,9 +1,6 @@
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
 FROM python:3.11-slim-buster
 
-# Add user that will be used in the container.
-RUN useradd wagtail
-
 # Port used by this container to serve HTTP.
 EXPOSE 8000
 
@@ -12,7 +9,8 @@ EXPOSE 8000
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8000
+    PORT=8000 \
+    POETRY_VIRTUALENVS_CREATE=false
 
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
@@ -58,3 +56,22 @@ RUN python manage.py collectstatic --noinput --clear
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
 CMD set -xe; python manage.py migrate --noinput; gunicorn crais.wsgi:application
+
+
+#FROM python:3.10-slim-buster
+#
+#ENV POETRY_VIRTUALENVS_CREATE=false
+#ENV PYTHONDONTWRITEBYTECODE=1
+#ENV PYTHONUNBUFFERED=1
+#
+## Install poetry
+#RUN pip install -U poetry
+#
+#WORKDIR /app
+#
+#COPY pyproject.toml poetry.lock ./
+#RUN poetry install --no-dev
+#
+#RUN mkdir media
+#
+#COPY . .

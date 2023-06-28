@@ -1,4 +1,3 @@
-from asyncio import events
 from django.core.management.base import BaseCommand
 from wagtail.models import Page, Site
 
@@ -11,11 +10,10 @@ from crais.users.models import MemberCategory
 
 
 class Command(BaseCommand):
-    """
-    Remove default wagtail site and root page and create new pages and site instances.
-    """
+    """Remove default wagtail site and root page and create new pages and site instances."""
 
     def handle(self, *args, **options) -> None:
+        """The actual logic of the command."""
         if Page.objects.count() != 2:
             return
 

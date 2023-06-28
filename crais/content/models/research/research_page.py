@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import HttpRequest
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField
 from wagtail.models import Page
@@ -8,6 +9,8 @@ from .publications import Publication
 
 
 class ResearchPage(Page):
+    """Page to showcase CRAIS research topics."""
+
     intro = models.CharField(max_length=255)
     information = RichTextField()
 
@@ -19,10 +22,9 @@ class ResearchPage(Page):
     parent_page_types = ("base.HomePage",)
     max_count = 1
 
-    def get_context(self, request, *args, **kwargs):
+    def get_context(self, request: HttpRequest, *args, **kwargs) -> dict:
+        """TODO."""
         context = super().get_context(request, *args, **kwargs)
-
-
         if category := request.GET.get("publication_category"):
             if category != "all":
                 publications = Publication.objects.filter(publication_category=category)
@@ -30,7 +32,6 @@ class ResearchPage(Page):
                 return context
 
         if year := request.GET.get("publication_year"):
-            print(year, type(year))
             publications = Publication.objects.filter(date__year=int(year))
             context["publications"] = publications
             return context
@@ -45,11 +46,12 @@ class ResearchPage(Page):
         context["pub_dates"] = pub_dates
 
         return context
-    
-    def get_template(self, request, *args, **kwargs):
+
+    def get_template(self, request: HttpRequest, *args, **kwargs) -> str:
+        """Get template for publication/patent."""
         template = super().get_template(request, *args, **kwargs)
 
         if request.GET.get("publication_category") or request.GET.get("publication_year"):
             return "research/_partials/publications.html"
-        
+
         return template

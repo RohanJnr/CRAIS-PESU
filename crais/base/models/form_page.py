@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import HttpRequest
 from django.template.response import TemplateResponse
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, InlinePanel
@@ -7,10 +8,14 @@ from wagtail.fields import RichTextField
 
 
 class FormField(AbstractFormField):
+    """Form input field linked to forms."""
+
     page = ParentalKey('FormPage', on_delete=models.CASCADE, related_name='form_fields')
 
 
 class FormPage(AbstractForm):
+    """General form page for registrations and contact page."""
+
     intro = models.CharField(max_length=128)
     thank_you_text = models.CharField(max_length=255)
     general_information = RichTextField()
@@ -25,7 +30,8 @@ class FormPage(AbstractForm):
 
     parent_page_types = ("content.EventPage",)
 
-    def serve(self, request, *args, **kwargs):
+    def serve(self, request: HttpRequest, *args, **kwargs) -> TemplateResponse:
+        """Alter form submission response to return a template response which is handled by htmx."""
         if request.method == "POST":
             form = self.get_form(
                 request.POST, request.FILES, page=self, user=request.user
@@ -36,14 +42,12 @@ class FormPage(AbstractForm):
                 return self.render_landing_page(
                     request, form_submission, *args, **kwargs
                 )
-            
-            else:
-                context = self.get_context(request)
-                context["form"] = form
-                return TemplateResponse(request, "base/partial_form_page.html", context)
 
-        else:
-            form = self.get_form(page=self, user=request.user)
+            context = self.get_context(request)
+            context["form"] = form
+            return TemplateResponse(request, "base/partial_form_page.html", context)
+
+        form = self.get_form(page=self, user=request.user)
 
         context = self.get_context(request)
         context["form"] = form

@@ -1,11 +1,12 @@
 from django.db import models
 from django.http import HttpRequest
-from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.models import Page
 
-from wagtail.documents import get_document_model
 
 class NewsIndexPage(Page):
+    """Page to showcase all news of CRAIS."""
+
     intro = models.CharField(max_length=256)
 
     content_panels = Page.content_panels + [FieldPanel("intro", classname="full")]

@@ -14,6 +14,8 @@ PATENT_STATUS = (
 
 
 class CenterInventor(Orderable):
+    """Patent inventor from CRAIS."""
+
     model = ParentalKey("content.Patent", related_name="center_inventors")
     inventor = models.ForeignKey(
         "content.Member",
@@ -30,13 +32,15 @@ class CenterInventor(Orderable):
 
 
 class ExternalInventor(Orderable):
+    """External patient inventor."""
+
     model = ParentalKey("content.Patent", related_name="external_inventors")
     inventor = models.CharField(max_length=255)
 
     panels = [
         FieldPanel("inventor")
     ]
-    
+
     def __str__(self) -> str:
         return self.inventor
 
@@ -44,6 +48,8 @@ class ExternalInventor(Orderable):
 
 @register_snippet
 class Patent(index.Indexed, ClusterableModel):
+    """Patents filed by CRAIS."""
+
     title = models.CharField(max_length=512)
     date_filed = models.DateField()
     date_granted = models.DateField(blank=True, null=True)
@@ -52,7 +58,7 @@ class Patent(index.Indexed, ClusterableModel):
         choices=PATENT_STATUS
     )
     link = models.URLField(blank=True, null=True)
-    
+
     panels = [
         FieldPanel("title"),
         FieldPanel("date_filed"),
@@ -70,6 +76,8 @@ class Patent(index.Indexed, ClusterableModel):
     ]
 
     class Meta:
+        """Order patents by date_filed."""
+
         ordering = ("date_filed", )
 
     def __str__(self) -> str:

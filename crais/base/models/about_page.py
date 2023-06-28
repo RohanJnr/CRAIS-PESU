@@ -1,12 +1,12 @@
 from django.db import models
-from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
-from wagtail.fields import StreamField, RichTextField
-from wagtail.images.blocks import ImageChooserBlock
+from wagtail.fields import RichTextField
 from wagtail.models import Page
 
 
 class AboutPage(Page):
+    """Model for about page."""
+
     parent_page_types = ("base.HomePage",)
 
     title_part_1 = models.CharField(max_length=64)

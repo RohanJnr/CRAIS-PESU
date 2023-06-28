@@ -5,6 +5,8 @@ from wagtail.models import Page
 
 
 class EventIndexPage(Page):
+    """Page to list all events."""
+
     intro = models.CharField(max_length=256)
 
     content_panels = Page.content_panels + [FieldPanel("intro", classname="full")]

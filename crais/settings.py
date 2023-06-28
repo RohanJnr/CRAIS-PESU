@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 from pathlib import Path
 from socket import gethostname, gethostbyname
 
@@ -9,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = bool(os.getenv("PRODUCTION", True))
 
 if DEBUG:
-    SECRET_KEY = "django-insecure-57f()xer=kbaonvvgrac7!vb1f^)_am2x4r7uxfxd$4$(s#43e"
+    SECRET_KEY = "django-insecure-57f()xer=kbaonvvgrac7!vb1f^)_am2x4r7uxfxd$4$(s#43e"  # noqa: S105
     ALLOWED_HOSTS = ["*"]
 
 else:

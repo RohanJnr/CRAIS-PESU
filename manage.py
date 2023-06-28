@@ -16,14 +16,14 @@ except ModuleNotFoundError:
     pass
 
 DEFAULT_USERNAME_DEBUG = "admin"
-DEFAULT_PASSWORD_DEBUG = "admin"
+DEFAULT_PASSWORD_DEBUG = "admin"  # noqa: S105
 
 
 def create_super_user(username: str, password: str) -> None:
     """Create superuser."""
-    User = get_user_model()
-    if not User.objects.filter(username=username).exists():
-        user = User.objects.create_superuser(username, "", password)
+    user = get_user_model()
+    if not user.objects.filter(username=username).exists():
+        user = user.objects.create_superuser(username, "", password)
         print(f"Superuser with username {user.username} created.")
 
 

@@ -2,15 +2,17 @@ from wagtail.contrib.modeladmin.options import (
     ModelAdmin, ModelAdminGroup, modeladmin_register
 )
 
-from crais.content.models import Course, CourseProgram
+from crais.content.models import Course
 from crais.content.models import EventPage
-from crais.content.models import Member, MemberCategory
-from crais.content.models import ProjectPage, ProjectCategory
+from crais.content.models import Member
+from crais.content.models import ProjectPage
 from crais.content.models import Patent, Publication
 from crais.content.models import NewsPage
 
 
 class MemberModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = Member
     menu_label = "Members"
     menu_icon = 'user'
@@ -21,6 +23,8 @@ class MemberModelAdmin(ModelAdmin):
 
 
 class ProjectModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = ProjectPage
     menu_label = "Projects"
     list_display = ("title", "category", "tags", "status")
@@ -29,6 +33,8 @@ class ProjectModelAdmin(ModelAdmin):
 
 
 class EventModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = EventPage
     menu_label = "Events"
     list_display = ("title", "timestamp", "location")
@@ -39,12 +45,16 @@ class EventModelAdmin(ModelAdmin):
 
 
 class ContentAdminModel(ModelAdminGroup):
+    """Display collections of models as a group in wagtail admin."""
+
     menu_label = "Content"
     menu_icon = "folder-open-inverse"
     menu_order = 101
     items = (ProjectModelAdmin, EventModelAdmin)
 
 class PublicationModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = Publication
     menu_label = "Publications"
     list_display = ("title", "date", "publication_category", "link")
@@ -52,6 +62,8 @@ class PublicationModelAdmin(ModelAdmin):
 
 
 class PatentModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = Patent
     menu_label = "Patents"
     list_display = ("title", "date_filed", "status",)
@@ -59,12 +71,16 @@ class PatentModelAdmin(ModelAdmin):
 
 
 class ResearchModelAdminGroup(ModelAdminGroup):
+    """Display collections of models as a group in wagtail admin."""
+
     menu_label = "Research"
     menu_icon = "folder-open-inverse"
     menu_order = 102
     items = (PatentModelAdmin, PublicationModelAdmin)
 
 class CoursesModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = Course
     menu_label = "Courses"
     menu_order = 103
@@ -73,6 +89,8 @@ class CoursesModelAdmin(ModelAdmin):
 
 
 class NewsModelAdmin(ModelAdmin):
+    """Display model in wagtail admin."""
+
     model = NewsPage
     menu_label = "News"
     menu_icon = "list-ul"

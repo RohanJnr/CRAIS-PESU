@@ -7,6 +7,8 @@ from .project_page import ProjectCategory, ProjectPage
 
 
 class ProjectIndexPage(Page):
+    """Page to list all projects by CRAIS."""
+
     intro = models.CharField(max_length=255)
 
     content_panels = Page.content_panels + [FieldPanel("intro")]

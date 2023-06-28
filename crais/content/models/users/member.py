@@ -8,6 +8,8 @@ from wagtail.snippets.models import register_snippet
 
 @register_snippet
 class MemberCategory(index.Indexed, models.Model):
+    """Categories for members. Ex: Faculty, Intern, Research Associate, etc."""
+
     name = models.CharField(max_length=255)
     description = models.CharField(
         max_length=512,
@@ -20,19 +22,25 @@ class MemberCategory(index.Indexed, models.Model):
         FieldPanel("description", widget=forms.Textarea),
     ]
 
+    class Meta:
+        """Order objects by name."""
+
+        verbose_name = "Member Category"
+        verbose_name_plural = "Member Categories"
+        ordering = ("name",)
+
     def __str__(self) -> str:
         return self.name
 
     def __repr__(self) -> str:
         return self.name
 
-    class Meta:
-        verbose_name = "Member Category"
-        verbose_name_plural = "Member Categories"
-        ordering = ("name",)
+
 
 @register_snippet
 class Member(index.Indexed, ClusterableModel):
+    """Member model for users/researchers CRAIS."""
+
     name = models.CharField(max_length=255)
     image = models.ForeignKey(
         'wagtailimages.Image',

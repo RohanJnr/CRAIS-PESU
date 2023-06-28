@@ -5,6 +5,8 @@ from wagtail.models import Orderable, Page
 
 
 class HomePageFeatured(Orderable):
+    """Featured news or information on home page."""
+
     page = ParentalKey("base.HomePage", related_name="featured")
     title = models.CharField(max_length=256)
     link = models.URLField()
@@ -23,6 +25,8 @@ class HomePageFeatured(Orderable):
     ]
 
 class HomePageOurWork(Orderable):
+    """Work done by CRAIS displayed on the home page."""
+
     page = ParentalKey("base.HomePage", related_name="our_work")
     title = models.CharField(max_length=256)
     short_description = models.CharField(max_length=128)
@@ -36,6 +40,8 @@ class HomePageOurWork(Orderable):
     ]
 
 class HomePageCollaborations(Orderable):
+    """Model for industry collaborations of CRAIS."""
+
     page = ParentalKey("base.HomePage", related_name="collaborations")
     collaborator_name = models.CharField(max_length=128, help_text="Company name, Industry Partner name, etc")
     collaborator_logo = models.ForeignKey(
@@ -56,6 +62,8 @@ class HomePageCollaborations(Orderable):
 
 
 class HomePage(Page):
+    """Home page model."""
+
     title_part_1 = models.CharField(max_length=64)
     title_part_2 = models.CharField(max_length=64)
     landing_page_paragraph = models.CharField(max_length=312)
@@ -67,5 +75,3 @@ class HomePage(Page):
     ]
 
     max_count = 1
-
-    

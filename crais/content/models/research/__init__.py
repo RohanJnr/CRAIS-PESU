@@ -1,3 +1,3 @@
-from .patents import *
-from .publications import *
-from .research_page import *
+from .patents import CenterInventor, ExternalInventor, Patent
+from .publications import CenterAuthor, ExternalAuthor, Publication
+from .research_page import ResearchPage

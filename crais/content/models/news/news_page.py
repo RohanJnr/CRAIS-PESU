@@ -7,6 +7,8 @@ from .news_index_page import NewsIndexPage
 
 
 class NewsPage(Page):
+    """Page for individual news post."""
+
     parent_page_types = (NewsIndexPage,)
 
     posted_at = models.DateField(auto_now=True)

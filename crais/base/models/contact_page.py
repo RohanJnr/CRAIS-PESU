@@ -5,6 +5,8 @@ from .form_page import FormPage
 
 
 class ContactPage(FormPage):
+    """Model for contact page with contact form."""
+
     contact_email = models.CharField(max_length=255)
     contact_phone = models.CharField(max_length=12, null=True, blank=True, help_text="This is optional.")
     contact_address = models.TextField()

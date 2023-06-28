@@ -6,6 +6,8 @@ from wagtail.fields import RichTextField
 
 @register_setting
 class SiteGlobalSettings(BaseSiteSetting):
+    """Global settings for navbar and footer."""
+
     navbar_announcement = RichTextField(
         help_text="Single line text, creating a hyperlink will style it as a button.",
         blank=True,

@@ -14,6 +14,8 @@ PUBLICATION_CATEGORY_CHOICES = (
 
 
 class CenterAuthor(Orderable):
+    """Publication authors from CRAIS."""
+
     model = ParentalKey("content.Publication", related_name="center_authors")
     author = models.ForeignKey(
         "content.Member",
@@ -30,6 +32,8 @@ class CenterAuthor(Orderable):
 
 
 class ExternalAuthor(Orderable):
+    """External publications authors."""
+
     model = ParentalKey("content.Publication", related_name="external_authors")
     author = models.CharField(max_length=255)
 
@@ -43,6 +47,8 @@ class ExternalAuthor(Orderable):
 
 @register_snippet
 class Publication(index.Indexed, ClusterableModel):
+    """Model for research publication."""
+
     title = models.CharField(max_length=512)
     date = models.DateField()
     publication_category = models.CharField(
@@ -51,7 +57,7 @@ class Publication(index.Indexed, ClusterableModel):
     )
 
     link = models.URLField(blank=True, null=True)
-    
+
     panels = [
         FieldPanel("title"),
         FieldPanel("date"),
@@ -68,6 +74,8 @@ class Publication(index.Indexed, ClusterableModel):
     ]
 
     class Meta:
+        """Order publications of date."""
+
         ordering = ("date", )
 
 

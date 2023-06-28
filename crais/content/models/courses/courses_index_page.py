@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import HttpRequest
 from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel
 from wagtail.models import Page
@@ -7,6 +8,8 @@ from wagtail.snippets.models import register_snippet
 
 
 class CoursesIndexPage(Page):
+    """Page to list all courses."""
+
     intro = models.CharField(max_length=255)
 
     content_panels = Page.content_panels + [FieldPanel("intro")]
@@ -14,7 +17,8 @@ class CoursesIndexPage(Page):
     parent_page_types = ("base.HomePage",)
     max_count = 1
 
-    def get_context(self, request, *args, **kwargs):
+    def get_context(self, request: HttpRequest, *args, **kwargs) -> dict:
+        """List all courses on the page."""
         context = super().get_context(request, *args, **kwargs)
 
         context["courses"] = Course.objects.all()
@@ -41,6 +45,8 @@ class CoursesIndexPage(Page):
 
 @register_snippet
 class CourseProgram(ClusterableModel):
+    """Programs for courses. Ex: UG, PG."""
+
     name = models.CharField(max_length=255)
 
     panels = [
@@ -55,6 +61,8 @@ class CourseProgram(ClusterableModel):
 
 @register_snippet
 class Course(index.Indexed, ClusterableModel):
+    """Courses offered by CRAIS model."""
+
     title = models.CharField(max_length=256)
     synopsis = models.TextField()
     credits = models.IntegerField()

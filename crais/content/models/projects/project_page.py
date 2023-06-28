@@ -31,6 +31,7 @@ class ProjectImages(Orderable):
 
 
 class ProjectContributors(Orderable):
+    """Members who contributed towards the project."""
 
     page = ParentalKey("content.ProjectPage", related_name="contributors")
     contributor = models.ForeignKey(
@@ -46,11 +47,19 @@ class ProjectContributors(Orderable):
 
 @register_snippet
 class ProjectCategory(index.Indexed, models.Model):
+    """Project categories. Ex: Research, Internship, Capstone, etc."""
+
     name = models.CharField(max_length=255, unique=True)
 
     panels = [
         FieldPanel("name"),
     ]
+
+    class Meta:
+        """Alter verbose name of model."""
+
+        verbose_name = "Project Category"
+        verbose_name_plural = "Project Categories"
 
     def __str__(self) -> str:
         return self.name
@@ -58,16 +67,16 @@ class ProjectCategory(index.Indexed, models.Model):
     def __repr__(self) -> str:
         return self.name
 
-    class Meta:
-        verbose_name = "Project Category"
-        verbose_name_plural = "Project Categories"
-
 
 class ProjectTag(TaggedItemBase):
+    """Project tags."""
+
     content_object = ParentalKey('content.ProjectPage', on_delete=models.CASCADE, related_name='tagged_items')
 
 
 class ProjectPage(Page):
+    """Page for projects done by CRAIS."""
+
     intro = models.CharField(max_length=255)
     description = RichTextField()
     banner = models.ForeignKey(
