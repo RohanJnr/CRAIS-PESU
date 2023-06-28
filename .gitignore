@@ -148,3 +148,6 @@ staticfiles/
 
 # ruff
 .ruff_cache/
+
+# output tailwind compiled css
+output.css
