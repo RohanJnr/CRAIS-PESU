@@ -145,3 +145,6 @@ media/
 
 # staticfiles - static root
 staticfiles/
+
+# ruff
+.ruff_cache/
