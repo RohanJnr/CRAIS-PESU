@@ -1,0 +1,32 @@
+.rich-text ul {
+    list-style: inherit;
+}
+
+.rich-text ol {
+    list-style: decimal;
+}
+
+.rich-text ul,
+.rich-text ol {
+    margin: 2rem;
+}
+
+
+.rich-text img {
+    margin: 50px 0;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.rich-text iframe {
+    margin: 50px 0;
+    height: 500px;
+    width: 80%;
+    border-radius: 4px;
+    border: 1px rgb(189, 189, 189) solid;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.rich-text a {
+    color: #4778ff;
+}

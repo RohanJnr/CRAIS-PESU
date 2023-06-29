@@ -1,6 +1,6 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.models import Orderable, Page
 
 
@@ -30,7 +30,7 @@ class HomePageOurWork(Orderable):
     page = ParentalKey("base.HomePage", related_name="our_work")
     title = models.CharField(max_length=256)
     short_description = models.CharField(max_length=128)
-    link = models.URLField()
+    link = models.URLField(null=True, blank=True)
 
 
     panels = [
@@ -54,10 +54,16 @@ class HomePageCollaborations(Orderable):
     )
     collaborator_link = models.URLField(help_text="Link to company website/information.", null=True, blank=True)
 
+    dark_background = models.BooleanField(
+        default=False,
+        help_text="Check this if the logo is light colored and needs a dark background color."
+    )
+
     panels = [
         FieldPanel("collaborator_name"),
         FieldPanel("collaborator_logo"),
         FieldPanel("collaborator_link"),
+        FieldPanel("dark_background")
     ]
 
 
@@ -71,7 +77,19 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("title_part_1"),
         FieldPanel("title_part_2"),
-        FieldPanel("landing_page_paragraph")
+        FieldPanel("landing_page_paragraph"),
+        MultiFieldPanel(
+            [InlinePanel("featured", label="Featured Posts")],
+            heading="Featured Posts",
+        ),
+        MultiFieldPanel(
+            [InlinePanel("our_work", label="Our Work")],
+            heading="Our work at CRIAS",
+        ),
+        MultiFieldPanel(
+            [InlinePanel("collaborations", label="Industry Collaborations")],
+            heading="CRAIS Collaborations",
+        ),
     ]
 
     max_count = 1

@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
-COPY ./static/src/input.css ./
+COPY static/css/input.css ./
 
 # Install Tailwind CSS and compile the styles
 RUN npm install tailwindcss && \

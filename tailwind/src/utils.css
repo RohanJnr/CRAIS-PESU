@@ -1,0 +1,74 @@
+a.underline-hover-effect {
+    text-decoration: none;
+    margin-top: 0.5rem;
+    font-size: 14px;
+}
+
+.underline-hover-effect {
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    /* defines the space between text and underline */
+    position: relative;
+}
+
+.underline-hover-effect::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #F25E3D;
+    transition: width 0.25s ease-out;
+}
+
+.underline-hover-effect:hover::before {
+    width: 100%;
+}
+
+.custom-form label {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.custom-form small {
+    padding: 5px;
+}
+
+.custom-form input {
+    border: 1px rgb(218, 218, 218) solid;
+    outline: none;
+    color: #916d6d;
+    font-weight: 500;
+    margin: 0;
+    background: #fafafa;
+    border-radius: 2px;
+}
+
+.custom-form input:focus {
+    border: 2px #A095E0 solid;
+}
+
+
+.custom-form textarea:focus {
+    border: 2px #A095E0 solid;
+}
+
+.custom-form textarea {
+    background: #fafafa;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
+    border: 1px rgb(218, 218, 218) solid;
+    padding: 20px;
+    color: #916d6d;
+    font-weight: 500;
+}
+
+
+.custom-form p strong {
+    color: red;
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400;
+}

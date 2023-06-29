@@ -109,6 +109,7 @@ class ProjectPage(Page):
             [InlinePanel("contributors", min_num=1, label="Contributors")],
             heading="Project Contributors",
         ),
+        InlinePanel('project_images', label="Gallery images"),
     ]
 
     parent_page_types = ("content.ProjectIndexPage",)

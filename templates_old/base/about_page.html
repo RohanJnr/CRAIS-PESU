@@ -31,7 +31,7 @@
 {#        {% for member in category.list %}#}
 {#            <div class="text-center">#}
 {#                {% image member.image fill-200x200 as image %}#}
-{#                <img src="{{ image.url }}" alt="" class="rounded-full w-full h-auto">#}
+{#                <img css="{{ image.url }}" alt="" class="rounded-full w-full h-auto">#}
 {#                <div class="flex justify-center items-center gap-5 my-5">#}
 {#                    {% if member.linkedin_link %}#}
 {#                    <a href="{{ member.linkedin_link }}"><span class="iconify text-[#0A66C2] h-8 w-8" data-icon="akar-icons:linkedin-box-fill"></span></a>#}
@@ -41,7 +41,7 @@
 {#                    {% endif %}#}
 {#                    {% if member.pes_faculty_profile_link %}#}
 {#                    <a href="{{ member.pes_faculty_profile_link }}">#}
-{#                        <img src="{% static 'images/pes.png' %}" class="h-8 w-auto" alt="PES">#}
+{#                        <img css="{% static 'images/pes.png' %}" class="h-8 w-auto" alt="PES">#}
 {#                    </a>#}
 {#                    {% endif %}#}
 {#                </div>#}
