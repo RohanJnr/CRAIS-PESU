@@ -3,17 +3,17 @@
 {% block content %}
     <main class="w-3/5 mx-auto my-24" x-data="{type: 'all', year: '0'}">
         <h1 class="font-black text-primary">Patents</h1>
-        <div class="my-10 flex justify-start items-center gap-5">
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='all'"
+        <div class="my-10 flex flex-wrap justify-start items-center gap-5">
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='all'"
                     x-bind:class="{'bg-primary text-white': type==='all'}">All
             </button>
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='filed'"
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='filed'"
                     x-bind:class="{'bg-primary text-white': type==='filed'}">Filed
             </button>
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='published'"
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='published'"
                     x-bind:class="{'bg-primary text-white': type==='published'}">Published
             </button>
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='granted'"
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='granted'"
                     x-bind:class="{'bg-primary text-white': type==='granted'}">Granted
             </button>
         </div>
@@ -47,12 +47,12 @@
                             </p>
                         </div>
                         <div class="flex justify-between items-center">
-                            <div class="flex justify-start items-center gap-2">
-                                <p class="w-fit px-4 py-2 border-2 border-primary text-primary rounded text-primary">{{ patent.status }}</p>
-                                <p class="w-fit px-4 py-2 text-primary rounded bg-background-light text-primary">
+                            <div class="flex flex-wrap justify-start items-center gap-2">
+                                <p class="mt-0 w-fit px-4 py-2 border-2 border-primary text-primary rounded text-primary">{{ patent.status }}</p>
+                                <p class="mt-0 w-fit px-4 py-2 text-primary rounded bg-background-light text-primary">
                                     Filed: {{ patent.date_filed.year }}</p>
                                 {% if patent.date_granted %}
-                                    <p class="w-fit px-4 py-2 text-primary rounded bg-primary text-white">
+                                    <p class="mt-0 w-fit px-4 py-2 text-primary rounded bg-primary text-white">
                                         Granted: {{ patent.date_filed.year }}</p>
                                 {% endif %}
                             </div>

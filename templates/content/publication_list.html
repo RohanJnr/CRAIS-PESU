@@ -3,17 +3,17 @@
 {% block content %}
     <main class="w-3/5 mx-auto my-24" x-data="{type: 'all', year: '0'}">
         <h1 class="font-black text-primary">Publications</h1>
-        <div class="my-10 flex justify-start items-center gap-5">
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='all'"
+        <div class="my-10 flex flex-wrap justify-start items-center gap-5">
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='all'"
                     x-bind:class="{'bg-primary text-white': type==='all'}">All
             </button>
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='journal'"
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='journal'"
                     x-bind:class="{'bg-primary text-white': type==='journal'}">Journal
             </button>
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='conference'"
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='conference'"
                     x-bind:class="{'bg-primary text-white': type==='conference'}">Conference
             </button>
-            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='book chapter'"
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded-full" x-on:click="type='book chapter'"
                     x-bind:class="{'bg-primary text-white': type==='book chapter'}">Book Chapter
             </button>
         </div>

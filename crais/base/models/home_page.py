@@ -74,10 +74,25 @@ class HomePage(Page):
     title_part_2 = models.CharField(max_length=64)
     landing_page_paragraph = models.CharField(max_length=312)
 
+    highlight_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="Hightlight image"
+    )
+
+    highlight_text = models.CharField(max_length=128, blank=True, null=True)
+    highlight_link = models.URLField(blank=True, null=True)
+
     content_panels = Page.content_panels + [
         FieldPanel("title_part_1"),
         FieldPanel("title_part_2"),
         FieldPanel("landing_page_paragraph"),
+        FieldPanel("highlight_image"),
+        FieldPanel("highlight_text"),
+        FieldPanel("highlight_link"),
         MultiFieldPanel(
             [InlinePanel("featured", label="Featured Posts")],
             heading="Featured Posts",

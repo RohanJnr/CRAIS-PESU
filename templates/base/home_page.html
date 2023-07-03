@@ -3,24 +3,38 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% block content %}
-    <main class="w-4/5 mx-auto grid md:grid-cols-3 my-24 gap-10">
-        <div class="md:col-span-2">
-            <h5 class="font-medium text-secondary">Center for Robotics, Automation and Intelligent Systems</h5>
-            <h1 class="text-primary font-black inline">{{ page.title_part_1 }} </h1>
-            <h1 class="text-secondary font-black inline">{{ page.title_part_2 }}</h1>
-            <p class="w-full md:w-2/3 my-10">
-                {{ page.landing_page_paragraph }}
-            </p>
-            <div class="flex justify-start items-center gap-10">
-                <a href="#" class="text-primary font-bold hover:text-secondary">Research -></a>
-                <a href="#" class="text-primary font-bold hover:text-secondary">Projects -></a>
-                <a href="#" class="text-primary font-bold hover:text-secondary">Courses -></a>
-                <a href="#" class="text-primary font-bold hover:text-secondary">News -></a>
+    <main class="gap-10 bg-primary">
+        <div class="w-4/5 mx-auto grid lg:grid-cols-3">
+            <div class="py-24 col-span-2 w-full">
+                <h5 class="font-medium text-secondary">Center for Robotics, Automation and Intelligent Systems</h5>
+                <h1 class="text-white font-black inline">{{ page.title_part_1 }} </h1>
+                <h1 class="text-white font-black inline">{{ page.title_part_2 }}</h1>
+                <p class="w-full md:w-2/3 text-gray-300 mt-5">
+                    {{ page.landing_page_paragraph }}
+                </p>
+                <div class="flex justify-start items-center gap-10 mt-10">
+                    <a href="{% url 'publications-list' %}"
+                       class="text-white font-medium hover:text-secondary px-4 py-2 rounded-full border-2 border-secondary flex justify-start items-center gap-2">Research <iconify-icon class="text-lg" icon="ph:arrow-right-bold"></iconify-icon></a>
+                    <a href="{% slugurl 'projects' %}"
+                       class="text-white font-medium hover:text-secondary px-4 py-2 rounded-full border-2 border-secondary flex justify-start items-center gap-2">Projects <iconify-icon class="text-lg" icon="ph:arrow-right-bold"></iconify-icon></a>
+                    {#                    <a href="#" class="text-white font-medium hover:text-secondary">Courses <iconify-icon class="text-xl" icon="ph:arrow-right-bold"></iconify-icon></a>#}
+                    {#                    <a href="#" class="text-white font-medium hover:text-secondary">News <iconify-icon class="text-xl" icon="ph:arrow-right-bold"></iconify-icon></a>#}
+                </div>
+            </div>
+            {% image page.highlight_image original as image_0 %}
+            <div class="w-full h-full relative">
+                <img src="{{ image_0.url }}" alt="" class="h-full w-full object-cover brightness-[1]">
+                <div class="absolute bottom-0 left-0 right-0 p-5 bg-black/80">
+                    <h4 class="font-bold text-white">{{ page.highlight_text }}</h4>
+                    <div class="mt-10">
+                        <a href="{{ page.highlight_link }}" class="text-primary px-4 py-2 bg-white rounded-full flex font-medium justify-center items-center gap-2 w-fit text-xs">Learn More<iconify-icon class="text-md" icon="ph:arrow-right-bold"></iconify-icon></a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
-        <div class="bg-black">
-            something else here!
-        </div>
+
     </main>
     <section class="bg-background-light py-20">
         <div class="w-4/5 mx-auto grid gap-20 md:gap-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
@@ -30,10 +44,10 @@
                         {% image item.image width-400 format-webp as item_image %}
                         <img src="{{ item_image.url }}" alt="">
                     </div>
-                    <h4 class="text-primary font-medium my-5">{{ item.title }}</h4>
+                    <h6 class="text-primary font-medium my-5">{{ item.title }}</h6>
                     <a href="{{ item.link }}"
-                       class="rounded text-secondary px-4 py-2 bg-primary border-2 border-primary hover:bg-white hover:text-primary duration-200 ease-in">Read
-                        More -></a>
+                       class="rounded text-white px-4 py-2 bg-primary border-2 border-primary hover:bg-white hover:text-primary duration-200 ease-in flex justify-start items-center gap-2 text-xs">Read
+                        More <iconify-icon class="text-md" icon="ph:arrow-right-bold"></iconify-icon></a>
                 </div>
             {% endfor %}
         </div>
@@ -41,12 +55,12 @@
 
     <section class="w-4/5 mx-auto my-40">
         <h5 class="text-secondary font-bold">Our Work</h5>
-        <h2 class="text-primary font-bold">At our university, we are pioneering the future of robotics and
-            automation.</h2>
+        <h3 class="text-primary font-bold">At our university, we are pioneering the future of robotics and
+            automation.</h3>
         <div class="my-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-20">
             {% for item in page.our_work.all %}
                 <div class="">
-                    <h4 class="text-primary font-bold border-b-4 border-secondary w-fit mb-5">{{ item.title }}</h4>
+                    <h5 class="text-primary font-bold w-fit mb-2">{{ item.title }}</h5>
                     <p class="w-full">{{ item.short_description }}</p>
                 </div>
             {% endfor %}
@@ -54,7 +68,7 @@
     </section>
     <section class="w-4/5 mx-auto my-40">
         <h5 class="text-secondary font-bold">Industry Collaborations</h5>
-        <h2 class="text-primary font-bold">Showcasing a few of our Industry Partnerships.</h2>
+        <h3 class="text-primary font-bold">Showcasing a few of our Industry Partnerships.</h3>
         <div class="my-20 flex justify-start items-center gap-20 flex-wrap">
             {% for item in page.collaborations.all %}
                 <a href="{{ item.collaborator_link }}">

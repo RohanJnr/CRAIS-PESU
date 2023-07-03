@@ -44,4 +44,34 @@
     transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
+#menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: #000;
+    width: fit-content;
+    max-width: 80vw;
+    transition: 0.4s;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    color: white;
+    text-align: left;
+    padding: 5rem;
+    font-size: 1.5rem;
+    transform: translateX(-100%);
+}
+
+#menu a {
+    padding: 0.6rem;
+}
+
+#menu.active {
+    transform: translateX(0);
+}
 /* Hamburger menu ends */

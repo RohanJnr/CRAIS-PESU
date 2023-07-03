@@ -1,10 +1,10 @@
 {% load static %}
 {% load wagtailcore_tags %}
 <!-- Navbar -->
-<header class="bg-white">
-    <nav class="relative mx-auto text-text-75 w-4/5">
+<header class="bg-background-light">
+    <nav class="mx-auto text-text-75 w-full">
         <!-- Flex container -->
-        <div class="flex items-center justify-between py-5">
+        <div class="flex items-center justify-between py-5 w-4/5 mx-auto">
             <!-- Logo -->
             <div class="pt-2 md:flex justify-around items-center gap-10">
                 <a href="https://pes.edu" class="text-2xl ">
@@ -28,7 +28,7 @@
                     </button>
                     <div x-show="open" class="absolute">
                         <ul class="flex flex-col justify-start items-start gap-2 mt-2 bg-primary p-5 rounded shadow-sm shadow-gray-300">
-                            <a href="#" class="underline-hover-effect font-bold text-white">Our Research</a>
+                            {#                            <a href="#" class="underline-hover-effect font-bold text-white">Our Research</a>#}
                             <a href="{% url 'publications-list' %}"
                                class="underline-hover-effect font-bold text-white">Publications</a>
                             <a href="{% url 'patents-list' %}" class="underline-hover-effect font-bold text-white">Patents</a>
@@ -47,7 +47,7 @@
             </div>
             <!-- Hamburger Icon -->
             <button id="menu-btn"
-                    class="hamburger lg:hidden focus:outline-none flex flex-col items-center justify-around">
+                    class="hamburger lg:hidden focus:outline-none flex flex-col items-center justify-around z-10 text-white lg:text-black rounded-full">
                 <span class="hamburger-top"></span>
                 <span class="hamburger-middle"></span>
                 <span class="hamburger-bottom"></span>
@@ -55,16 +55,18 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="block lg:hidden">
-            <div id="menu"
-                 class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                <a href="{% slugurl 'home' %}" class="underline-hover-effect">Home</a>
-                <a href="{% slugurl 'about-us' %}" class="underline-hover-effect">About Us</a>
-                <a href="{% slugurl 'projects' %}" class="underline-hover-effect">Projects</a>
-                <a href="{% slugurl 'blog' %}" class="underline-hover-effect">Blog</a>
-                <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect">Contact Us</a>
+        <div class="lg:hidden z-0">
+            <div id="menu" class="z-0">
+                <a href="{% slugurl 'home' %}" class="">Home</a>
+                <a href="{% slugurl 'about' %}" class="">About Us</a>
+                <a href="{% url 'publications-list' %}" class="">Publications</a>
+                <a href="{% url 'patents-list' %}" class="">Patents</a>
+                <a href="{% slugurl 'news' %}" class="">News</a>
+                <a href="{% slugurl 'projects' %}" class="">Projects</a>
+                <a href="{% slugurl 'courses' %}" class="">Courses</a>
             </div>
         </div>
+
     </nav>
 </header>
 
@@ -74,8 +76,8 @@
 
     btn.addEventListener('click', () => {
         btn.classList.toggle('open')
-        nav.classList.toggle('flex')
-        nav.classList.toggle('hidden')
+        btn.classList.toggle("text-white")
+        nav.classList.toggle('active')
     })
 
 </script>
