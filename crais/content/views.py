@@ -41,7 +41,7 @@ class MemberView(DetailView):
     model = Member
     query_pk_and_slug = True
 
-    def get_object(self, queryset: QuerySet | None = None) -> Member:
+    def get_object(self, queryset: QuerySet | None = None) -> Member | Http404:
         """Override get_object to return http404 on members without a page."""
         obj:Member = super().get_object(queryset)
         if not obj.member_page:
