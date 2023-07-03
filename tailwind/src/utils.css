@@ -1,7 +1,7 @@
-a.underline-hover-effect {
+.underline-hover-effect {
     text-decoration: none;
     margin-top: 0.5rem;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .underline-hover-effect {
@@ -18,7 +18,7 @@ a.underline-hover-effect {
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #F25E3D;
+    background-color: #FF7878;
     transition: width 0.25s ease-out;
 }
 
@@ -71,4 +71,10 @@ a.underline-hover-effect {
     font-size: 14px;
     padding: 5px;
     font-weight: 400;
+}
+
+.bg-page {
+  background: linear-gradient(-20deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/cool-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

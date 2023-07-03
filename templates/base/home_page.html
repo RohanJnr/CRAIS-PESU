@@ -3,11 +3,11 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% block content %}
-    <main class="w-4/5 mx-auto grid md:grid-cols-3 my-24">
+    <main class="w-4/5 mx-auto grid md:grid-cols-3 my-24 gap-10">
         <div class="md:col-span-2">
             <h5 class="font-medium text-secondary">Center for Robotics, Automation and Intelligent Systems</h5>
-            <h1 class="text-primary font-bold inline">{{ page.title_part_1 }} </h1>
-            <h1 class="text-secondary font-bold inline">{{ page.title_part_2 }}</h1>
+            <h1 class="text-primary font-black inline">{{ page.title_part_1 }} </h1>
+            <h1 class="text-secondary font-black inline">{{ page.title_part_2 }}</h1>
             <p class="w-full md:w-2/3 my-10">
                 {{ page.landing_page_paragraph }}
             </p>

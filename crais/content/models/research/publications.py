@@ -68,7 +68,7 @@ class Publication(index.Indexed, ClusterableModel):
             heading="Center Authors",
         ),
         MultiFieldPanel(
-            [InlinePanel("external_authors", min_num=1, label="External Authors")],
+            [InlinePanel("external_authors", label="External Authors")],
             heading="External Authors",
         ),
     ]

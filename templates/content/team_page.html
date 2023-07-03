@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% block content %}
+    <main class="w-4/5 mx-auto my-24">
+        <h1 class="text-primary font-black">{{ page.title }}</h1>
+        {% for member_category in page.member_categories.all %}
+            <h6 class="text-primary mt-10 mb-10 font-regular w-fit">{{ member_category.category.name }}</h6>
+            <div class="rich-text">
+                {{ member_category.category.description | richtext }}
+            </div>
+            <div class="my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
+                {% for member in member_category.category.members.all %}
+                    <div>
+                        <a href="{% url 'member-detail' slug=member.slug %}">
+                            <div class="aspect-square h-[350px] w-[350px] flex justify-center items-center bg-background-light">
+                                {% image member.image fill-350x350 format-webp as member_image %}
+                                <img src="{{ member_image.url }}" alt=""
+                                     class="rounded aspect-square w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-primary font-bold mt-2">{{ member.name|title }}</h5>
+                            <h6 class="text-xs uppercase text-secondary font-medium my-1">
+                                {% if member.designation %}
+                                    {{ member.designation }},
+                                {% endif %}
+                                {{ member_category.category.name }}
+                            </h6>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}

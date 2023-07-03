@@ -1,1 +1,1 @@
-from .courses_index_page import  Course, CoursesIndexPage, CourseProgram
+from .courses_index_page import  Course, CoursesIndexPage, CourseProgram, CourseFaculty

@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% block content %}
+    <main class="bg-primary">
+        <div class="w-3/5 mx-auto grid grid-cols-1 lg:grid-cols-3 py-24 gap-20">
+            {#            <div>#}
+            {#                <h1 class="text-primary font-bold inline">{{ page.title_part_1 }} </h1>#}
+            {#                <h1 class="text-secondary font-bold inline">{{ page.title_part_2 }}</h1>#}
+            {#            </div>#}
+            <div class="col-span-2">
+                <h1 class="text-white font-black">About Us</h1>
+                <h6 class="text-white font-bold">Center for Robotics, Automation and Intelligent Systems.</h6>
+                <p class="w-full my-10 text-gray-300">
+                    {{ page.landing_page_paragraph }}
+                </p>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-10">
+                <img src="{% static 'images/pes_logo_white.png' %}" alt="" class="h-28 w-auto">
+                <img src="{% static 'images/logo.png' %}" alt="" class="h-24 w-auto brightness-0 invert bright">
+            </div>
+        </div>
+
+    </main>
+    <div class="rich-text w-3/5 mx-auto my-10">
+        {{ page.body | richtext }}
+    </div>
+{% endblock %}

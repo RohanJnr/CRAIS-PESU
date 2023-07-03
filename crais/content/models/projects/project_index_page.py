@@ -21,12 +21,11 @@ class ProjectIndexPage(Page):
         """Update context to include only published posts, ordered by reverse-chron."""
         context = super().get_context(request)
 
-        project_pages = self.get_children().live().order_by("-first_published_at")
+        project_pages = ProjectPage.objects.all().order_by("-start_date")
 
-        project_years = ProjectPage.objects.order_by().values('date').distinct()
         project_categories = ProjectCategory.objects.all()
 
-        context["projectpages"] = project_pages
-        context["project_years"] = project_years
+        context["projects"] = project_pages
+        context["project_years"] = [project.start_date.year for project in project_pages]
         context["project_categories"] = project_categories
         return context

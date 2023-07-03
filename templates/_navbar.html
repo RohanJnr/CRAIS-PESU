@@ -8,27 +8,46 @@
             <!-- Logo -->
             <div class="pt-2 md:flex justify-around items-center gap-10">
                 <a href="https://pes.edu" class="text-2xl ">
-                    <img class="h-[65px] w-auto" src="{% static 'images/pes.png' %}" alt="" />
+                    <img class="h-[65px] w-auto" src="{% static 'images/pes.png' %}" alt=""/>
                     <!-- LOGO -->
                 </a>
                 <a href="{% slugurl 'home' %}" class="text-2xl ">
-                    <img class="h-[40px] w-auto" src="{% static 'images/logo.png' %}" alt="" />
+                    <img class="h-[40px] w-auto" src="{% static 'images/logo.png' %}" alt=""/>
                     <!-- LOGO -->
                 </a>
             </div>
+            <div class="hidden pt-2 lg:flex justify-around items-center gap-10">
+                <a href="{% slugurl 'about' %}" class="underline-hover-effect font-bold text-primary">About Us</a>
+                <a href="{% slugurl 'team' %}" class="underline-hover-effect text-primary font-bold">Team</a>
+                <div x-data="{ open: false }" class="" @mouseleave="open = false">
+                    <button @mouseover="open = true"
+                            class="underline-hover-effect font-bold flex justify-center items-center gap-[2px] text-primary">
+                        Research
+                        <iconify-icon class="text-primary text-lg duration-100 ease-in" icon="mingcute:down-line"
+                                      x-bind:class="{'rotate-180': open}"></iconify-icon>
+                    </button>
+                    <div x-show="open" class="absolute">
+                        <ul class="flex flex-col justify-start items-start gap-2 mt-2 bg-primary p-5 rounded shadow-sm shadow-gray-300">
+                            <a href="#" class="underline-hover-effect font-bold text-white">Our Research</a>
+                            <a href="{% url 'publications-list' %}"
+                               class="underline-hover-effect font-bold text-white">Publications</a>
+                            <a href="{% url 'patents-list' %}" class="underline-hover-effect font-bold text-white">Patents</a>
+                        </ul>
+                    </div>
+                </div>
 
+            </div>
             <!-- Menu Items -->
             <div class="hidden pt-2 lg:flex justify-around items-center gap-10">
-                <a href="{% slugurl 'about-us' %}" class="underline-hover-effect uppercase font-semibold">About Us</a>
-                <a href="{% slugurl 'research' %}" class="underline-hover-effect uppercase font-semibold">Research</a>
-                <a href="{% slugurl 'projects' %}" class="underline-hover-effect uppercase font-semibold">Projects</a>
-                <a href="{% slugurl 'courses' %}" class="underline-hover-effect uppercase font-semibold">Courses</a>
-                <a href="{% slugurl 'events' %}" class="underline-hover-effect uppercase font-semibold">Events</a>
-                <a href="{% slugurl 'news' %}" class="underline-hover-effect uppercase font-semibold">News</a>
-                <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect uppercase font-semibold">Contact Us</a>
+                <a href="{% slugurl 'news' %}" class="underline-hover-effect text-primary font-bold">News</a>
+                <a href="{% slugurl 'projects' %}" class="underline-hover-effect text-primary font-bold">Projects</a>
+                <a href="{% slugurl 'courses' %}" class="underline-hover-effect text-primary font-bold">Courses</a>
+                {#                <a href="{% slugurl 'events' %}" class="underline-hover-effect text-primary font-bold">Events</a>#}
+                {#                <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect text-primary font-bold">Contact</a>#}
             </div>
             <!-- Hamburger Icon -->
-            <button id="menu-btn" class="hamburger lg:hidden focus:outline-none flex flex-col items-center justify-around">
+            <button id="menu-btn"
+                    class="hamburger lg:hidden focus:outline-none flex flex-col items-center justify-around">
                 <span class="hamburger-top"></span>
                 <span class="hamburger-middle"></span>
                 <span class="hamburger-bottom"></span>
@@ -38,12 +57,12 @@
         <!-- Mobile Menu -->
         <div class="block lg:hidden">
             <div id="menu"
-                class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                    <a href="{% slugurl 'home' %}" class="underline-hover-effect">Home</a>
-                    <a href="{% slugurl 'about-us' %}" class="underline-hover-effect">About Us</a>
-                    <a href="{% slugurl 'projects' %}" class="underline-hover-effect">Projects</a>
-                    <a href="{% slugurl 'blog' %}" class="underline-hover-effect">Blog</a>
-                    <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect">Contact Us</a>
+                 class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="{% slugurl 'home' %}" class="underline-hover-effect">Home</a>
+                <a href="{% slugurl 'about-us' %}" class="underline-hover-effect">About Us</a>
+                <a href="{% slugurl 'projects' %}" class="underline-hover-effect">Projects</a>
+                <a href="{% slugurl 'blog' %}" class="underline-hover-effect">Blog</a>
+                <a href="{% slugurl 'contact-us' %}" class="underline-hover-effect">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -54,9 +73,9 @@
     const nav = document.getElementById('menu')
 
     btn.addEventListener('click', () => {
-      btn.classList.toggle('open')
-      nav.classList.toggle('flex')
-      nav.classList.toggle('hidden')
+        btn.classList.toggle('open')
+        nav.classList.toggle('flex')
+        nav.classList.toggle('hidden')
     })
 
 </script>

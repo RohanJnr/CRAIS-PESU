@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import Textarea
 from django.http import HttpRequest
 from wagtail.admin.panels import FieldPanel
 from wagtail.models import Page
@@ -9,7 +10,9 @@ class NewsIndexPage(Page):
 
     intro = models.CharField(max_length=256)
 
-    content_panels = Page.content_panels + [FieldPanel("intro", classname="full")]
+    content_panels = Page.content_panels + [
+        FieldPanel("intro", classname="full", widget=Textarea)
+    ]
 
     parent_page_types = ("base.HomePage",)
     subpage_types = ("content.NewsPage",)

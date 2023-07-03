@@ -1,8 +1,9 @@
 from django.db import models
+from django.forms.widgets import Textarea
 from django.http import HttpRequest
-from modelcluster.models import ClusterableModel
-from wagtail.admin.panels import FieldPanel
-from wagtail.models import Page
+from modelcluster.models import ClusterableModel, ParentalKey
+from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.models import Orderable, Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
@@ -22,25 +23,27 @@ class CoursesIndexPage(Page):
         context = super().get_context(request, *args, **kwargs)
 
         context["courses"] = Course.objects.all()
+        context["course_programs"] = CourseProgram.objects.all()
 
         return context
 
 
-# class CourseFaculty(Orderable):
+class CourseFaculty(Orderable):
+    """Faculty conducting the course."""
 
-#     model = ParentalKey("courses.Course", related_name="faculties")
-#     faculty = models.ForeignKey(
-#         "users.Member",
-#         blank=True,
-#         on_delete=models.CASCADE,
-#     )
+    model = ParentalKey("content.Course", related_name="faculty")
+    faculty = models.ForeignKey(
+        "content.Member",
+        blank=True,
+        on_delete=models.CASCADE,
+    )
 
-#     panels = [
-#         FieldPanel("faculty")
-#     ]
+    panels = [
+        FieldPanel("faculty")
+    ]
 
-#     def __str__(self) -> str:
-#         return self.faculty.name
+    def __str__(self) -> str:
+        return self.faculty.name
 
 
 @register_snippet
@@ -53,6 +56,10 @@ class CourseProgram(ClusterableModel):
         FieldPanel("name"),
     ]
 
+    class Meta:
+        """Order by name."""
+
+        ordering = ("name", )
     def __str__(self) -> str:
         return self.name
 
@@ -74,9 +81,13 @@ class Course(index.Indexed, ClusterableModel):
     )
     panels = [
         FieldPanel("title"),
-        FieldPanel("synopsis"),
+        FieldPanel("synopsis", widget=Textarea),
         FieldPanel("credits"),
         FieldPanel('program'),
+        MultiFieldPanel(
+            [InlinePanel("faculty", min_num=1, label="Faculty")],
+            heading="Course Faculty",
+        ),
     ]
 
     parent_page_types = ("content.CoursesIndexPage",)

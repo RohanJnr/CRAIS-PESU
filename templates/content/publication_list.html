@@ -1,0 +1,63 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block content %}
+    <main class="w-3/5 mx-auto my-24" x-data="{type: 'all', year: '0'}">
+        <h1 class="font-black text-primary">Publications</h1>
+        <div class="my-10 flex justify-start items-center gap-5">
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='all'"
+                    x-bind:class="{'bg-primary text-white': type==='all'}">All
+            </button>
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='journal'"
+                    x-bind:class="{'bg-primary text-white': type==='journal'}">Journal
+            </button>
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='conference'"
+                    x-bind:class="{'bg-primary text-white': type==='conference'}">Conference
+            </button>
+            <button class="px-4 py-2 border-2 border-primary text-primary rounded" x-on:click="type='book chapter'"
+                    x-bind:class="{'bg-primary text-white': type==='book chapter'}">Book Chapter
+            </button>
+        </div>
+        <div class="w-fit pr-4 border-2 border-primary rounded">
+            <select x-model="year" class="pl-4 py-2 pr-20 focus:outline-none" name="" id="">
+                <option value="" selected disabled>Publication Year</option>
+                <option value="0">All</option>
+                {% for year in publication_years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="my-20">
+            {% for pub in object_list %}
+                <div x-show="((type === 'all' || type === '{{ pub.publication_category|lower }}') && (year === '0' || year === '{{ pub.date.year }}'))"
+                     class="w-full grid grid-cols-6" x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
+                    <h4 class="font-medium col-span-1">{{ forloop.counter }}</h4>
+                    <div class="border-b-2 border-background-light pb-10 col-span-5">
+                        <h4 class="font-semibold">{{ pub.title }}</h4>
+                        <div class="my-3">
+                            <p class="m-0 text-gray-500">
+                                {% for center_authors in pub.center_authors.all %}
+                                    <a href="#" class="underline text-a-blue">{{ center_authors|title }}</a>;
+                                {% endfor %}
+
+                                {% for ext_authors in pub.external_authors.all %}
+                                    {{ ext_authors|title }};
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex justify-start items-center gap-2">
+                                <p class="w-fit px-4 py-2 border-2 border-primary text-primary rounded text-primary">{{ pub.publication_category }}</p>
+                                <p class="w-fit px-4 py-2 text-primary rounded bg-background-light text-primary">{{ pub.date.year }}</p>
+                            </div>
+                            <a href="{{ pub.link }}" class="shadow-md w-fit px-4 py-2 text-white rounded bg-primary hover:text-secondary">View Publication -></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

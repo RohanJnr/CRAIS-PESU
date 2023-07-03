@@ -1,3 +1,19 @@
+.rich-text h2 {
+    color: #10183E;
+}
+.rich-text h3 {
+    color: #10183E;
+}
+.rich-text h4 {
+    color: #10183E;
+    margin-bottom: 4rem;
+}
+
+
+.rich-text p {
+    margin-bottom: 2rem;
+}
+
 .rich-text ul {
     list-style: inherit;
 }
@@ -8,14 +24,14 @@
 
 .rich-text ul,
 .rich-text ol {
-    margin: 2rem;
+    margin: 1rem 2rem;
 }
 
 
 .rich-text img {
     margin: 50px 0;
     border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
 }
 
 .rich-text iframe {

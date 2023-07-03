@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+    <section class="py-[4%] bg-home">
+        <div class="w-2/3 mx-auto grid grid-cols-5 gap-5">
+            <div class="w-full px-10 md:px-0 mx-auto col-span-3">
+                <h2 class="text-primary font-black">{{ page.title }}</h2>
+                <p class="my-5 w-full text-primary">{{ page.intro }}</p>
+                <div class="flex flex-wrap justify-start gap-2 items-center mb-5">
+                    <button class="font-medium px-4 py-2 bg-secondary text-white rounded-full text-xs">{{ page.category.name }}</button>
+                    {% for tag in page.tags.all %}
+                        <button class="font-medium px-4 py-2 border-2 border-secondary text-primary rounded-full text-xs">{{ tag }}</button>
+                    {% endfor %}
+                </div>
+                <div class="mt-10">
+                    <h5 class="text-primary font-medium">Contributors</h5>
+                    <div class="flex flex-col flex-wrap justify-start items-start">
+                        {% for contrib in page.contributors.all %}
+                            <div>
+                                <a href="{{ contrib.contributor.linkedin_link }}"
+                                   class="text-secondary text-sm">-> {{ contrib.contributor.name }}</a>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+            {% image page.banner original as banner %}
+            <div class="h-[300px] flex justify-center col-span-2">
+                <img src="{{ banner.url }}" alt="" class="w-auto h-full rounded-md">
+            </div>
+        </div>
+
+    </section>
+    <section class="w-2/3 mx-auto rich-text my-10 rounded">
+        {{ page.description|richtext }}
+    </section>
+
+{% endblock %}

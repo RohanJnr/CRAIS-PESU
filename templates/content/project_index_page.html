@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+    <main class="my-24" x-data="{type: 'all'}">
+        <div class="w-3/5 mx-auto">
+            <h1 class="text-primary font-black">{{ page.title }}</h1>
+            <p>{{ page.intro }}</p>
+            <div class="my-10 flex justify-start items-center gap-5">
+                <button class="px-3 py-1 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white duration-200"
+                        x-on:click="type='all'"
+                        x-bind:class="{'bg-primary text-white': type==='all'}">All
+                </button>
+                {% for category in project_categories %}
+                    <button class="px-2 py-1 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white duration-200"
+                            x-on:click="type='{{ category.name|lower }}'"
+                            x-bind:class="{'bg-primary text-white': type==='{{ category.name|lower }}'}">{{ category.name }}
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="mt-40">
+            {% for project in projects %}
+                <div x-show="type === '{{ project.category|lower }}' || type === 'all'" x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="flex flex-col justify-center items-start w-4/5 mx-auto row-start-1 {% if forloop.counter|divisibleby:2 %}col-start-2{% else %}col-start-1{% endif %}">
+                        <div class="flex justify-start items-center gap-5 mb-5">
+                            <button class="font-medium px-4 py-2 bg-secondary text-white rounded-full text-xs">{{ project.category.name }}</button>
+                            {% for tag in project.tags.all %}
+                                <button class="font-medium px-4 py-2 border-2 border-secondary text-primary rounded-full text-xs">{{ tag }}</button>
+                            {% endfor %}
+                        </div>
+                        <a href="{% pageurl project %}" class="text-primary hover:text-secondary duration-200"><h4 class="font-bold">{{ project.title }}</h4></a>
+                        <p class="mt-5 text-sm">{{ project.intro }}</p>
+                    </div>
+                    <div class="w-full row-start-1 {% if forloop.counter|divisibleby:2 %}col-start-1{% else %}col-start-2{% endif %}">
+                        {% image project.banner fill-800x400 format-webp as project_banner %}
+                        <img src="{{ project_banner.url }}" alt="" class="w-full object-cover">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+{% endblock %}

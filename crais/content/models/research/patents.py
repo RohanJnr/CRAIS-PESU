@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
@@ -79,6 +80,14 @@ class Patent(index.Indexed, ClusterableModel):
         """Order patents by date_filed."""
 
         ordering = ("date_filed", )
+
+    def clean(self) -> None:
+        """Validate data before saving."""
+        if self.date_granted is not None and self.status == "filed":
+            raise ValidationError("Cannot assign status 'Filed' for a patent with granted date.")
+
+        super().clean()
+
 
     def __str__(self) -> str:
         return self.title

@@ -27,7 +27,7 @@ class ProjectModelAdmin(ModelAdmin):
 
     model = ProjectPage
     menu_label = "Projects"
-    list_display = ("title", "category", "tags", "status")
+    list_display = ("title", "category", "tags")
     list_filter = ("category", "tags", "pinned")
     search_fields = ("title", "intro", "description")
 
