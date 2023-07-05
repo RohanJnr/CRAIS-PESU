@@ -18,16 +18,8 @@ jobs:
       - name: Install Python and dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.1
         with:
+          install_args: "--only dev"
           python_version: '3.11'
-
-      - name: Install Poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.5.1
-
-      - name: Install Dependencies
-        run: poetry install --only dev
-
 
       - name: Lint
         run: pre-commit run --all-files
