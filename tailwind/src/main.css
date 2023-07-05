@@ -11,6 +11,10 @@
 @tailwind utilities;
 
 
+:root {
+  --animate-delay: 0.5s;
+}
+
 html {
     font-size: 112.5%;
 }

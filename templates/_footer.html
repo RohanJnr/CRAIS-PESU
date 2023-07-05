@@ -1,4 +1,5 @@
 {% load static %}
+{% load wagtailcore_tags %}
 {% load wagtailsettings_tags %}
 {% get_settings %}
 <footer class="bg-primary pt-20 pb-2">
@@ -22,7 +23,9 @@
                 <h6 class="p-0 text-white font-medium whitespace-pre-line w-3/5">{{ settings.base.ContactGlobalSettings.address }}</h6>
             </div>
             <div class="my-10">
-                <a href="#" class="rounded px-4 py-2 bg-background-light-blue text-primary">Contact Form -></a>
+                <a href="{% slugurl 'contact-form' %}" class="rounded font-bold px-4 py-2 bg-background-light-blue text-primary flex justify-center items-center gap-2">
+                    Contact Form <iconify-icon class="text-primary text-xl" icon="fluent:send-16-filled"></iconify-icon>
+                </a>
             </div>
         </div>
     </div>

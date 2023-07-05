@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+{% load tailwind_filters %}
+
+{% load wagtailcore_tags %}
+{% load wagtailsettings_tags %}
+{% get_settings %}
+{% block content %}
+    <main class="px-5 md:px-[10%] py-20 bg-[#EFF2FF]">
+        <h1 class="font-black text-primary text-center">{{ page.title }}</h1>
+        <p class="text-center">{{ page.intro }}</p>
+
+
+        <div class="lg:grid lg:grid-cols-2 mt-20 rounded-xl overflow-hidden">
+            <div class="bg-primary p-10">
+                <h2 class="text-white font-black">Contact Information</h2>
+                <p class="text-white mt-10">{{ page.general_information }}</p>
+                <div class="flex flex-col justify-start items-start gap-10 mt-20">
+                    <div class="flex justify-center lg:justify-start items-center gap-2">
+                        <iconify-icon class="text-secondary text-5xl" icon="mdi:email-edit"></iconify-icon>
+                        <h6 class="my-5 text-white font-medium">{{ settings.base.ContactGlobalSettings.email }}</h6>
+                    </div>
+                    <div class="flex justify-center lg:justify-start items-center gap-2">
+                        <iconify-icon class="text-secondary text-5xl" icon="mdi:locations"></iconify-icon>
+                        <h6 class="p-0 text-white font-medium">{{ settings.base.ContactGlobalSettings.address }}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-10">
+                <form class="w-full custom-form" hx-post="{% pageurl page %}" hx-swap="outerHTML">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit"
+                            class="mt-10 text-white border-2 border-primary bg-primary md:flex justify-around items-center rounded py-3 px-6 text-md font-bold hover:bg-white hover:text-primary">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

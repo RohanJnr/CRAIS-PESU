@@ -32,7 +32,6 @@ class MemberCategory(models.Model):
         return self.name
 
 
-
 @register_snippet
 class Member(index.Indexed, ClusterableModel):
     """Member model for users/researchers CRAIS."""
@@ -49,7 +48,11 @@ class Member(index.Indexed, ClusterableModel):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name='+',
+        help_text=(
+            "Square images are preferred, if not, then please try to "
+            "upload images with width > height, i.e, landscape images are better."
+        )
     )
 
     email = models.EmailField()
@@ -75,21 +78,26 @@ class Member(index.Indexed, ClusterableModel):
     pes_faculty_profile_link = models.URLField(
         blank=True,
         null=True,
+        help_text="If applicable"
     )
 
     faculty_guide = models.ForeignKey(
         "content.Member",
         blank=True,
         null=True,
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        help_text="If applicable"
     )
     srn = models.CharField(
         max_length=32,
         blank=True,
         null=True,
-        help_text="Enter srn if applicable"
+        help_text="If applicable"
     )
-    university = models.CharField(max_length=128)
+    university = models.CharField(
+        max_length=128,
+        default="PES University"
+    )
 
     member_page = models.BooleanField(
         default=True,
@@ -107,7 +115,8 @@ class Member(index.Indexed, ClusterableModel):
         FieldPanel("pes_faculty_profile_link"),
         FieldPanel("faculty_guide"),
         FieldPanel("srn"),
-        FieldPanel("university")
+        FieldPanel("university"),
+        FieldPanel("member_page")
     ]
 
     search_fields = [

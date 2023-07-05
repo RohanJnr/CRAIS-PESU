@@ -45,5 +45,5 @@ class MemberView(DetailView):
         """Override get_object to return http404 on members without a page."""
         obj:Member = super().get_object(queryset)
         if not obj.member_page:
-            return Http404("Detail page not found for member.")
+            raise Http404("Detail page not found for member.")
         return obj

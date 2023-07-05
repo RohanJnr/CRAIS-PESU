@@ -27,8 +27,11 @@
 }
 
 .custom-form label {
-    font-size: 16px;
-    padding: 5px;
+    font-size: 18px;
+    color: #1a1c28;
+    margin-top: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .custom-form small {
@@ -36,33 +39,33 @@
 }
 
 .custom-form input {
-    border: 1px rgb(218, 218, 218) solid;
+    border: 1px rgb(246, 246, 246) solid;
     outline: none;
-    color: #916d6d;
-    font-weight: 500;
+    color: #18204f;
+    font-weight: 400;
     margin: 0;
-    background: #fafafa;
-    border-radius: 2px;
+    background: rgb(246, 246, 246);
+    border-radius: 5px;
 }
 
 .custom-form input:focus {
-    border: 2px #A095E0 solid;
+    border: 2px #18204f solid;
 }
 
 
 .custom-form textarea:focus {
-    border: 2px #A095E0 solid;
+    border: 2px #18204f solid;
 }
 
 .custom-form textarea {
-    background: #fafafa;
-    border-radius: 2px;
+    border: 1px rgb(246, 246, 246) solid;
     outline: none;
+    color: #18204f;
+    font-weight: 400;
+    margin: 0;
+    background: rgb(246, 246, 246);
+    border-radius: 5px;
     resize: none;
-    border: 1px rgb(218, 218, 218) solid;
-    padding: 20px;
-    color: #916d6d;
-    font-weight: 500;
 }
 
 
@@ -73,7 +76,12 @@
     font-weight: 400;
 }
 
-.landing-page {
-    /*border-radius: 2.0625rem;*/
-    /*box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+
+.work-box-shadow {
+    /*border-radius: 1.125rem;*/
+    box-shadow: 0px 0px 11px -7px rgba(0, 0, 0, 0.25);
+}
+
+.contact-gradient {
+    /*background: linear-gradient(135deg, #10183E 0%, #FF42BF 100%);*/
 }

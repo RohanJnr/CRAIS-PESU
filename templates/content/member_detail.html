@@ -4,12 +4,15 @@
 {% load wagtailimages_tags %}
 {% block content %}
     <main class="w-3/5 md:w-3/5 lg:w-[50%] mx-auto my-24">
-    <h1 class="font-bold text-primary">{{ object.name }}</h1>
-    <p class="uppercase text-secondary font-medium my-5">{{ object.designation }}, {{ object.category.name }}</p>
-    <div class="">
-        {% image object.image width-800 format-webp as member_image %}
-        <img src="{{ member_image.url }}" alt="" class="w-full h-auto rounded">
-    </div>
-    <div class="mt-10 rich-text">{{ object.about|richtext }}</div>
+        <h2 class="font-bold text-primary w-full">{{ object.name|title }}</h2>
+        <p class="uppercase text-secondary font-medium my-5">{% if member.designation %}
+            {{ object.designation }},
+        {% endif %}
+            {{ object.category.name }}</p>
+        <div class="">
+            {% image object.image width-800 format-webp as member_image %}
+            <img src="{{ member_image.url }}" alt="" class="w-full h-auto rounded">
+        </div>
+        <div class="mt-10 rich-text">{{ object.about|richtext }}</div>
     </main>
 {% endblock %}

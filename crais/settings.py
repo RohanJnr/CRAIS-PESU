@@ -10,6 +10,7 @@ DEBUG = bool(os.getenv("PRODUCTION", True))
 if DEBUG:
     SECRET_KEY = "django-insecure-57f()xer=kbaonvvgrac7!vb1f^)_am2x4r7uxfxd$4$(s#43e"  # noqa: S105
     ALLOWED_HOSTS = ["*"]
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 else:
     SECRET_KEY = os.getenv("SECRET_KEY")
@@ -19,8 +20,9 @@ else:
         gethostbyname(gethostname())
     ]
     CSRF_COOKIE_SECURE = True
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 
 INSTALLED_APPS = [
     # Whitenoise
@@ -184,3 +186,9 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")

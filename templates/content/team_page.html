@@ -10,16 +10,16 @@
             <div class="rich-text">
                 {{ member_category.category.description | richtext }}
             </div>
-            <div class="my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
+            <div class="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20">
                 {% for member in member_category.category.members.all %}
-                    <div class="justify-self-center">
+                    <div class="">
                         <a href="{% url 'member-detail' slug=member.slug %}">
                             <div class="aspect-square h-[350px] w-[350px] flex justify-center items-center bg-background-light">
                                 {% image member.image fill-350x350 format-webp as member_image %}
                                 <img src="{{ member_image.url }}" alt=""
                                      class="rounded aspect-square w-full h-full object-cover">
                             </div>
-                            <h5 class="text-primary font-bold mt-2">{{ member.name|title }}</h5>
+                            <h5 class="text-primary font-bold mt-2 w-full">{{ member.name|title }}</h5>
                             <h6 class="text-xs uppercase text-secondary font-medium my-1">
                                 {% if member.designation %}
                                     {{ member.designation }},

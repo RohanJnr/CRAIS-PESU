@@ -3,8 +3,7 @@ from django.http import HttpRequest
 from django.template.response import TemplateResponse
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, InlinePanel
-from wagtail.contrib.forms.models import AbstractForm, AbstractFormField
-from wagtail.fields import RichTextField
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
 
 class FormField(AbstractFormField):
@@ -13,19 +12,23 @@ class FormField(AbstractFormField):
     page = ParentalKey('FormPage', on_delete=models.CASCADE, related_name='form_fields')
 
 
-class FormPage(AbstractForm):
+class FormPage(AbstractEmailForm):
     """General form page for registrations and contact page."""
 
     intro = models.CharField(max_length=128)
     thank_you_text = models.CharField(max_length=255)
-    general_information = RichTextField()
+    general_information = models.TextField(blank=True, null=True)
 
 
-    content_panels = AbstractForm.content_panels + [
+    content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('intro'),
         FieldPanel('general_information'),
         InlinePanel('form_fields', label="Form fields"),
         FieldPanel('thank_you_text', classname="full"),
+        FieldPanel("from_address"),
+        FieldPanel("to_address"),
+        FieldPanel("subject")
+
     ]
 
     parent_page_types = ("content.EventPage",)

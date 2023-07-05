@@ -1,34 +1,40 @@
 {% load compress %}
 {% load static %}
 
+{% load wagtailsettings_tags %}
+{% get_settings %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>cRAIS Site</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
-
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 
 <body class="bg-body">
 
-    {% include '_navbar.html' %}
-    {% block content %}
-    {% endblock content %}
-    <div class="w-2/3 mx-auto">
-        {% block content_w %}
-        {% endblock content_w %}
-    </div>
-    {% include '_footer.html' %}
-    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.8.0"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+{% include '_navbar.html' %}
+{% block content %}
+{% endblock content %}
+<div class="w-2/3 mx-auto">
+    {% block content_w %}
+    {% endblock content_w %}
+</div>
+{% include '_footer.html' %}
+<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script src="https://unpkg.com/htmx.org@1.8.0"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 
 </body>
 
