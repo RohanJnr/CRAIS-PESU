@@ -11,16 +11,20 @@ django = "^4.2.2"
 django-compressor = "^4.3.1"
 django-crispy-forms = "^2.0"
 crispy-tailwind = "^0.5.0"
-python-dotenv = "^1.0.0"
 wagtail = "^5.0.2"
 whitenoise = "^6.5.0"
 gunicorn = "^20.1.0"
+django-environ = "^0.10.0"
+django-storages = "^1.13.2"
+boto3 = "^1.27.1"
+psycopg = {extras = ["binary", "pool"], version = "^3.1.9"}
 
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.275"
 pre-commit = "^3.3.3"
 taskipy = "^1.11.0"
+python-dotenv = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]

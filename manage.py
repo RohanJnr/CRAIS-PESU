@@ -30,7 +30,6 @@ def create_super_user(username: str, password: str) -> None:
 def pre_run() -> None:
     """Migrate migrations and create superuser."""
     django.setup()
-
     call_command("migrate")
 
     if settings.DEBUG:

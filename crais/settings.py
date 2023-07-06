@@ -1,32 +1,44 @@
-import os
+import secrets
 from pathlib import Path
 from socket import gethostname, gethostbyname
+
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, False),
+)
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = bool(os.getenv("PRODUCTION", True))
+DEBUG = env("DEBUG")
+FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 if DEBUG:
     SECRET_KEY = "django-insecure-57f()xer=kbaonvvgrac7!vb1f^)_am2x4r7uxfxd$4$(s#43e"  # noqa: S105
     ALLOWED_HOSTS = ["*"]
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 else:
-    SECRET_KEY = os.getenv("SECRET_KEY")
-    ALLOWED_HOSTS = [item for item in os.getenv("ALLOWED_HOSTS", "").replace(" ", "").split(",") if item] or [
-        "crais.pes.edu",
-        gethostname(),
-        gethostbyname(gethostname())
-    ]
+    SECRET_KEY = secrets.token_urlsafe(32)
+    ALLOWED_HOSTS = env.list(
+        'ALLOWED_HOSTS',
+        default=[
+            "crais.pes.edu",
+            gethostname(),
+            gethostbyname(gethostname())
+        ],
+    )
+
     CSRF_COOKIE_SECURE = True
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+    FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
 
 INSTALLED_APPS = [
     # Whitenoise
     "whitenoise.runserver_nostatic",
+    # Crispy forms
     "crispy_tailwind",
     'crispy_forms',
     # Custom apps
@@ -96,10 +108,7 @@ WSGI_APPLICATION = "crais.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": Path(BASE_DIR, "db.sqlite3"),
-    }
+    "default": env.db()
 }
 
 
@@ -152,7 +161,7 @@ STATICFILES_DIRS = [
 
 STORAGES = {
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "BACKEND": FILE_STORAGE,
     },
     "staticfiles": {
         # "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # With caching
@@ -187,8 +196,15 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+if not DEBUG:
+    AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
+    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
+    AWS_S3_CUSTOM_DOMAIN = 'd1efqn8u7xvdls.cloudfront.net'
+
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")

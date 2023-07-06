@@ -151,3 +151,6 @@ staticfiles/
 
 # output tailwind compiled css
 output.css
+
+# production env
+.env.prod

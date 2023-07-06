@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5000:5432"
+    environment:
+      POSTGRES_DB: crais
+      POSTGRES_PASSWORD: crais
+      POSTGRES_USER: crais
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver --bind 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    tty: true
+    volumes:
+      - .:/app:ro
+      - ./media:/app/media
+    environment:
+      DATABASE_URL: postgres://crais:crais@postgres:5432/crais
+      DEBUG: 1
+
+
+volumes:
+  postgres_data:
