@@ -32,7 +32,16 @@ else:
 
     CSRF_COOKIE_SECURE = True
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    # FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+    CSRF_TRUSTED_ORIGINS = env.list(
+        'ALLOWED_HOSTS',
+        default=[
+            "crais.pes.edu",
+            gethostname(),
+            gethostbyname(gethostname())
+        ],
+    )
 
 
 INSTALLED_APPS = [
@@ -197,11 +206,11 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
 if not DEBUG:
-    AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
-    AWS_S3_CUSTOM_DOMAIN = 'd1efqn8u7xvdls.cloudfront.net'
+    # AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+    # AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+    # AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
+    # AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
+    # AWS_S3_CUSTOM_DOMAIN = 'd1efqn8u7xvdls.cloudfront.net'
 
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_USE_TLS = True
