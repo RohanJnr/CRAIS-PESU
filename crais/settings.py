@@ -34,13 +34,13 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
-    CSRF_TRUSTED_ORIGINS = env.list(
-        'TRUSTED_ORIGINS',
-        default=[
-            "http://localhost",
-            "http://127.0.0.1"
-        ],
-    )
+CSRF_TRUSTED_ORIGINS = env.list(
+    'TRUSTED_ORIGINS',
+    default=[
+        "http://localhost",
+        "http://127.0.0.1"
+    ],
+)
 
 
 INSTALLED_APPS = [
