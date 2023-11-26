@@ -36,6 +36,7 @@ class MemberCategory(models.Model):
 class Member(index.Indexed, ClusterableModel):
     """Member model for users/researchers CRAIS."""
 
+    order = models.IntegerField(blank=True, null=True)
     name = models.CharField(max_length=255)
     about = RichTextField(help_text="About the member.")
     slug = models.SlugField(
@@ -105,6 +106,7 @@ class Member(index.Indexed, ClusterableModel):
     )
 
     panels = [
+        FieldPanel("order"),
         FieldPanel("name"),
         FieldPanel("about"),
         FieldPanel("image"),
@@ -124,6 +126,9 @@ class Member(index.Indexed, ClusterableModel):
         index.FilterField("university"),
         index.FilterField("srn"),
     ]
+
+    class Meta:
+        ordering = ["order"]
 
     def __str__(self) -> str:
         return self.name

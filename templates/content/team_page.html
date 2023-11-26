@@ -10,22 +10,35 @@
             <div class="rich-text">
                 {{ member_category.category.description | richtext }}
             </div>
-            <div class="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20">
+            <div class="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                 {% for member in member_category.category.members.all %}
                     <div class="">
-                        <a href="{% url 'member-detail' slug=member.slug %}">
-                            <div class="aspect-square h-[350px] w-[350px] flex justify-center items-center bg-background-light">
-                                {% image member.image fill-350x350 format-webp as member_image %}
+                        <a href="{{ member.pes_faculty_profile_link }}">
+                            <div class="aspect-square w-full h-auto flex justify-center items-center bg-background-light">
+                                {% image member.image original format-webp as member_image %}
                                 <img src="{{ member_image.url }}" alt=""
                                      class="rounded aspect-square w-full h-full object-cover">
                             </div>
-                            <h5 class="text-primary font-bold mt-2 w-full">{{ member.name|title }}</h5>
-                            <h6 class="text-xs uppercase text-secondary font-medium my-1">
-                                {% if member.designation %}
-                                    {{ member.designation }},
-                                {% endif %}
-                                {{ member_category.category.name }}
-                            </h6>
+                            <div class="flex justify-between items-center w-full">
+                                <div>
+                                    <h5 class="text-primary font-bold mt-2 w-full">{{ member.name|title }}</h5>
+                                    <h6 class="text-xs uppercase text-secondary font-medium my-1">
+                                        {% if member.designation %}
+                                            {{ member.designation }},
+                                        {% endif %}
+                                        {{ member_category.category.name }}
+                                    </h6>
+                                </div>
+                                <div class="flex justify-end items-center gap-2">
+                                    <a href="{{ member.linkedin_link }}">
+                                        <img src="{% static 'images/google_scholar.png' %}" alt="" class="w-6 h-6">
+                                    </a>
+                                    <a href="{{ member.google_scholar_link }}">
+                                        <img src="{% static 'images/linkedin.png' %}" alt="" class="w-6 h-6">
+                                    </a>
+                                </div>
+                            </div>
+                
                         </a>
                     </div>
                 {% endfor %}

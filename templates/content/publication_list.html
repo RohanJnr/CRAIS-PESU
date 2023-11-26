@@ -51,7 +51,9 @@
                                 <p class="w-fit px-4 py-2 border-2 border-primary text-primary rounded text-primary">{{ pub.publication_category }}</p>
                                 <p class="w-fit px-4 py-2 text-primary rounded bg-background-light text-primary">{{ pub.date.year }}</p>
                             </div>
-                            <a href="{{ pub.link }}" class="shadow-md w-fit px-4 py-2 text-white rounded bg-primary hover:text-secondary">View Publication -></a>
+                            <a href="{{ pub.link }}" class="shadow-md w-fit px-4 py-2 text-white rounded bg-primary hover:text-secondary flex justify-center items-center gap-2">View Publication <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                              </svg></a>
                         </div>
 
                     </div>

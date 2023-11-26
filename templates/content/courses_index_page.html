@@ -32,7 +32,10 @@
                             <h6 class="text-primary font-medium">Faculty</h6>
                             <div class="flex flex-col justify-start items-start">
                                 {% for faculty_obj in course.faculty.all %}
-                                    <a href="{% url 'member-detail' slug=faculty_obj.faculty.slug %}" class="text-blue-500">-> {{ faculty_obj.faculty.name }}</a>
+                                    <a href="{% url 'member-detail' slug=faculty_obj.faculty.slug %}" class="text-blue-500 flex justify-center items-center gap-2">
+                                        <svg class="w-3 h-3 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                      </svg>{{ faculty_obj.faculty.name }}</a>
                                 {% endfor %}
                             </div>
 
