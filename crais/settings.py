@@ -1,4 +1,3 @@
-import secrets
 from pathlib import Path
 from socket import gethostname, gethostbyname
 
@@ -15,12 +14,13 @@ DEBUG = env("DEBUG")
 FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+
 if DEBUG:
     SECRET_KEY = "django-insecure-57f()xer=kbaonvvgrac7!vb1f^)_am2x4r7uxfxd$4$(s#43e"  # noqa: S105
     ALLOWED_HOSTS = ["*"]
 
 else:
-    SECRET_KEY = secrets.token_urlsafe(32)
+    SECRET_KEY = env("SECRET_KEY")
     ALLOWED_HOSTS = env.list(
         'ALLOWED_HOSTS',
         default=[

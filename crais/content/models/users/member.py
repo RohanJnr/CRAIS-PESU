@@ -118,7 +118,7 @@ class Member(index.Indexed, ClusterableModel):
         FieldPanel("faculty_guide"),
         FieldPanel("srn"),
         FieldPanel("university"),
-        FieldPanel("member_page")
+        # FieldPanel("member_page")
     ]
 
     search_fields = [
