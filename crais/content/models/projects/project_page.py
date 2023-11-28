@@ -106,7 +106,7 @@ class ProjectPage(Page):
         FieldPanel("end_date"),
         FieldPanel("pinned"),
         MultiFieldPanel(
-            [InlinePanel("contributors", min_num=1, label="Contributors")],
+            [InlinePanel("contributors", label="Contributors")],
             heading="Project Contributors",
         ),
         InlinePanel('project_images', label="Gallery images"),

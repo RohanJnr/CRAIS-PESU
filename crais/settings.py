@@ -2,6 +2,7 @@ from pathlib import Path
 from socket import gethostname, gethostbyname
 
 import environ
+from django.utils import timezone
 
 env = environ.Env(
     DEBUG=(bool, False),
@@ -216,3 +217,46 @@ if not DEBUG:
     EMAIL_PORT = 587
     EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
     EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+
+LOGGING_DIR = BASE_DIR / 'logs'
+
+LOGGING_DIR.mkdir(parents=True, exist_ok=True)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s %(levelname)s %(name)s %(message)s'
+        },
+        'pesuio': {
+            '()': 'colorlog.ColoredFormatter',
+            'format': '%(log_color)s%(asctime)s %(levelname)s %(name)s %(bold_white)s%(message)s',
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            "class": "logging.FileHandler",
+            'filename': Path(LOGGING_DIR, f'{timezone.now().date()}.log'),
+            'formatter': 'standard',
+            'encoding': "utf8"
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'pesuio',
+            'filters': [],
+        },
+    },
+    'loggers': {
+        logger_name: {
+            'level': "WARNING",
+            'propagate': True,
+        } for logger_name in ('django', 'django.request', 'django.db.backends', 'django.template', 'core')
+    },
+    'root': {
+        'level': "DEBUG",
+        'handlers': ['console', 'file'],
+    }
+}
