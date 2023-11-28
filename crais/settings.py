@@ -11,7 +11,7 @@ env = environ.Env(
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = env("DEBUG")
+DEBUG = False
 FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -229,7 +229,7 @@ LOGGING = {
         'standard': {
             'format': '%(asctime)s %(levelname)s %(name)s %(message)s'
         },
-        'pesuio': {
+        'crais': {
             '()': 'colorlog.ColoredFormatter',
             'format': '%(log_color)s%(asctime)s %(levelname)s %(name)s %(bold_white)s%(message)s',
         }
@@ -245,7 +245,7 @@ LOGGING = {
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'pesuio',
+            'formatter': 'crais',
             'filters': [],
         },
     },
