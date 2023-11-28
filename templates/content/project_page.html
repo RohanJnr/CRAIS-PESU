@@ -16,16 +16,17 @@
                     {% endfor %}
                 </div>
                 <div class="mt-10">
-                    <h5 class="text-primary font-medium">Contributors</h5>
-                    <div class="flex flex-col flex-wrap justify-start items-start mt-2">
-                        {% for contrib in page.contributors.all %}
-                            <div class="my-0 py-0">
-                                <a href="{{ contrib.contributor.linkedin_link }}"
-                                   class="text-blue-500 font-bold text-sm py-0 my-0">{{ contrib.contributor.name }}</a>
-                            </div>
-
-                        {% endfor %}
-                    </div>
+                    {% if page.contributors.all %}
+                        <h5 class="text-primary font-medium">Contributors</h5>
+                        <div class="flex flex-col flex-wrap justify-start items-start mt-2">
+                            {% for contrib in page.contributors.all %}
+                                <div class="my-0 py-0">
+                                    <a href="{{ contrib.contributor.linkedin_link }}"
+                                    class="text-blue-500 font-bold text-sm py-0 my-0">{{ contrib.contributor.name }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
 
                 </div>
             </div>

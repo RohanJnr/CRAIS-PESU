@@ -91,7 +91,7 @@ class ProjectPage(Page):
     )
     tags = ClusterTaggableManager(through=ProjectTag, blank=True)
 
-    start_date = models.DateField(blank=True, null=True)
+    start_date = models.DateField(help_text="This field is used for project ordering.")
     end_date = models.DateField(blank=True, null=True, help_text="leave blank if project is not completed.")
 
     pinned = models.BooleanField(default=False)
