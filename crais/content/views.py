@@ -1,5 +1,9 @@
-from django.http import Http404
-from django.views.generic import DetailView, ListView
+from typing import Any
+
+from django.contrib import messages
+from django.http import Http404, HttpRequest
+from django.shortcuts import redirect
+from django.views.generic import DetailView, ListView, RedirectView, View
 from django.db.models import QuerySet
 
 from crais.content.models import Member, Patent, Publication
@@ -35,15 +39,17 @@ class PatentsView(ListView):
         return context
 
 
-class MemberView(DetailView):
+class MemberView(View):
     """DetailView generic for Member model."""
 
-    model = Member
-    query_pk_and_slug = True
+    def get(self, request: HttpRequest, *args, **kwargs) -> str | None:
+        slug = kwargs.get("slug")
+        try:
+            member = Member.objects.get(slug=slug)
+        except Member.DoesNotExist:
+            return redirect("/team")
 
-    def get_object(self, queryset: QuerySet | None = None) -> Member | Http404:
-        """Override get_object to return http404 on members without a page."""
-        obj:Member = super().get_object(queryset)
-        if not obj.member_page:
-            raise Http404("Detail page not found for member.")
-        return obj
+        if member.pes_faculty_profile_link:
+            return redirect(member.pes_faculty_profile_link)
+        
+        return redirect("/team")

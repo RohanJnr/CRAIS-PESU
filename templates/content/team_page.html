@@ -30,12 +30,16 @@
                                     </h6>
                                 </div>
                                 <div class="flex justify-end items-center gap-2">
+                                    {% if member.linkedin_link %}
                                     <a href="{{ member.linkedin_link }}">
-                                        <img src="{% static 'images/google_scholar.png' %}" alt="" class="w-6 h-6">
+                                        <img src="{% static 'images/google_scholar.png' %}" alt="" class="w-5 h-5">
                                     </a>
+                                    {% endif %}
+                                    {% if member.google_scholar_link %}
                                     <a href="{{ member.google_scholar_link }}">
-                                        <img src="{% static 'images/linkedin.png' %}" alt="" class="w-6 h-6">
+                                        <img src="{% static 'images/linkedin.png' %}" alt="" class="w-5 h-5">
                                     </a>
+                                    {% endif %}
                                 </div>
                             </div>
                 
